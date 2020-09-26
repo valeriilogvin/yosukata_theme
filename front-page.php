@@ -1,4 +1,6 @@
-<?php get_header(); ?>
+<?php
+    get_header('home');
+?>
 
 <body>
 
@@ -16,7 +18,7 @@
 
         <div class="header">
             <div class="container flex">
-                <a href="" class="logo"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/logo.svg" alt=""></a>
+                <a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/logo.svg" alt=""></a>
                 <ul class="navbar">
                     <li><a href="#about">About</a></li>
                     <li class="parent-submenu">

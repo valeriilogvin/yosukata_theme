@@ -2,14 +2,11 @@
 /**
  * The template for displaying all single posts
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package yosukata
  */
 
 get_header();
 ?>
-
+single
 	<main id="primary" class="site-main">
 
 		<?php
