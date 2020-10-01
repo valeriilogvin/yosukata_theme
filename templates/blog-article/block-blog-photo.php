@@ -1,0 +1,1 @@
+<div class="img col-8"><img src="<?php the_sub_field('image') ?>" alt=""></div>

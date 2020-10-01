@@ -16,18 +16,18 @@
                 <div class="flex row">
                     <div class="col-6">
                         <ul>
-                            <li><a href="#about">About</a></li>
+                            <li><a href="<?php echo home_url(); ?>/#about">About</a></li>
                             <li><a href="#">Knowledge Base</a></li>
-                            <li><a href="#recipes">Recipes</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#"  data-modal="modal-contact" class="md-trigger">Contact</a></li>
+                            <li><a href="<?php echo home_url(); ?>/recipes">Recipes</a></li>
+                            <li><a href="<?php echo home_url(); ?>/faq">FAQ</a></li>
+                            <li><a data-modal="modal-contact" class="md-trigger">Contact</a></li>
                             <li><a href="#">Shop</a></li>
                         </ul>
                     </div>
                     <div class="col-6">
                         <ul>
                             <li><a href="#">Product Registration</a></li>
-                            <li><a href="#" data-modal="modal-wholesale" class="md-trigger">Wholesales</a></li>
+                            <li><a data-modal="modal-wholesale" class="md-trigger">Wholesales</a></li>
                             <li><a href="#">Warranty & Returns</a></li>
                             <li><a href="#">Privacy policy</a></li>
                             <li><a href="#">Terms & Conditions</a></li>
@@ -65,7 +65,7 @@
     </div>
 </a>
 
-<a href="#" class="coupon md-trigger" data-modal="modal-coupon">
+<a class="coupon md-trigger" data-modal="modal-coupon">
     <span>I’m a coupon!</span>
 </a>
 

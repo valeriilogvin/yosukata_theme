@@ -7,6 +7,7 @@
 <div class="wrapper">
 
     <section class="sect1">
+
         <div href="#" class="header-top display_none">
             <div class="container">
                 <p>free shipping on orders over 75$</p>
@@ -16,46 +17,8 @@
             </div>
         </div>
 
-        <div class="header">
-            <div class="container flex">
-                <a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/logo.svg" alt=""></a>
-                <ul class="navbar">
-                    <li><a href="#about">About</a></li>
-                    <li class="parent-submenu">
-                        <a href="">Knowledge Base</a>
-                        <ul class="submenu">
-                            <li><a href="#">Seasoning&Care</a></li>
-                            <li><a href="#">Video</a></li>
-                            <li><a href="#">Other Category</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#recipes">Recipes</a></li>
-                    <li><a href="">FAQ</a></li>
-                    <li><a href="#" data-modal="modal-register" class="md-trigger">Register</a></li>
-                    <li><a href="#" data-modal="modal-contact" class="md-trigger">Contact</a></li>
-                </ul>
-                <a href="#" class="button md-trigger" data-modal="modal-where-to-buy">Buy now<span class="back"></span></a>
-                <div class="language">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/img/usa.jpg" alt="">
-                    <div class="language_drop-down">
-                        <a href="#" class="ger">
-                            <img src="<?php echo get_stylesheet_directory_uri() ?>/img/ger.jpg" alt="">
-                        </a>
-                        <a href="#" class="fr">
-                            <img src="<?php echo get_stylesheet_directory_uri() ?>/img/fr.jpg" alt="">
-                        </a>
-                        <a href="#" class="ch">
-                            <img src="<?php echo get_stylesheet_directory_uri() ?>/img/ch.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-                <button class="menu-btn display_none">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
+        <?php get_template_part( 'template-parts/header' ); ?>
+
         <div class="container container-arrow">
             <div class="arrow">
                 <span></span>
@@ -119,50 +82,9 @@
     </section>
 
     <section class="sect2">
-        <div class="fixed-box">
-            <div class="fixed-header header "  style="top: 0;">
-                <div class="container flex">
-                    <a href="" class="logo"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/logo.svg" alt=""></a>
-                    <ul class="navbar">
-                        <li><a href="#about">About</a></li>
-                        <li class="parent-submenu">
-                            <a href="">Knowledge Base</a>
-                            <ul class="submenu">
-                                <li><a href="#">Seasoning&Care</a></li>
-                                <li><a href="#">Video</a></li>
-                                <li><a href="#">Other Category</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#recipes">Recipes</a></li>
-                        <li><a href="">FAQ</a></li>
-                        <li><a data-modal="modal-register" class="md-trigger">Register</a></li>
-                        <li><a data-modal="modal-contact" class="md-trigger">Contact</a></li>
-                    </ul>
 
-                    <a href="#" class="button md-trigger" data-modal="modal-where-to-buy">Buy now<span class="back"></span></a>
-                    <div class="language">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/img/usa.jpg" alt="">
-                        <div class="language_drop-down">
-                            <a href="#" class="ger">
-                                <img src="<?php echo get_stylesheet_directory_uri() ?>/img/ger.jpg" alt="">
-                            </a>
-                            <a href="#" class="fr">
-                                <img src="<?php echo get_stylesheet_directory_uri() ?>/img/fr.jpg" alt="">
-                            </a>
-                            <a href="#" class="ch">
-                                <img src="<?php echo get_stylesheet_directory_uri() ?>/img/ch.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <button class="menu-btn display_none">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
+        <?php get_template_part( 'template-parts/fixed', 'header' ); ?>
 
-                </div>
-            </div>
-        </div>
         <div class="container">
             <h2 data-aos="fade-right"
                 data-aos-delay="300"
@@ -253,32 +175,32 @@
                 Categories
             </h2>
             <div class="flex row">
-                <a href="#" class="item col-4">
+                <a target="_blank" href="<?php echo home_url(); ?>/catalogue/#Steel-Woks" class="item col-4">
                     <h3>Steel Woks</h3>
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/img/steel-woks.png" alt="">
                     <p class="button"><span class="back"></span> To the Category</p>
                 </a>
-                <a href="#" class="item col-4">
+                <a target="_blank" href="<?php echo home_url(); ?>/catalogue/#Steel-Pans" class="item col-4">
                     <h3>Steel Pans</h3>
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/img/steel-pans.png" alt="">
                     <p class="button"><span class="back"></span> To the Category</p>
                 </a>
-                <a href="#" class="item col-4">
+                <a target="_blank" href="<?php echo home_url(); ?>/catalogue/#Cast-Iron-Woks" class="item col-4">
                     <h3>Cast Iron Woks</h3>
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/img/iron-woks.png" alt="">
                     <p class="button"><span class="back"></span> To the Category</p>
                 </a>
-                <a href="#" class="item col-4">
+                <a target="_blank" href="<?php echo home_url(); ?>/catalogue/#Cast-Iron-Pans" class="item col-4">
                     <h3>Cast Iron Pans</h3>
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/img/iron-pans.png" alt="">
                     <p class="button"><span class="back"></span> To the Category</p>
                 </a>
-                <a href="#" class="item col-4">
+                <a target="_blank" href="<?php echo home_url(); ?>/catalogue/#Lids" class="item col-4">
                     <h3>Lids</h3>
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/img/lids.png" alt="">
                     <p class="button"><span class="back"></span> To the Category</p>
                 </a>
-                <a href="#" class="item col-4">
+                <a target="_blank" href="<?php echo home_url(); ?>/catalogue/#Accessories" class="item col-4">
                     <h3>Accessories</h3>
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/img/accessories.png" alt="">
                     <p class="button"><span class="back"></span> To the Category</p>
@@ -303,7 +225,7 @@
                         and scrambled it to make a type specimen book.</p>
                 </div>
                 <div class="col-3 button-block">
-                    <a href="#" class="button black"><span class="back"></span>See all</a>
+                    <a target="_blank" href="<?php echo home_url(); ?>/blog" class="button black"><span class="back"></span>See all</a>
                 </div>
             </div>
             <div class="sect4-slick">
@@ -618,7 +540,7 @@
                 Get your discount instantly, <br />
                 just press the button!
             </p>
-            <a href="#" class="button md-trigger" data-modal="modal-coupon"><span class="back"></span>Get a coupon</a>
+            <a class="button md-trigger" data-modal="modal-coupon"><span class="back"></span>Get a coupon</a>
         </div>
     </section>
 
@@ -632,7 +554,7 @@
                         Check out our recipes!
                     </h2>
                 </div>
-                <div class="col-3"><a href="#" class="button black"><span class="back"></span>All Recipes</a></div>
+                <div class="col-3"><a target="_blank" href="<?php echo home_url(); ?>/recipes" class="button black"><span class="back"></span>All Recipes</a></div>
             </div>
             <div class="sect8-slick">
                 <a href="#" class="slide">
