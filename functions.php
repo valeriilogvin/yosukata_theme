@@ -43,13 +43,13 @@ function yosukata_scripts() {
         'yosukata-allMinCSS',
         get_stylesheet_directory_uri() . '/css/all.min.css',
         array(),
-        '1.3'
+        '1.0'
     );
     wp_enqueue_style(
         'yosukata-libsCSS',
         get_stylesheet_directory_uri() . '/css/libs.min.css',
         array(),
-        '1.3'
+        '1.0'
     );
     wp_enqueue_style(
         'yosukata-slick-theme',
@@ -67,13 +67,19 @@ function yosukata_scripts() {
         'yosukata-style',
         get_stylesheet_directory_uri() . '/css/main.css',
         array(),
-        '1.3'
+        '1.0'
+    );
+    wp_enqueue_style(
+        'yosukata-style-pages',
+        get_stylesheet_directory_uri() . '/css/pages.css',
+        array(),
+        '1.0'
     );
     wp_enqueue_script(
         'yosukata-slick',
         get_template_directory_uri() . '/slick/slick.min.js',
         array(),
-        '1.3',
+        '1.0',
         true
     );
 
@@ -81,14 +87,14 @@ function yosukata_scripts() {
         'yosukata-libs',
         get_template_directory_uri() . '/js/libs.min.js',
         array(),
-        '1.3',
+        '1.0',
         true
     );
     wp_enqueue_script(
         'yosukata-mainJs',
         get_template_directory_uri() . '/js/main.js',
         array(),
-        '1.3',
+        '1.0',
         true
     );
     if ( is_post_type_archive('catalogue') ) {
@@ -96,7 +102,7 @@ function yosukata_scripts() {
             'yosukata-catalogue-fixed-menu',
             get_template_directory_uri() . '/js/catalogue-fixed-menu.js',
             array(),
-            '1.3',
+            '1.0',
             true
         );
     }
@@ -190,39 +196,42 @@ function my_custom_init(){
         'query_var'          => true,
         'rewrite'            => true,
         'capability_type'    => 'post',
-        'menu_icon'          => 'dashicons-megaphone',
+        'menu_icon'          => 'dashicons-list-view',
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => 4,
         'supports'           => array('title','custom-fields')
     ) );
-    /*register_taxonomy( 'catalogue_product_type', [ 'catalogue' ], [
-        'label'                 => '', // определяется параметром $labels->name
-        'labels'                => [
-            'name'              => 'Catalogue type',
-            'singular_name'     => 'Catalogue type',
-            'search_items'      => 'Search catalogue type',
-            'all_items'         => 'All catalogue type',
-            'view_item '        => 'View catalogue type',
-            'parent_item'       => 'Parent catalogue type',
-            'parent_item_colon' => 'Parent catalogue type:',
-            'edit_item'         => 'Edit catalogue type',
-            'update_item'       => 'Update catalogue type',
-            'add_new_item'      => 'Add new catalogue type',
-            'new_item_name'     => 'New catalogue type name',
-            'menu_name'         => 'Catalogue type',
-        ],
-        'description'           => '', // описание таксономии
-        'public'                => true,
-        'hierarchical'          => true,
-        'rewrite'               => true,
-        'capabilities'          => array(),
-        'meta_box_cb'           => null, // html метабокса. callback: `post_categories_meta_box` или `post_tags_meta_box`. false — метабокс отключен.
-        'show_admin_column'     => true, // авто-создание колонки таксы в таблице ассоциированного типа записи. (с версии 3.5)
-        'show_in_rest'          => null, // добавить в REST API
-        'rest_base'             => null, // $taxonomy
-        //'update_count_callback' => '_update_post_term_count',
-    ] );*/
+
+    register_post_type('reviews ', array(
+        'labels'             => array(
+            'name'               => 'Reviews',
+            'singular_name'      => 'Reviews',
+            'add_new'            => 'Add new',
+            'add_new_item'       => 'Add new review',
+            'edit_item'          => 'Edit',
+            'new_item'           => 'New review',
+            'view_item'          => 'See the item',
+            'search_items'       => 'Search',
+            'not_found'          => 'Not found',
+            'not_found_in_trash' => 'Not found in the cart',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Reviews'
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => true,
+        'capability_type'    => 'post',
+        'menu_icon'          => 'dashicons-thumbs-up',
+        'has_archive'        => false,
+        'hierarchical'       => false,
+        'menu_position'      => 4,
+        'supports'           => array('title','custom-fields')
+    ) );
+
 
 }
 

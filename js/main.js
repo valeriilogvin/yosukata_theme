@@ -19,6 +19,13 @@ $('.sect1-slick').slick(    {
         return '<a class="custom-dots">' + '0' + (i + 1) + '</a>';
     },
 });
+$('.sect1-slick .slider1 .slider-lines .front')
+    .css('animation','categoryProgress 4500ms infinite linear both')
+    .css('-webkit-animation','categoryProgress 4500ms infinite linear both');
+// On edge hit
+$('.sect1-slick').on('edge', function(event, slick, direction){
+    console.log('edge was hit')
+});
 $('.sect4-slick').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -66,6 +73,52 @@ $('.sect6-slick').slick({
     // cssEase: 'linear',
     // pauseOnHover:false,
     responsive: [
+        {
+            breakpoint: 1025,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 3000,
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 3000,
+            }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+    ]
+});
+$('.recommended-products').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    dots: false,
+    prevArrow: '<button type="button" class="my-slick-prev"><i class="fas fa-chevron-left"></i></button>',
+    nextArrow: '<button type="button" class="my-slick-next"><i class="fas fa-chevron-right"></i></button>',
+    // infinite: true,
+    // fade: true,
+    // cssEase: 'linear',
+    // pauseOnHover:false,
+    responsive: [
+        {
+            breakpoint: 1281,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 3000,
+            }
+        },
         {
             breakpoint: 1025,
             settings: {
@@ -330,3 +383,33 @@ $(document).ready(function(){
         }
     });
 });
+
+$('a.item').on('click', 'p.button' , function () {
+    event.preventDefault();
+});
+
+$('.js-button-buy').on('click','', function () {
+    let $this = $(this),
+        $amazonButton = $('.js-buy-amazon'),
+        $ebayButton = $('.js-buy-ebay'),
+        dataAmazon = $this.attr('data-amazon'),
+        dataEbay = $this.attr('data-ebay');
+
+    $amazonButton.css('display', 'none');
+    $ebayButton.css('display', 'none');
+
+    if ($this.attr("data-amazon")) {
+        console.log('has am')
+        $amazonButton
+            .attr('href', dataAmazon)
+            .css('display', 'flex');
+    }
+    if($this.attr("data-ebay")){
+        console.log('has e');
+        $ebayButton
+            .attr('href', dataEbay)
+            .css('display', 'flex')
+    }
+});
+
+$('.js-top_sales').append('<div class="fire"><i class="fas fa-fire"></i> top sales</div>');

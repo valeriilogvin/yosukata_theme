@@ -27,86 +27,26 @@ else {
         </div>
         <div class="container container-blog">
             <div class="flex row">
-                <div class="col-6">
-                    <a href="#" class="slider-item slider-row blog-article video" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg')">
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
-                    <p class="title">About Yosukata. Brand traditions and priorities</p>
-                </div>
-                <div class="col-6">
-                    <a href="#" class="slider-item slider-column-top blog-article articles post" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg')">
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
-                    <p class="title">Sesoning&Caring. Method #1</p>
-                    <p class="text">Lorem Ipsum has been the industry's text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book...</p>
-
-                </div>
-                <div class="col-6">
-                    <a href="#" class="slider-item slider-row blog-article video" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg')">
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
-                    <p class="title">About Yosukata. Brand traditions and priorities</p>
-                </div>
-                <div class="col-6">
-                    <a href="#" class="slider-item slider-column-top blog-article articles post" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg')">
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
-                    <p class="title">Sesoning&Caring. Method #1</p>
-                    <p class="text">Lorem Ipsum has been the industry's text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book...</p>
-
-                </div>
-                <div class="col-6">
-                    <a href="#" class="slider-item slider-row blog-article video" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg')">
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
-                    <p class="title">About Yosukata. Brand traditions and priorities</p>
-                </div>
-                <div class="col-6">
-                    <a href="#" class="slider-item slider-column-top blog-article articles post" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg')">
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
-                    <p class="title">Sesoning&Caring. Method #1</p>
-                    <p class="text">Lorem Ipsum has been the industry's text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book...</p>
-
-                </div>
-                <div class="col-6">
-                    <a href="#" class="slider-item slider-row blog-article video" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg')">
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
-                    <p class="title">About Yosukata. Brand traditions and priorities</p>
-                </div>
-                <div class="col-6">
-                    <a href="#" class="slider-item slider-column-top blog-article articles post" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg')">
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
-                    <p class="title">Sesoning&Caring. Method #1</p>
-                    <p class="text">Lorem Ipsum has been the industry's text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book...</p>
-
-                </div>
-                <div class="col-6">
-                    <a href="#" class="slider-item slider-row blog-article video" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg')">
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
-                    <p class="title">About Yosukata. Brand traditions and priorities</p>
-                </div>
-                <div class="col-6">
-                    <a href="#" class="slider-item slider-column-top blog-article articles post" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg')">
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
-                    <p class="title">Sesoning&Caring. Method #1</p>
-                    <p class="text">Lorem Ipsum has been the industry's text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book...</p>
-
-                </div>
+                <?php
+                $posts = get_posts( array(
+                    'posts_per_page' => 6,
+                    'post_type'   => 'blog',
+                    'suppress_filters' => true,
+                ));
+                foreach( $posts as $post ){ setup_postdata($post);
+                    ?>
+                    <div class="col-6">
+                        <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>');">
+                            <i class="fas icon"></i>
+                            <div class="background"></div>
+                        </a>
+                        <p class="title"><?php echo the_field('blog_title') ?></p>
+                        <p class="text"><?php echo the_field('blog_text') ?></p>
+                    </div>
+                    <?php
+                }
+                wp_reset_postdata();
+                ?>
             </div>
         </div>
     </div>

@@ -67,74 +67,31 @@ else {
                     More from Blog
                 </h2>
                 <div class="sect-blog-bottom-slider">
-                    <div class="slider">
-                        <a href="#" class="slider-item video" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg');">
-                            <div class="watch"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/play.png" alt=""></div>
-                            <p class="title">About Yosukata. Brand traditions and priorities</p>
-                            <i class="fas fa-video"></i>
-                        </a>
-                    </div>
-                    <div class="slider">
-                        <a href="#" class="slider-item post" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg');">
-                            <p class="title">Sesoning&Caring. Method #1
-                                <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's... </span>
-                            </p>
-                            <i class="fas fa-align-left"></i>
-                        </a>
-                    </div>
-                    <div class="slider">
-                        <a href="#" class="slider-item post" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col2.png.jpg');">
-                            <div class="watch"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/play.png" alt=""></div>
-                            <p class="title">Cook like a Chef! Wok cooking tips&tricks</p>
-                            <i class="fas fa-video"></i>
-                        </a>
-                    </div>
-                    <div class="slider">
-                        <a href="#" class="slider-item video"
-                           style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg')">
-                            <div class="watch"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/play.png" alt=""></div>
-                            <p class="title">About Yosukata. Brand traditions and priorities</p>
-                            <i class="fas fa-video"></i>
-                        </a>
-                    </div>
-                    <div class="slider">
-                        <a href="#" class="slider-item post" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg');">
-                            <p class="title">Sesoning&Caring. Method #1
-                                <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's... </span>
-                            </p>
-                            <i class="fas fa-align-left"></i>
-                        </a>
-                    </div>
-                    <div class="slider">
-                        <a href="#" class="slider-item post" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col2.png.jpg');">
-                            <div class="watch"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/play.png" alt=""></div>
-                            <p class="title">Cook like a Chef! Wok cooking tips&tricks</p>
-                            <i class="fas fa-video"></i>
-                        </a>
-                    </div>
-                    <div class="slider">
-                        <a href="#" class="slider-item video"
-                           style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg');">
-                            <div class="watch"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/play.png" alt=""></div>
-                            <p class="title">About Yosukata. Brand traditions and priorities</p>
-                            <i class="fas fa-video"></i>
-                        </a>
-                    </div>
-                    <div class="slider">
-                        <a href="#" class="slider-item post" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg');">
-                            <p class="title">Sesoning&Caring. Method #1
-                                <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's... </span>
-                            </p>
-                            <i class="fas fa-stream"></i>
-                        </a>
-                    </div>
-                    <div class="slider">
-                        <a href="#" class="slider-item post" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col2.png.jpg');">
-                            <div class="watch"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/play.png" alt=""></div>
-                            <p class="title">Cook like a Chef! Wok cooking tips&tricks</p>
-                            <i class="fas fa-video"></i>
-                        </a>
-                    </div>
+
+                    <?php
+                    $posts = get_posts( array(
+                        'posts_per_page' => 6,
+                        'post_type'   => 'blog',
+                        'tag' => 'more_from_blog',
+                        'suppress_filters' => true,
+                    ));
+                    foreach( $posts as $post ){ setup_postdata($post);
+                        ?>
+                        <div class="slider">
+                            <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>');">
+                                <p class="title">
+                                    <?php the_title(); ?>
+                                <span class="text"><?php echo the_field('blog_text') ?></span>
+                                </p>
+                                <i class="fas icon"></i>
+                                <div class="background"></div>
+                            </a>
+                        </div>
+                        <?php
+                    }
+                    wp_reset_postdata();
+                    ?>
+
                 </div>
             </div>
         </div>

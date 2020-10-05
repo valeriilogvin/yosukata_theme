@@ -1,11 +1,11 @@
 <div class="fixed-box">
     <div class="fixed-header header "  style="top: 0;">
         <div class="container flex">
-            <a href="" class="logo"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/logo.svg" alt=""></a>
+            <a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/logo.svg" alt=""></a>
             <ul class="navbar">
                 <li><a href="<?php echo home_url(); ?>/#about">About</a></li>
                 <li class="parent-submenu">
-                    <a href="">Knowledge Base</a>
+                    <a href="<?php echo home_url(); ?>/blog">Knowledge Base</a>
                     <ul class="submenu">
                         <li><a href="#">Seasoning&Care</a></li>
                         <li><a href="#">Video</a></li>

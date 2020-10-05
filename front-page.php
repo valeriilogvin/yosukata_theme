@@ -8,9 +8,9 @@
 
     <section class="sect1">
 
-        <div href="#" class="header-top display_none">
+        <div class="header-top display_none">
             <div class="container">
-                <p>free shipping on orders over 75$</p>
+                <p><?php the_field('text_on_top_header') ?></p>
                 <a href="#" class="close">
                     <span></span><span></span>
                 </a>
@@ -92,15 +92,65 @@
                 Special offers
             </h2>
             <div class="flex row">
-                <a href="#" class="item deal_of_the_month col-6">
-                    <h2 class="title">Deal of <br />the month</h2>
-                    <div class="flex">
+
+                <!-- get acf-group -->
+                <?php $hero = get_field('item1');
+                if( $hero ): ?>
+                    <a href="#" class="item deal_of_the_month col-6">
+                        <h2 class="title">Deal of <br />the month</h2>
+                        <div class="flex">
+                            <div class="img-block">
+                                <img src="<?php echo $hero['image']; ?>" alt="">
+                            </div>
+                            <div class="descriptions">
+                                <h3><?php echo $hero['title']; ?></h3>
+                                <div class="stars <?php echo $hero['amount_of_stars']; ?>">
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                </div>
+                                <div class="flex">
+                                    <div class="price-block">
+                                        <span class="price"><?php echo $hero['price']; ?></span>
+                                        <span class="old-price"><?php echo $hero['price_old']; ?></span>
+                                    </div>
+                                    <p class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
+
+                                        <?php
+                                        if(  $hero['amazon_link'] ) { ?>
+                                            data-amazon="<?php echo $hero['amazon_link']; ?>"
+                                        <?php }
+                                        if( $hero['ebay_link'] ) { ?>
+                                            data-ebay="<?php echo $hero['ebay_link']; ?>"
+                                        <?php }?>
+
+                                    >
+                                        <span class="back"></span>
+                                        Buy now
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                <?php endif;
+                ?>
+
+                <!-- get acf-group -->
+                <?php $hero = get_field('item2');
+                if( $hero ): ?>
+                    <a href="#" class="item top_sales col-3">
+                        <div class="fire">
+                            <i class="fas fa-fire"></i> top sales
+                        </div>
                         <div class="img-block">
-                            <img src="<?php echo get_stylesheet_directory_uri() ?>/img/sect2-1.png" alt="">
+                            <img src="<?php echo $hero['image']; ?>" alt="">
                         </div>
                         <div class="descriptions">
-                            <h3>Pre-Seasoned Carbon Steel Wok Pan 14“ </h3>
-                            <div class="stars stars5">
+                            <h3><?php echo $hero['title']; ?></h3>
+                            <div class="stars <?php echo $hero['amount_of_stars']; ?>">
                                 <div class="star"></div>
                                 <div class="star"></div>
                                 <div class="star"></div>
@@ -108,55 +158,70 @@
                                 <div class="star"></div>
                             </div>
                             <div class="flex">
-                                <div class="price-block">
-                                    <span class="price">49.99$</span>
-                                    <span class="old-price">59.99$</span>
-                                </div>
-                                <p  class="button black">Buy now<span class="back"></span></p>
+                                <span class="price"><?php echo $hero['price']; ?></span>
+                                <p class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
+
+                                    <?php
+                                    if(  $hero['amazon_link'] ) { ?>
+                                        data-amazon="<?php echo $hero['amazon_link']; ?>"
+                                    <?php }
+                                    if( $hero['ebay_link'] ) { ?>
+                                        data-ebay="<?php echo $hero['ebay_link']; ?>"
+                                    <?php }?>
+
+                                >
+                                    <span class="back"></span>
+                                    Buy now
+
+                                </p>
                             </div>
                         </div>
-                    </div>
-                </a>
-                <a href="#" class="item top_sales col-3">
-                    <div class="fire">
-                        <i class="fas fa-fire"></i> top sales
-                    </div>
-                    <div class="img-block"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/sect2-1.png" alt=""></div>
-                    <div class="descriptions">
-                        <h3>Pre-Seasoned Carbon Steel Wok Pan 14“ </h3>
-                        <div class="stars stars4">
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
+                    </a>
+                <?php endif;
+                ?>
+
+                <!-- get acf-group -->
+                <?php $hero = get_field('item3');
+                if( $hero ): ?>
+                    <a href="#" class="item top_sales col-3">
+                        <div class="fire">
+                            <i class="fas fa-fire"></i> top sales
                         </div>
-                        <div class="flex">
-                            <span class="price">59.99$</span>
-                            <p class="button black"><span class="back"></span> Buy now</p>
+                        <div class="img-block">
+                            <img src="<?php echo $hero['image']; ?>" alt="">
                         </div>
-                    </div>
-                </a>
-                <a href="#" class="item top_sales col-3">
-                    <div class="fire">
-                        <i class="fas fa-fire"></i> top sales
-                    </div>
-                    <div class="img-block"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/sect2-1.png" alt=""></div>
-                    <div class="descriptions">
-                        <h3>Pre-Seasoned Carbon Steel Wok Pan - 14“ Woks and Stir Fry Pans</h3>
-                        <div class="stars stars4">
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
+                        <div class="descriptions">
+                            <h3><?php echo $hero['title']; ?></h3>
+                            <div class="stars <?php echo $hero['amount_of_stars']; ?>">
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                            </div>
+                            <div class="flex">
+                                <span class="price"><?php echo $hero['price']; ?></span>
+                                <p class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
+
+                                    <?php
+                                    if(  $hero['amazon_link'] ) { ?>
+                                        data-amazon="<?php echo $hero['amazon_link']; ?>"
+                                    <?php }
+                                    if( $hero['ebay_link'] ) { ?>
+                                        data-ebay="<?php echo $hero['ebay_link']; ?>"
+                                    <?php }?>
+
+                                >
+                                    <span class="back"></span>
+                                    Buy now
+
+                                </p>
+                            </div>
                         </div>
-                        <div class="flex">
-                            <span class="price">59.99$</span>
-                            <p class="button black"><span class="back"></span> Buy now</p>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                <?php endif;
+                ?>
+
             </div>
             <div class="text-center">
                 <a href="#" class="button black"><span class="back"></span> View full catalogue</a>
@@ -230,133 +295,116 @@
             </div>
             <div class="sect4-slick">
                 <div class="slider">
-                    <a href="#" class="slider-item slider-row video" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg')">
-                        <div class="watch"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/play.png" alt=""></div>
+                    <a href="#" class="slider-item slider-row blog-article video" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg')">
                         <p class="title">About Yosukata. Brand traditions and priorities</p>
-                        <i class="fas fa-video"></i>
+                        <i class="fas icon"></i>
+                        <div class="background"></div>
                     </a>
                     <div class="slider-column">
-                        <a href="#" class="slider-item slider-column-top post" >
+                        <a href="#" class="slider-item slider-column-top blog-article articles post" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg')">
                             <p class="title">Sesoning&Caring. Method #1
                                 <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's... </span>
                             </p>
-                            <i class="fas fa-align-left"></i>
+                            <i class="fas icon"></i>
+                            <div class="background"></div>
                         </a>
-                        <a href="#" class="slider-item slider-column-bottom post">
-                            <div class="watch"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/play.png" alt=""></div>
+                        <a href="#" class="slider-item slider-column-bottom blog-article video post" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col2.png.jpg')">
                             <p class="title">Cook like a Chef! Wok cooking tips&tricks</p>
-                            <i class="fas fa-video"></i>
+                            <i class="fas icon"></i>
+                            <div class="background"></div>
                         </a>
                     </div>
                 </div>
                 <div class="slider">
-                    <a href="#" class="slider-item slider-row video" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg')">
-                        <div class="watch"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/play.png" alt=""></div>
+                    <a href="#" class="slider-item slider-row blog-article video" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg')">
                         <p class="title">About Yosukata. Brand traditions and priorities</p>
-                        <i class="fas fa-video"></i>
+                        <i class="fas icon"></i>
+                        <div class="background"></div>
                     </a>
                     <div class="slider-column">
-                        <a href="#" class="slider-item slider-column-top post" >
+                        <a href="#" class="slider-item slider-column-top blog-article articles post" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg')">
                             <p class="title">Sesoning&Caring. Method #1
                                 <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's... </span>
                             </p>
-                            <i class="fas fa-align-left"></i>
+                            <i class="fas icon"></i>
+                            <div class="background"></div>
                         </a>
-                        <a href="#" class="slider-item slider-column-bottom post">
-                            <div class="watch"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/play.png" alt=""></div>
+                        <a href="#" class="slider-item slider-column-bottom blog-article video post" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col2.png.jpg')">
                             <p class="title">Cook like a Chef! Wok cooking tips&tricks</p>
-                            <i class="fas fa-video"></i>
+                            <i class="fas icon"></i>
+                            <div class="background"></div>
                         </a>
                     </div>
                 </div>
                 <div class="slider">
-                    <a href="#" class="slider-item slider-row video" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg')">
-                        <div class="watch"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/play.png" alt=""></div>
+                    <a href="#" class="slider-item slider-row blog-article video" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg')">
                         <p class="title">About Yosukata. Brand traditions and priorities</p>
-                        <i class="fas fa-video"></i>
+                        <i class="fas icon"></i>
+                        <div class="background"></div>
                     </a>
                     <div class="slider-column">
-                        <a href="#" class="slider-item slider-column-top post" >
+                        <a href="#" class="slider-item slider-column-top blog-article articles post" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg')">
                             <p class="title">Sesoning&Caring. Method #1
                                 <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's... </span>
                             </p>
-                            <i class="fas fa-stream"></i>
+                            <i class="fas icon"></i>
+                            <div class="background"></div>
                         </a>
-                        <a href="#" class="slider-item slider-column-bottom post">
-                            <div class="watch"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/play.png" alt=""></div>
+                        <a href="#" class="slider-item slider-column-bottom blog-article video post" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col2.png.jpg')">
                             <p class="title">Cook like a Chef! Wok cooking tips&tricks</p>
-                            <i class="fas fa-video"></i>
+                            <i class="fas icon"></i>
+                            <div class="background"></div>
                         </a>
                     </div>
                 </div>
             </div>
             <div class="sect4-slick-mobile">
                 <div class="slider">
-                    <a href="#" class="slider-item video" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg');">
-                        <div class="watch"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/play.png" alt=""></div>
+                    <a href="#" class="slider-item blog-article video" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg');">
                         <p class="title">About Yosukata. Brand traditions and priorities</p>
-                        <i class="fas fa-video"></i>
+                        <i class="fas icon"></i>
+                        <div class="background"></div>
                     </a>
                 </div>
                 <div class="slider">
-                    <a href="#" class="slider-item post" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg');">
+                    <a href="#" class="slider-item blog-article articles" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg');">
                         <p class="title">Sesoning&Caring. Method #1
                             <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's... </span>
                         </p>
-                        <i class="fas fa-align-left"></i>
+                        <i class="fas icon"></i>
+                        <div class="background"></div>
                     </a>
                 </div>
                 <div class="slider">
-                    <a href="#" class="slider-item post" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col2.png.jpg');">
-                        <div class="watch"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/play.png" alt=""></div>
-                        <p class="title">Cook like a Chef! Wok cooking tips&tricks</p>
-                        <i class="fas fa-video"></i>
-                    </a>
-                </div>
-                <div class="slider">
-                    <a href="#" class="slider-item video"
-                       style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg')">
-                        <div class="watch"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/play.png" alt=""></div>
+                    <a href="#" class="slider-item blog-article video" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg');">
                         <p class="title">About Yosukata. Brand traditions and priorities</p>
-                        <i class="fas fa-video"></i>
+                        <i class="fas icon"></i>
+                        <div class="background"></div>
                     </a>
                 </div>
                 <div class="slider">
-                    <a href="#" class="slider-item post" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg');">
+                    <a href="#" class="slider-item blog-article articles" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg');">
                         <p class="title">Sesoning&Caring. Method #1
                             <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's... </span>
                         </p>
-                        <i class="fas fa-align-left"></i>
+                        <i class="fas icon"></i>
+                        <div class="background"></div>
                     </a>
                 </div>
                 <div class="slider">
-                    <a href="#" class="slider-item post" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col2.png.jpg');">
-                        <div class="watch"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/play.png" alt=""></div>
-                        <p class="title">Cook like a Chef! Wok cooking tips&tricks</p>
-                        <i class="fas fa-video"></i>
-                    </a>
-                </div>
-                <div class="slider">
-                    <a href="#" class="slider-item video"
-                       style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg');">
-                        <div class="watch"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/play.png" alt=""></div>
+                    <a href="#" class="slider-item blog-article video" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg');">
                         <p class="title">About Yosukata. Brand traditions and priorities</p>
-                        <i class="fas fa-video"></i>
+                        <i class="fas icon"></i>
+                        <div class="background"></div>
                     </a>
                 </div>
                 <div class="slider">
-                    <a href="#" class="slider-item post" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg');">
+                    <a href="#" class="slider-item blog-article articles" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg');">
                         <p class="title">Sesoning&Caring. Method #1
                             <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's... </span>
                         </p>
-                        <i class="fas fa-stream"></i>
-                    </a>
-                </div>
-                <div class="slider">
-                    <a href="#" class="slider-item post" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col2.png.jpg');">
-                        <div class="watch"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/play.png" alt=""></div>
-                        <p class="title">Cook like a Chef! Wok cooking tips&tricks</p>
-                        <i class="fas fa-video"></i>
+                        <i class="fas icon"></i>
+                        <div class="background"></div>
                     </a>
                 </div>
             </div>
@@ -390,146 +438,7 @@
         </div>
     </section>
 
-    <section class="sect6">
-        <div class="container">
-            <h2 data-aos="fade-right"
-                data-aos-delay="300"
-                data-aos-duration="1000">
-                Reviews
-            </h2>
-            <div class="sect6-slick">
-                <div class="slide">
-                    <p class="title">Authentic Wok, great price, “asian guy” approved</p>
-                    <div class="stars stars5">
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                    </div>
-                    <div class="line">
-                        <span class="country"><i class="fas fa-flag"></i>United States</span>
-                        <a href=""><i class="fab fa-amazon"></i>Link to the review & photos on Amazon</a>
-                    </div>
-                    <p class="text">Great price, pre seasoned which is practical , FOLLOW RECOMMENDED CLEANING, NO
-                        DISH SOAP , and this will be a heirloom kitchen utensil. Just the right feel and weight for
-                        an authentic wok ,I do recommended buying the metal circular wok stand for use on gas stove
-                        for greater stability otherwise as long as you’re comfortable just keep it stable by holding
-                        the handle while stir frying .
-                        The quality of metal used plus the pre seasoning of the wok gives an authentic ‘Chinese take
-                        out’ taste on everything you cook in it</p>
-                </div>
-                <div class="slide">
-                    <p class="title">A perfect wok</p>
-                    <div class="stars stars5">
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                    </div>
-                    <div class="line">
-                        <span class="country"><i class="fas fa-flag"></i>United States</span>
-                        <a href=""><i class="fab fa-amazon"></i>Link to the review & photos on Amazon</a>
-                    </div>
-                    <p class="text"> This is not a regular wok that you find in the stores. It is a well made
-                        original japnese wok. You will notice the difference as soon as you unpack it. Tried some
-                        stirfry toufu with veggies and some indo-chinese fried rice, the heat distrubution is
-                        perfect. The dishes came out perfect. 10 on 10 for the wok. The handle as screws if you need
-                        to remove it to put in oven. The ciscumference of the handle is just perfect, lot of woks
-                        have a thinner handle. Overall i am very satisfied and would recommend it to home cook
-                        looking for a perfect wok</p>
-                </div>
-                <div class="slide">
-                    <p class="title">Great product! But...</p>
-                    <div class="stars stars4">
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                    </div>
-                    <div class="line">
-                        <span class="country"><i class="fas fa-flag"></i>United States</span>
-                        <a href=""><i class="fab fa-amazon"></i>Link to the review & photos on Amazon</a>
-                    </div>
-                    <p class="text"> This is not a regular wok that you find in the stores. It is a well made
-                        original japnese wok. You will notice the difference as soon as you unpack it. Tried some
-                        stirfry toufu with veggies and some indo-chinese fried rice, the heat distrubution is
-                        perfect. The dishes came out perfect. 10 on 10 for the wok. The handle as screws if you need
-                        to remove it to put in oven. The ciscumference of the handle is just perfect, lot of woks
-                        have a thinner handle. Overall i am very satisfied and would recommend it to home cook
-                        looking for a perfect wok</p>
-                </div>
-                <div class="slide">
-                    <p class="title">Authentic Wok, great price, “asian guy” approved</p>
-                    <div class="stars stars5">
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                    </div>
-                    <div class="line">
-                        <span class="country"><i class="fas fa-flag"></i>United States</span>
-                        <a href=""><i class="fab fa-amazon"></i>Link to the review & photos on Amazon</a>
-                    </div>
-                    <p class="text">Great price, pre seasoned which is practical , FOLLOW RECOMMENDED CLEANING, NO
-                        DISH SOAP , and this will be a heirloom kitchen utensil. Just the right feel and weight for
-                        an authentic wok ,I do recommended buying the metal circular wok stand for use on gas stove
-                        for greater stability otherwise as long as you’re comfortable just keep it stable by holding
-                        the handle while stir frying .
-                        The quality of metal used plus the pre seasoning of the wok gives an authentic ‘Chinese take
-                        out’ taste on everything you cook in it</p>
-                </div>
-                <div class="slide">
-                    <p class="title">A perfect wok</p>
-                    <div class="stars stars5">
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                    </div>
-                    <div class="line">
-                        <span class="country"><i class="fas fa-flag"></i>United States</span>
-                        <a href=""><i class="fab fa-amazon"></i>Link to the review & photos on Amazon</a>
-                    </div>
-                    <p class="text"> This is not a regular wok that you find in the stores. It is a well made
-                        original japnese wok. You will notice the difference as soon as you unpack it. Tried some
-                        stirfry toufu with veggies and some indo-chinese fried rice, the heat distrubution is
-                        perfect. The dishes came out perfect. 10 on 10 for the wok. The handle as screws if you need
-                        to remove it to put in oven. The ciscumference of the handle is just perfect, lot of woks
-                        have a thinner handle. Overall i am very satisfied and would recommend it to home cook
-                        looking for a perfect wok</p>
-                </div>
-                <div class="slide">
-                    <p class="title">Great product! But...</p>
-                    <div class="stars stars4">
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                    </div>
-                    <div class="line">
-                        <span class="country"><i class="fas fa-flag"></i>United States</span>
-                        <a href=""><i class="fab fa-amazon"></i>Link to the review & photos on Amazon</a>
-                    </div>
-                    <p class="text"> This is not a regular wok that you find in the stores. It is a well made
-                        original japnese wok. You will notice the difference as soon as you unpack it. Tried some
-                        stirfry toufu with veggies and some indo-chinese fried rice, the heat distrubution is
-                        perfect. The dishes came out perfect. 10 on 10 for the wok. The handle as screws if you need
-                        to remove it to put in oven. The ciscumference of the handle is just perfect, lot of woks
-                        have a thinner handle. Overall i am very satisfied and would recommend it to home cook
-                        looking for a perfect wok</p>
-                </div>
-            </div>
-        </div>
-        <img src="<?php echo get_stylesheet_directory_uri() ?>/img/parsley2.png" alt="" class="parsley">
-        <img src="<?php echo get_stylesheet_directory_uri() ?>/img/tomato.png" alt="" class="tomato">
-        <img src="<?php echo get_stylesheet_directory_uri() ?>/img/shrimp.png" alt="" class="shrimp">
-    </section>
+    <?php get_template_part( 'template-parts/review' ); ?>
 
     <section class="sect7">
         <div class="container text-center">
@@ -557,76 +466,29 @@
                 <div class="col-3"><a target="_blank" href="<?php echo home_url(); ?>/recipes" class="button black"><span class="back"></span>All Recipes</a></div>
             </div>
             <div class="sect8-slick">
-                <a href="#" class="slide">
-                    <span class="time">32 min</span>
-                    <div class="img-block" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect8-img3.jpg')"></div>
-                    <div class="slide-title">
-                        <span>Difficulty: <span class="value">easy</span></span>
-                        <span>Servings: <span class="value">4</span></span>
-                        <h3>Steel Woks</h3>
-                        <p class="button"><span class="back"></span> View Recipe</p>
-                    </div>
-                </a>
-                <a href="#" class="slide">
-                    <span class="time">32 min</span>
-                    <div class="img-block" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect8-img3.jpg')"></div>
-                    <div class="slide-title">
-                        <span>Difficulty: <span class="value">easy</span></span>
-                        <span>Servings: <span class="value">4</span></span>
-                        <h3>Steel Pans</h3>
-                        <p class="button"><span class="back"></span>View Recipe</p>
-                    </div>
-                </a>
-                <a href="#" class="slide">
-                    <span class="time">32 min</span>
-                    <div class="img-block" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect8-img3.jpg')"></div>
-                    <div class="slide-title">
-                        <span>Difficulty: <span class="value">easy</span></span>
-                        <span>Servings: <span class="value">4</span></span>
-                        <h3>Noodles and shrimps stir-fry</h3>
-                        <p class="button"><span class="back"></span>View Recipe</p>
-                    </div>
-                </a>
-                <a href="#" class="slide">
-                    <span class="time">32 min</span>
-                    <div class="img-block" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect8-img3.jpg')"></div>
-                    <div class="slide-title">
-                        <span>Difficulty: <span class="value">easy</span></span>
-                        <span>Servings: <span class="value">4</span></span>
-                        <h3>Cast Iron Pans</h3>
-                        <p class="button"><span class="back"></span>View Recipe</p>
-                    </div>
-                </a>
-                <a href="#" class="slide">
-                    <span class="time">32 min</span>
-                    <div class="img-block" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect8-img3.jpg')"></div>
-                    <div class="slide-title">
-                        <span>Difficulty: <span class="value">easy</span></span>
-                        <span>Servings: <span class="value">4</span></span>
-                        <h3>Steel Pans</h3>
-                        <p class="button"><span class="back"></span>View Recipe</p>
-                    </div>
-                </a>
-                <a href="#" class="slide">
-                    <span class="time">32 min</span>
-                    <div class="img-block" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect8-img3.jpg')"></div>
-                    <div class="slide-title">
-                        <span>Difficulty: <span class="value">easy</span></span>
-                        <span>Servings: <span class="value">4</span></span>
-                        <h3>Noodles and shrimps stir-fry</h3>
-                        <p class="button"><span class="back"></span>View Recipe</p>
-                    </div>
-                </a>
-                <a href="#" class="slide">
-                    <span class="time">32 min</span>
-                    <div class="img-block" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect8-img3.jpg')"></div>
-                    <div class="slide-title">
-                        <span>Difficulty: <span class="value">easy</span></span>
-                        <span>Servings: <span class="value">4</span></span>
-                        <h3>Cast Iron Pans</h3>
-                        <p class="button"><span class="back"></span>View Recipe</p>
-                    </div>
-                </a>
+                <?php
+                $posts = get_posts( array(
+                    'posts_per_page' => 6,
+                    'post_type'   => 'recipes',
+//                        'tag' => 'more_from_blog',
+                    'suppress_filters' => true,
+                ));
+                foreach( $posts as $post ){ setup_postdata($post);
+                    ?>
+                    <a href="<?php echo get_permalink(); ?>" class="slide">
+                        <span class="time"><?php the_field('time'); ?></span>
+                        <div class="img-block" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect8-img3.jpg')"></div>
+                        <div class="slide-title">
+                            <span>Difficulty: <span class="value"><?php the_field('difficulty'); ?></span></span>
+                            <span>Servings: <span class="value"><?php the_field('serving'); ?></span></span>
+                            <h3><?php the_title(); ?></h3>
+                            <p class="button"><span class="back"></span> View Recipe</p>
+                        </div>
+                    </a>
+                    <?php
+                }
+                wp_reset_postdata();
+                ?>
             </div>
             <div class="bottom-text">
                 <p class="js-show-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
