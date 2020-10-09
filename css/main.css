@@ -1177,8 +1177,6 @@ button.menu-btn {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
-    background: url("../img/bg.jpg") top center no-repeat;
-    background-size: cover;
     height: 100vh; }
     .sect1-slick .slider1 h1 {
       text-transform: none;
@@ -1296,6 +1294,7 @@ button.menu-btn {
     display: block; }
   .header a.button {
     margin-left: auto; }
+
   .sect1-slick .slider1 h1 {
     font-size: 40px;
     line-height: 50px; }
@@ -1308,9 +1307,6 @@ button.menu-btn {
     line-height: 34px; } }
 
 @media (min-width: 481px) and (max-width: 1024px) {
-  .sect1-slick .slider1 {
-    background: url("../img/bg-mob.jpg") bottom center no-repeat;
-    background-size: cover; }
     .sect1-slick .slider1 .container {
       margin: auto auto;
       text-align: center; }
@@ -1346,9 +1342,7 @@ button.menu-btn {
     font-size: 14px; }
   .sect1-slick .my-dots {
     display: none !important; }
-  .sect1-slick .slider1 {
-    background: url("../img/bg-mob.jpg") bottom center no-repeat;
-    background-size: cover; }
+
     .sect1-slick .slider1 .container {
       margin: 150px auto auto;
       text-align: center; }
@@ -1777,7 +1771,11 @@ button.menu-btn {
 .star:before {
   -webkit-clip-path: polygon(50% 0%, 66% 27%, 98% 35%, 76% 57%, 79% 91%, 50% 78%, 21% 91%, 24% 57%, 2% 35%, 32% 27%);
   clip-path: polygon(50% 0%, 66% 27%, 98% 35%, 76% 57%, 79% 91%, 50% 78%, 21% 91%, 24% 57%, 2% 35%, 32% 27%); }
-
+@media (max-width: 1400px) {
+.sect2 .top_sales{
+      padding: 35px 30px;
+    }
+}
 @media (max-width: 1366px) {
   .sect2 .flex {
     -webkit-flex-wrap: wrap;
@@ -1789,6 +1787,7 @@ button.menu-btn {
   .sect2 .col-3 {
     width: -webkit-calc(30% - 30px);
     width: calc(30% - 30px); }
+    
   .sect2 .deal_of_the_month h2 {
     margin-bottom: 65px; }
   .sect2 .deal_of_the_month .img-block {

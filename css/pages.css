@@ -239,7 +239,10 @@
     .catalogue .item:nth-child(2n+1) {
         border-left: none; }
     .catalogue .item:nth-child(2n) {
-        border-left: 1px solid #e5e5e5; } }
+        border-left: 1px solid #e5e5e5;
+        margin: 25px 20px 25px 0px;
+        padding: 40px 0 15px 20px;} }
+
 
 @media (max-width: 769px) {
     .catalogue > .container > .flex {
@@ -507,8 +510,8 @@
     left: 0; }
 
 .wok .wok-sect4 {
-    background: url("../img/sect2-bg.jpg") top center no-repeat;
-    padding-bottom: 130px; }
+    background: url("../img/sect2-bg.jpg") bottom center no-repeat;
+    padding: 75px 0 130px; }
 .wok .wok-sect4 h2 {
     color: #000000;
     padding-bottom: 35px;
@@ -705,7 +708,7 @@
 .wok .wok-description a.button {
     margin-top: 50px; }
 .wok .wok-description a.button.grey {
-    margin-right: 20px; }
+    margin-right: 40px; }
 
 .wok .wok-description-mob {
     display: none; }
@@ -995,7 +998,9 @@
     -webkit-transition: opacity .5s ease;
     -o-transition: opacity .5s ease;
     transition: opacity .5s ease; }
-
+.blog-article .sect-blog-bottom {
+    background: url("../img/sect2-bg.jpg") bottom center no-repeat;
+    padding: 75px 0 130px; }
 .blog-article-slider .slick-list {
     margin: 0 -15px; }
 
@@ -1030,7 +1035,7 @@
     display: none; }
 
 .sect-blog-bottom-slider {
-    margin: 20px -15px 120px; }
+    margin: 20px -15px 0; }
 .sect-blog-bottom-slider .slider {
     margin: 0 15px; }
 .sect-blog-bottom-slider .slider a {
@@ -1219,6 +1224,9 @@
 .recipes-article .sect-main .instructions ul li {
     font-size: 18px;
     font-weight: 400; }
+.recipes-article .sect-main .instructions ul li + li{
+    margin-top: 10px;
+}
 .recipes-article .sect-main .instructions ul li .num {
     font-weight: 900;
     padding-right: 15px; }
