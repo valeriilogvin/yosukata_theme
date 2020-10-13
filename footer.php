@@ -29,9 +29,9 @@
                             <li><a href="#">Product Registration</a></li>
                             <li><a data-modal="modal-wholesale" class="md-trigger">Wholesales</a></li>
                             <li><a href="#">Warranty & Returns</a></li>
-                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="<?php echo home_url(); ?>/privacy-policy/">Privacy policy</a></li>
                             <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Site Map</a></li>
+                            <li><a href="<?php echo home_url(); ?>/site-map/">Site Map</a></li>
                         </ul>
                     </div>
                 </div>
@@ -53,7 +53,9 @@
         </div>
         <div class="copyright">
             <span>© Yosukata 2020</span>
-            <img src="<?php echo get_stylesheet_directory_uri() ?>/img/footer-icons.png" alt="" class="icons">
+            <div class="img">
+                <img src="<?php echo get_stylesheet_directory_uri() ?>/img/footer-icons.png" alt="" class="icons">
+            </div>
         </div>
     </div>
 </div>

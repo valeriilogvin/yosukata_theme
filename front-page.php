@@ -27,57 +27,120 @@
         </div>
 
         <div class="sect1-slick">
-            <div class="slider1 slider1_1">
-                <div class="container">
-                    <div class="content">
-                        <h1 data-aos="fade-right"
-                            data-aos-delay="300"
-                            data-aos-duration="1000">Traditional WOK</h1>
-                        <h2>Stir-fry like a Chef at your home!</h2>
-                        <a href="#" class="button">Find out more<span class="back"></span></a>
+            <?php $hero = get_field('first_block_slide_1');
+            if( $hero ): ?>
+
+                <div class="slider1 slider1_1">
+                    <div class="container">
+                        <div class="content">
+                            <h1 data-aos="fade-right"
+                                data-aos-delay="300"
+                                data-aos-duration="1000"><?php echo $hero['title']; ?></h1>
+                            <h2><?php echo $hero['title2']; ?></h2>
+                            <a href="<?php echo $hero['link']; ?>" class="button"><?php echo $hero['button_text']; ?><span class="back"></span></a>
+                        </div>
                     </div>
-                </div>
-                <div class="container container-bottom">
-                    <div class="slider-lines">
-                        <div class="front"></div>
-                        <div class="back"></div>
+                    <div class="container container-bottom">
+                        <div class="slider-lines">
+                            <div class="front"></div>
+                            <div class="back"></div>
+                        </div>
                     </div>
+                    <style>
+                        .sect1-slick .slider1_1{
+                            background-image: url(<?php echo $hero['photo']; ?>) ;
+                            background-position: top center;
+                            background-repeat: no-repeat;
+                            -webkit-background-size: cover;
+                            background-size: cover;
+                        }
+                        @media (max-width: 1024px) {
+                            .sect1-slick .slider1_1{
+                                background-image: url(<?php echo $hero['photo_mob']; ?>) ;
+                                background-position: bottom center;
+                            }
+                        }
+                    </style>
                 </div>
-            </div>
-            <div class="slider1 slider1_2">
-                <div class="container">
-                    <div class="content">
-                        <h1 data-aos="fade-right"
-                            data-aos-delay="300"
-                            data-aos-duration="1000">Traditional WOK</h1>
-                        <h2>Stir-fry like a Chef at your home!</h2>
-                        <a href="#" class="button">Find out more<span class="back"></span></a>
+
+            <?php endif;
+            ?>
+            <?php $hero = get_field('first_block_slide_2');
+            if( $hero ): ?>
+
+                <div class="slider1 slider1_2">
+                    <div class="container">
+                        <div class="content">
+                            <h1 data-aos="fade-right"
+                                data-aos-delay="300"
+                                data-aos-duration="1000"><?php echo $hero['title']; ?></h1>
+                            <h2><?php echo $hero['title2']; ?></h2>
+                            <a href="<?php echo $hero['link']; ?>" class="button"><?php echo $hero['button_text']; ?><span class="back"></span></a>
+                        </div>
                     </div>
-                </div>
-                <div class="container container-bottom">
-                    <div class="slider-lines">
-                        <div class="front"></div>
-                        <div class="back"></div>
+                    <div class="container container-bottom">
+                        <div class="slider-lines">
+                            <div class="front"></div>
+                            <div class="back"></div>
+                        </div>
                     </div>
+                    <style>
+                        .sect1-slick .slider1_2{
+                            background-image: url(<?php echo $hero['photo']; ?>) ;
+                            background-position: top center;
+                            background-repeat: no-repeat;
+                            -webkit-background-size: cover;
+                            background-size: cover;
+                        }
+                        @media (max-width: 1024px) {
+                            .sect1-slick .slider1_2{
+                                background-image: url(<?php echo $hero['photo_mob']; ?>) ;
+                                background-position: bottom center;
+                            }
+                        }
+                    </style>
                 </div>
-            </div>
-            <div class="slider1 slider1_3">
-                <div class="container">
-                    <div class="content">
-                        <h1 data-aos="fade-right"
-                            data-aos-delay="300"
-                            data-aos-duration="1000">Traditional WOK</h1>
-                        <h2>Stir-fry like a Chef at your home!</h2>
-                        <a href="#" class="button">Find out more<span class="back"></span></a>
+
+            <?php endif;
+            ?>
+            <?php $hero = get_field('first_block_slide_3');
+            if( $hero ): ?>
+
+                <div class="slider1 slider1_3">
+                    <div class="container">
+                        <div class="content">
+                            <h1 data-aos="fade-right"
+                                data-aos-delay="300"
+                                data-aos-duration="1000"><?php echo $hero['title']; ?></h1>
+                            <h2><?php echo $hero['title2']; ?></h2>
+                            <a href="<?php echo $hero['link']; ?>" class="button"><?php echo $hero['button_text']; ?><span class="back"></span></a>
+                        </div>
                     </div>
-                </div>
-                <div class="container container-bottom">
-                    <div class="slider-lines">
-                        <div class="front"></div>
-                        <div class="back"></div>
+                    <div class="container container-bottom">
+                        <div class="slider-lines">
+                            <div class="front"></div>
+                            <div class="back"></div>
+                        </div>
                     </div>
+                    <style>
+                        .sect1-slick .slider1_3{
+                            background-image: url(<?php echo $hero['photo']; ?>) ;
+                            background-position: top center;
+                            background-repeat: no-repeat;
+                            -webkit-background-size: cover;
+                            background-size: cover;
+                        }
+                        @media (max-width: 1024px) {
+                            .sect1-slick .slider1_3{
+                                background-image: url(<?php echo $hero['photo_mob']; ?>) ;
+                                background-position: bottom center;
+                            }
+                        }
+                    </style>
                 </div>
-            </div>
+
+            <?php endif;
+            ?>
         </div>
     </section>
 
@@ -96,7 +159,7 @@
                 <!-- get acf-group -->
                 <?php $hero = get_field('item1');
                 if( $hero ): ?>
-                    <a href="#" class="item deal_of_the_month col-6">
+                    <a href="<?php echo $hero['link']; ?>" class="item deal_of_the_month col-6">
                         <h2 class="title">Deal of <br />the month</h2>
                         <div class="flex">
                             <div class="img-block">
@@ -141,7 +204,7 @@
                 <!-- get acf-group -->
                 <?php $hero = get_field('item2');
                 if( $hero ): ?>
-                    <a href="#" class="item top_sales col-3">
+                    <a href="<?php echo $hero['link']; ?>" class="item top_sales col-3">
                         <div class="fire">
                             <i class="fas fa-fire"></i> top sales
                         </div>
@@ -183,7 +246,7 @@
                 <!-- get acf-group -->
                 <?php $hero = get_field('item3');
                 if( $hero ): ?>
-                    <a href="#" class="item top_sales col-3">
+                    <a href="<?php echo $hero['link']; ?>" class="item top_sales col-3">
                         <div class="fire">
                             <i class="fas fa-fire"></i> top sales
                         </div>
@@ -224,7 +287,7 @@
 
             </div>
             <div class="text-center">
-                <a href="#" class="button black"><span class="back"></span> View full catalogue</a>
+                <a href="<?php echo home_url(); ?>/catalogue" class="button black"><span class="back"></span> View full catalogue</a>
             </div>
         </div>
         <img class="pepper" src="<?php echo get_stylesheet_directory_uri() ?>/img/pepper.png" alt="">
@@ -295,117 +358,284 @@
             </div>
             <div class="sect4-slick">
                 <div class="slider">
-                    <a href="#" class="slider-item slider-row blog-article video" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg')">
-                        <p class="title">About Yosukata. Brand traditions and priorities</p>
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
-                    <div class="slider-column">
-                        <a href="#" class="slider-item slider-column-top blog-article articles post" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg')">
-                            <p class="title">Sesoning&Caring. Method #1
-                                <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's... </span>
+                    <?php
+                    $posts = get_posts( array(
+                        'numberposts' => 1,
+                        'post_type'   => 'blog',
+                        'tag' => 'slide-1',
+                        'suppress_filters' => true,
+                    ));
+                    foreach( $posts as $post ){ setup_postdata($post);
+                        ?>
+                        <a href="<?php echo get_permalink(); ?>" class="slider-item slider-row blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
+                            <p class="title">
+                                <span class="text"><?php echo the_field('blog_text') ?></span>
+                                <?php the_title() ?>
                             </p>
                             <i class="fas icon"></i>
                             <div class="background"></div>
                         </a>
-                        <a href="#" class="slider-item slider-column-bottom blog-article video post" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col2.png.jpg')">
-                            <p class="title">Cook like a Chef! Wok cooking tips&tricks</p>
-                            <i class="fas icon"></i>
-                            <div class="background"></div>
-                        </a>
+                        <?php
+                    }
+                    wp_reset_postdata();
+                    ?>
+                    
+                    <div class="slider-column">
+                        <?php
+                            $posts = get_posts( array(
+                                'numberposts' => 1,
+                                'post_type'   => 'blog',
+                                'tag' => 'slide-2',
+                                'suppress_filters' => true,
+                            ));
+                            foreach( $posts as $post ){ setup_postdata($post);
+                                ?>
+                                <a href="<?php echo get_permalink(); ?>" class="slider-item slider-column-top blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
+                                    <p class="title">
+                                        <span class="text"><?php echo the_field('blog_text') ?></span>
+                                        <?php the_title() ?>
+                                    </p>
+                                    <i class="fas icon"></i>
+                                    <div class="background"></div>
+                                </a>
+                                <?php
+                            }
+                            wp_reset_postdata();
+                        ?>
+
+                        <?php
+                            $posts = get_posts( array(
+                                'numberposts' => 1,
+                                'post_type'   => 'blog',
+                                'tag' => 'slide-3',
+                                'suppress_filters' => true,
+                            ));
+                            foreach( $posts as $post ){ setup_postdata($post);
+                                ?>
+                                <a href="<?php echo get_permalink(); ?>" class="slider-item slider-column-bottom blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
+                                    <p class="title">
+                                        <span class="text"><?php echo the_field('blog_text') ?></span>
+                                        <?php the_title() ?>
+                                    </p>
+                                    <i class="fas icon"></i>
+                                    <div class="background"></div>
+                                </a>
+                                <?php
+                            }
+                            wp_reset_postdata();
+                        ?>
+
                     </div>
                 </div>
                 <div class="slider">
-                    <a href="#" class="slider-item slider-row blog-article video" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg')">
-                        <p class="title">About Yosukata. Brand traditions and priorities</p>
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
-                    <div class="slider-column">
-                        <a href="#" class="slider-item slider-column-top blog-article articles post" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg')">
-                            <p class="title">Sesoning&Caring. Method #1
-                                <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's... </span>
+                    <?php
+                    $posts = get_posts( array(
+                        'numberposts' => 1,
+                        'post_type'   => 'blog',
+                        'tag' => 'slide-4',
+                        'suppress_filters' => true,
+                    ));
+                    foreach( $posts as $post ){ setup_postdata($post);
+                        ?>
+                        <a href="<?php echo get_permalink(); ?>" class="slider-item slider-row blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
+                            <p class="title">
+                                <span class="text"><?php echo the_field('blog_text') ?></span>
+                                <?php the_title() ?>
                             </p>
                             <i class="fas icon"></i>
                             <div class="background"></div>
                         </a>
-                        <a href="#" class="slider-item slider-column-bottom blog-article video post" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col2.png.jpg')">
-                            <p class="title">Cook like a Chef! Wok cooking tips&tricks</p>
-                            <i class="fas icon"></i>
-                            <div class="background"></div>
-                        </a>
-                    </div>
-                </div>
-                <div class="slider">
-                    <a href="#" class="slider-item slider-row blog-article video" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg')">
-                        <p class="title">About Yosukata. Brand traditions and priorities</p>
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
+                        <?php
+                    }
+                    wp_reset_postdata();
+                    ?>
+                    
                     <div class="slider-column">
-                        <a href="#" class="slider-item slider-column-top blog-article articles post" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg')">
-                            <p class="title">Sesoning&Caring. Method #1
-                                <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's... </span>
-                            </p>
-                            <i class="fas icon"></i>
-                            <div class="background"></div>
-                        </a>
-                        <a href="#" class="slider-item slider-column-bottom blog-article video post" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col2.png.jpg')">
-                            <p class="title">Cook like a Chef! Wok cooking tips&tricks</p>
-                            <i class="fas icon"></i>
-                            <div class="background"></div>
-                        </a>
+                        <?php
+                            $posts = get_posts( array(
+                                'numberposts' => 1,
+                                'post_type'   => 'blog',
+                                'tag' => 'slide-5',
+                                'suppress_filters' => true,
+                            ));
+                            foreach( $posts as $post ){ setup_postdata($post);
+                                ?>
+                                <a href="<?php echo get_permalink(); ?>" class="slider-item slider-column-top blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
+                                    <p class="title">
+                                        <span class="text"><?php echo the_field('blog_text') ?></span>
+                                        <?php the_title() ?>
+                                    </p>
+                                    <i class="fas icon"></i>
+                                    <div class="background"></div>
+                                </a>
+                                <?php
+                            }
+                            wp_reset_postdata();
+                        ?>
+
+                        <?php
+                            $posts = get_posts( array(
+                                'numberposts' => 1,
+                                'post_type'   => 'blog',
+                                'tag' => 'slide-6',
+                                'suppress_filters' => true,
+                            ));
+                            foreach( $posts as $post ){ setup_postdata($post);
+                                ?>
+                                <a href="<?php echo get_permalink(); ?>" class="slider-item slider-column-bottom blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
+                                    <p class="title">
+                                        <span class="text"><?php echo the_field('blog_text') ?></span>
+                                        <?php the_title() ?>
+                                    </p>
+                                    <i class="fas icon"></i>
+                                    <div class="background"></div>
+                                </a>
+                                <?php
+                            }
+                            wp_reset_postdata();
+                        ?>
+                        
                     </div>
                 </div>
             </div>
             <div class="sect4-slick-mobile">
                 <div class="slider">
-                    <a href="#" class="slider-item blog-article video" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg');">
-                        <p class="title">About Yosukata. Brand traditions and priorities</p>
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
+                    <?php
+                        $posts = get_posts( array(
+                            'numberposts' => 1,
+                            'post_type'   => 'blog',
+                            'tag' => 'slide-1',
+                            'suppress_filters' => true,
+                        ));
+                        foreach( $posts as $post ){ setup_postdata($post);
+                            ?>
+                            <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
+                                <p class="title">
+                                    <span class="text"><?php echo the_field('blog_text') ?></span>
+                                    <?php the_title() ?>
+                                </p>
+                                <i class="fas icon"></i>
+                                <div class="background"></div>
+                            </a>
+                            <?php
+                        }
+                        wp_reset_postdata();
+                    ?>
                 </div>
                 <div class="slider">
-                    <a href="#" class="slider-item blog-article articles" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg');">
-                        <p class="title">Sesoning&Caring. Method #1
-                            <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's... </span>
-                        </p>
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
+                    <?php
+                        $posts = get_posts( array(
+                            'numberposts' => 1,
+                            'post_type'   => 'blog',
+                            'tag' => 'slide-2',
+                            'suppress_filters' => true,
+                        ));
+                        foreach( $posts as $post ){ setup_postdata($post);
+                            ?>
+                            <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
+                                <p class="title">
+                                    <span class="text"><?php echo the_field('blog_text') ?></span>
+                                    <?php the_title() ?>
+                                </p>
+                                <i class="fas icon"></i>
+                                <div class="background"></div>
+                            </a>
+                            <?php
+                        }
+                        wp_reset_postdata();
+                    ?>
                 </div>
                 <div class="slider">
-                    <a href="#" class="slider-item blog-article video" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg');">
-                        <p class="title">About Yosukata. Brand traditions and priorities</p>
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
+                    <?php
+                        $posts = get_posts( array(
+                            'numberposts' => 1,
+                            'post_type'   => 'blog',
+                            'tag' => 'slide-3',
+                            'suppress_filters' => true,
+                        ));
+                        foreach( $posts as $post ){ setup_postdata($post);
+                            ?>
+                            <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
+                                <p class="title">
+                                    <span class="text"><?php echo the_field('blog_text') ?></span>
+                                    <?php the_title() ?>
+                                </p>
+                                <i class="fas icon"></i>
+                                <div class="background"></div>
+                            </a>
+                            <?php
+                        }
+                        wp_reset_postdata();
+                    ?>
                 </div>
                 <div class="slider">
-                    <a href="#" class="slider-item blog-article articles" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg');">
-                        <p class="title">Sesoning&Caring. Method #1
-                            <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's... </span>
-                        </p>
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
+                    <?php
+                        $posts = get_posts( array(
+                            'numberposts' => 1,
+                            'post_type'   => 'blog',
+                            'tag' => 'slide-4',
+                            'suppress_filters' => true,
+                        ));
+                        foreach( $posts as $post ){ setup_postdata($post);
+                            ?>
+                            <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
+                                <p class="title">
+                                    <span class="text"><?php echo the_field('blog_text') ?></span>
+                                    <?php the_title() ?>
+                                </p>
+                                <i class="fas icon"></i>
+                                <div class="background"></div>
+                            </a>
+                            <?php
+                        }
+                        wp_reset_postdata();
+                    ?>
                 </div>
                 <div class="slider">
-                    <a href="#" class="slider-item blog-article video" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-row.jpg');">
-                        <p class="title">About Yosukata. Brand traditions and priorities</p>
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
+                    <?php
+                        $posts = get_posts( array(
+                            'numberposts' => 1,
+                            'post_type'   => 'blog',
+                            'tag' => 'slide-5',
+                            'suppress_filters' => true,
+                        ));
+                        foreach( $posts as $post ){ setup_postdata($post);
+                            ?>
+                            <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
+                                <p class="title">
+                                    <span class="text"><?php echo the_field('blog_text') ?></span>
+                                    <?php the_title() ?>
+                                </p>
+                                <i class="fas icon"></i>
+                                <div class="background"></div>
+                            </a>
+                            <?php
+                        }
+                        wp_reset_postdata();
+                    ?>
                 </div>
                 <div class="slider">
-                    <a href="#" class="slider-item blog-article articles" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect4-slider-col1.png.jpg');">
-                        <p class="title">Sesoning&Caring. Method #1
-                            <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's... </span>
-                        </p>
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </a>
+                    <?php
+                        $posts = get_posts( array(
+                            'numberposts' => 1,
+                            'post_type'   => 'blog',
+                            'tag' => 'slide-6',
+                            'suppress_filters' => true,
+                        ));
+                        foreach( $posts as $post ){ setup_postdata($post);
+                            ?>
+                            <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
+                                <p class="title">
+                                    <span class="text"><?php echo the_field('blog_text') ?></span>
+                                    <?php the_title() ?>
+                                </p>
+                                <i class="fas icon"></i>
+                                <div class="background"></div>
+                            </a>
+                            <?php
+                        }
+                        wp_reset_postdata();
+                    ?>
                 </div>
             </div>
             <!--.flex-->

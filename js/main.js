@@ -237,6 +237,42 @@ $('.blog-article-slider').slick({
         // instead of a settings object
     ]
 });
+$('.blog-article-slider-full').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    prevArrow: '<button type="button" class="my-slick-prev"><i class="fas fa-chevron-left"></i></button>',
+    nextArrow: '<button type="button" class="my-slick-next"><i class="fas fa-chevron-right"></i></button>',
+    // infinite: true,
+    // fade: true,
+    // cssEase: 'linear',
+    // pauseOnHover:false,
+    /*responsive: [
+        {
+            breakpoint: 1025,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 3000,
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 3000,
+            }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+    ]*/
+});
 $('.sect-blog-bottom-slider').slick({
     slidesToShow: 3,
     slidesToScroll: 1,

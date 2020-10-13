@@ -14,7 +14,7 @@ else {
 
     <div class="container catalogue">
         <h2>Catalogue</h2>
-        <div class="flex">
+        <div class="flex row">
             <div class="col-2 js-col-2">
                 <ul class="fixed-catalogue js-fixed-catalogue">
                     <li><a href="#Steel-Woks">Steel Woks</a></li>
@@ -55,7 +55,7 @@ else {
                                         <div class="star"></div>
                                     </div>
                                     <div class="flex">
-                                        <span class="price"><?php the_field('stars'); ?></span>
+                                        <span class="price"><?php the_field('price'); ?></span>
                                         <p
 
                                                 class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
@@ -159,7 +159,7 @@ else {
                                         <div class="star"></div>
                                     </div>
                                     <div class="flex">
-                                        <span class="price"><?php the_field('stars'); ?></span>
+                                        <span class="price"><?php the_field('price'); ?></span>
                                         <p
 
                                                 class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
@@ -212,7 +212,7 @@ else {
                                         <div class="star"></div>
                                     </div>
                                     <div class="flex">
-                                        <span class="price"><?php the_field('stars'); ?></span>
+                                        <span class="price"><?php the_field('price'); ?></span>
                                         <p
 
                                                 class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
@@ -264,7 +264,7 @@ else {
                                         <div class="star"></div>
                                     </div>
                                     <div class="flex">
-                                        <span class="price"><?php the_field('stars'); ?></span>
+                                        <span class="price"><?php the_field('price'); ?></span>
                                         <p
 
                                            class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"

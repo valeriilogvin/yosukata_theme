@@ -18,116 +18,31 @@ else {
         </div>
         <div class="container container-recipe">
             <div class="flex row">
-                <a href="#" class="col-6 recipe" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/recipes/recipes1.jpg')">
-                    <div class="description">
-                        <span class="time">30 min</span>
-                        <span class="info">
-                                <span class="info-name">Difficulty <span class="info-text">easy</span></span>
-                                <span class="info-name">Servings <span class="info-text">4</span></span>
+
+                <?php
+                $posts = get_posts( array(
+                    'numberposts' => -1,
+                    'post_type'   => 'recipes',
+                    'suppress_filters' => true,
+                ));
+                foreach( $posts as $post ){ setup_postdata($post);
+                    ?>
+                    <a href="<?php echo get_permalink(); ?>" class="col-6 recipe" style="background-image: url('<?php the_field('recipe_main_photo'); ?>')">
+                        <div class="description">
+                            <span class="time"><?php the_field('time'); ?></span>
+                            <span class="info">
+                                <span class="info-name">Difficulty <span class="info-text"><?php the_field('difficulty'); ?></span></span>
+                                <span class="info-name">Servings <span class="info-text"><?php the_field('serving'); ?></span></span>
                             </span>
-                        <p class="recipe-title">Noodles and shrimps stir-fry</p>
-                        <p class="button black"><span class="back"></span>View recipe</p>
-                    </div>
-                </a>
-                <a href="#" class="col-6 recipe" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/recipes/recipes2.jpg')">
-                    <div class="description">
-                        <span class="time">30 min</span>
-                        <span class="info">
-                                <span class="info-name">Difficulty <span class="info-text">easy</span></span>
-                                <span class="info-name">Servings <span class="info-text">4</span></span>
-                            </span>
-                        <p class="recipe-title">Veggies and tofu stir-fry</p>
-                        <p class="button black"><span class="back"></span>View recipe</p>
-                    </div>
-                </a>
-                <a href="#" class="col-6 recipe" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/recipes/recipes2.jpg')">
-                    <div class="description">
-                        <span class="time">30 min</span>
-                        <span class="info">
-                                <span class="info-name">Difficulty <span class="info-text">easy</span></span>
-                                <span class="info-name">Servings <span class="info-text">4</span></span>
-                            </span>
-                        <p class="recipe-title">Veggies and tofu stir-fry</p>
-                        <p class="button black"><span class="back"></span>View recipe</p>
-                    </div>
-                </a>
-                <a href="#" class="col-6 recipe" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/recipes/recipes1.jpg')">
-                    <div class="description">
-                        <span class="time">30 min</span>
-                        <span class="info">
-                                <span class="info-name">Difficulty <span class="info-text">easy</span></span>
-                                <span class="info-name">Servings <span class="info-text">4</span></span>
-                            </span>
-                        <p class="recipe-title">Noodles and shrimps stir-fry</p>
-                        <p class="button black"><span class="back"></span>View recipe</p>
-                    </div>
-                </a>
-                <a href="#" class="col-6 recipe" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/recipes/recipes1.jpg')">
-                    <div class="description">
-                        <span class="time">30 min</span>
-                        <span class="info">
-                                <span class="info-name">Difficulty <span class="info-text">easy</span></span>
-                                <span class="info-name">Servings <span class="info-text">4</span></span>
-                            </span>
-                        <p class="recipe-title">Noodles and shrimps stir-fry</p>
-                        <p class="button black"><span class="back"></span>View recipe</p>
-                    </div>
-                </a>
-                <a href="#" class="col-6 recipe" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/recipes/recipes2.jpg')">
-                    <div class="description">
-                        <span class="time">30 min</span>
-                        <span class="info">
-                                <span class="info-name">Difficulty <span class="info-text">easy</span></span>
-                                <span class="info-name">Servings <span class="info-text">4</span></span>
-                            </span>
-                        <p class="recipe-title">Veggies and tofu stir-fry</p>
-                        <p class="button black"><span class="back"></span>View recipe</p>
-                    </div>
-                </a>
-                <a href="#" class="col-6 recipe" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/recipes/recipes2.jpg')">
-                    <div class="description">
-                        <span class="time">30 min</span>
-                        <span class="info">
-                                <span class="info-name">Difficulty <span class="info-text">easy</span></span>
-                                <span class="info-name">Servings <span class="info-text">4</span></span>
-                            </span>
-                        <p class="recipe-title">Veggies and tofu stir-fry</p>
-                        <p class="button black"><span class="back"></span>View recipe</p>
-                    </div>
-                </a>
-                <a href="#" class="col-6 recipe" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/recipes/recipes1.jpg')">
-                    <div class="description">
-                        <span class="time">30 min</span>
-                        <span class="info">
-                                <span class="info-name">Difficulty <span class="info-text">easy</span></span>
-                                <span class="info-name">Servings <span class="info-text">4</span></span>
-                            </span>
-                        <p class="recipe-title">Noodles and shrimps stir-fry</p>
-                        <p class="button black"><span class="back"></span>View recipe</p>
-                    </div>
-                </a>
-                <a href="#" class="col-6 recipe" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/recipes/recipes2.jpg')">
-                    <div class="description">
-                        <span class="time">30 min</span>
-                        <span class="info">
-                                <span class="info-name">Difficulty <span class="info-text">easy</span></span>
-                                <span class="info-name">Servings <span class="info-text">4</span></span>
-                            </span>
-                        <p class="recipe-title">Veggies and tofu stir-fry</p>
-                        <p class="button black"><span class="back"></span>View recipe</p>
-                    </div>
-                </a>
-                <a href="#" class="col-6 recipe" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/recipes/recipes1.jpg')">
-                    <div class="description">
-                        <span class="time">30 min</span>
-                        <span class="info">
-                                <span class="info-name">Difficulty <span class="info-text">easy</span></span>
-                                <span class="info-name">Servings <span class="info-text">4</span></span>
-                            </span>
-                        <p class="recipe-title">Noodles and shrimps stir-fry</p>
-                        <p class="button black"><span class="back"></span>View recipe</p>
-                    </div>
-                </a>
+                            <p class="recipe-title"><?php the_title() ?></p>
+                            <p class="button black"><span class="back"></span>View recipe</p>
+                        </div>
+                    </a>
+                    <?php
+                }
+                wp_reset_postdata();
+                ?>
+
             </div>
         </div>
     </div>

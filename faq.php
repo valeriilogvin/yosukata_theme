@@ -43,10 +43,8 @@ if (is_home()) {
 
         </div>
         <img src="<?php echo get_stylesheet_directory_uri() ?>/img/parsley.png" alt="" class="sect-faq-img parsley1">
-        <img src="<?php echo get_stylesheet_directory_uri() ?>/img/parsley.png" alt="" class="sect-faq-img parsley2">
         <img src="<?php echo get_stylesheet_directory_uri() ?>/img/parsley.png" alt="" class="sect-faq-img parsley3">
         <img src="<?php echo get_stylesheet_directory_uri() ?>/img/tomato.png" alt="" class="sect-faq-img tomato1">
-        <img src="<?php echo get_stylesheet_directory_uri() ?>/img/tomato.png" alt="" class="sect-faq-img tomato2">
         <img src="<?php echo get_stylesheet_directory_uri() ?>/img/tomato.png" alt="" class="sect-faq-img tomato3">
     </div>
 

@@ -4,7 +4,7 @@
         <a class="close menu-btn"><span></span><span></span></a>
 
         <ul class="navbar">
-            <li class="pushy-link"><a href="#about">About</a></li>
+            <li><a href="<?php echo home_url(); ?>/#about">About</a></li>
             <li class="parent-submenu">
                 <a>Knowledge Base</a>
                 <ul class="submenu">
@@ -13,10 +13,10 @@
                     <li><a href="#">Other Category</a></li>
                 </ul>
             </li>
-            <li class="pushy-link"><a href="#recipes">Recipes</a></li>
-            <li class="pushy-link"><a href="">FAQ</a></li>
-            <li class="pushy-link"><a href="#" data-modal="modal-register" class="md-trigger">Register</a></li>
-            <li class="pushy-link"><a href="#" data-modal="modal-contact" class="md-trigger">Contact</a></li>
+            <li class="pushy-link"><a href="<?php echo home_url(); ?>/recipes">Recipes</a></li>
+            <li class="pushy-link"><a href="<?php echo home_url(); ?>/faq">FAQ</a></li>
+            <li class="pushy-link"><a data-modal="modal-register" class="md-trigger">Register</a></li>
+            <li class="pushy-link"><a data-modal="modal-contact" class="md-trigger">Contact</a></li>
         </ul>
         <div class="language">
             <img src="<?php echo get_stylesheet_directory_uri() ?>/img/usa.jpg" alt="">
