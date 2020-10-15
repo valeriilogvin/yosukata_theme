@@ -244,3 +244,61 @@ function post_tag_for_pages(){
 add_action( 'init', 'post_tag_for_pages' );
 
 get_template_part( 'inc/breadcrumbs' );
+
+function true_loadmore_scripts() {
+//	wp_enqueue_script('jquery'); // just in case
+ 	wp_enqueue_script( 'true_loadmore', get_stylesheet_directory_uri() . '/loadmore.js', array('jquery') );
+}
+ 
+add_action( 'wp_enqueue_scripts', 'true_loadmore_scripts' );
+
+function true_load_posts(){
+ 
+	$args = unserialize( stripslashes( $_POST['query'] ) );
+	$args['paged'] = $_POST['page'] + 1; // next page
+	$args['post_status'] = 'publish';
+
+	$post_type = isset($_POST['post_type']) ? $_POST['post_type'] : '';
+
+	if($post_type){
+//		$args['paged'] = 1;
+
+		if($post_type == 'articles'){
+          $args['meta_key']		= 'blog_type_of_post';
+          $args['meta_value']	= 'articles';
+		}
+		if($post_type == 'video'){
+          $args['meta_key']		= 'blog_type_of_post';
+          $args['meta_value']	= 'video';
+		}
+	}
+
+//print_r($args);
+
+	query_posts( $args );
+	if( have_posts() ) :
+ 
+		while( have_posts() ): the_post();
+ 
+//echo 'pm='.get_permalink();
+?>
+                    <div class="col-6">
+                        <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>');">
+                            <i class="fas icon"></i>
+                            <div class="background"></div>
+                        </a>
+                        <p class="title"><?php echo the_field('blog_title') ?></p>
+                        <p class="text"><?php echo the_field('blog_text') ?></p>
+                    </div>
+<?php
+ 
+		endwhile;
+ 
+	endif;
+
+	die();
+}
+ 
+ 
+add_action('wp_ajax_loadmore', 'true_load_posts');
+add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
