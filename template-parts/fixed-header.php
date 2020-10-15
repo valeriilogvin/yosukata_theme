@@ -18,7 +18,8 @@
                 <li><a data-modal="modal-contact" class="md-trigger">Contact</a></li>
             </ul>
 
-            <a class="button md-trigger" data-modal="modal-where-to-buy">Buy now<span class="back"></span></a>
+            <a data-amazon="<?php the_field('button_buy_link_amazon', 20); ?>" data-ebay="<?php the_field('button_buy_link_ebay', 20); ?>" class="button md-trigger js-button-buy" data-modal="modal-where-to-buy">Buy now<span class="back"></span></a>
+
             <div class="language">
                 <img src="<?php echo get_stylesheet_directory_uri() ?>/img/usa.jpg" alt="">
                 <div class="language_drop-down">

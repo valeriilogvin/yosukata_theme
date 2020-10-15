@@ -358,38 +358,32 @@
             </div>
             <div class="sect4-slick">
                 <div class="slider">
+
                     <?php
-                    $posts = get_posts( array(
-                        'numberposts' => 1,
-                        'post_type'   => 'blog',
-                        'tag' => 'slide-1',
-                        'suppress_filters' => true,
-                    ));
-                    foreach( $posts as $post ){ setup_postdata($post);
-                        ?>
-                        <a href="<?php echo get_permalink(); ?>" class="slider-item slider-row blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
-                            <p class="title">
-                                <span class="text"><?php echo the_field('blog_text') ?></span>
-                                <?php the_title() ?>
-                            </p>
-                            <i class="fas icon"></i>
-                            <div class="background"></div>
-                        </a>
-                        <?php
-                    }
-                    wp_reset_postdata();
+                    $post_objects = get_field('slide_1');
+                    if( $post_objects ): ?>
+                            <?php foreach( $post_objects as $post): // Переменная должна быть названа обязательно $post (IMPORTANT) ?>
+                                <?php setup_postdata($post); ?>
+                                <a href="<?php echo get_permalink(); ?>" class="slider-item slider-row blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
+                                    <p class="title">
+                                        <span class="text"><?php echo the_field('blog_text') ?></span>
+                                        <?php the_title() ?>
+                                    </p>
+                                    <i class="fas icon"></i>
+                                    <div class="background"></div>
+                                </a>
+                            <?php endforeach; ?>
+                        <?php wp_reset_postdata(); // ВАЖНО - сбросьте значение $post object чтобы избежать ошибок в дальнейшем коде ?>
+                    <?php endif;
                     ?>
+
                     
                     <div class="slider-column">
                         <?php
-                            $posts = get_posts( array(
-                                'numberposts' => 1,
-                                'post_type'   => 'blog',
-                                'tag' => 'slide-2',
-                                'suppress_filters' => true,
-                            ));
-                            foreach( $posts as $post ){ setup_postdata($post);
-                                ?>
+                        $post_objects = get_field('slide_2');
+                        if( $post_objects ): ?>
+                            <?php foreach( $post_objects as $post): // Переменная должна быть названа обязательно $post (IMPORTANT) ?>
+                                <?php setup_postdata($post); ?>
                                 <a href="<?php echo get_permalink(); ?>" class="slider-item slider-column-top blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
                                     <p class="title">
                                         <span class="text"><?php echo the_field('blog_text') ?></span>
@@ -398,20 +392,16 @@
                                     <i class="fas icon"></i>
                                     <div class="background"></div>
                                 </a>
-                                <?php
-                            }
-                            wp_reset_postdata();
+                            <?php endforeach; ?>
+                            <?php wp_reset_postdata(); // ВАЖНО - сбросьте значение $post object чтобы избежать ошибок в дальнейшем коде ?>
+                        <?php endif;
                         ?>
 
                         <?php
-                            $posts = get_posts( array(
-                                'numberposts' => 1,
-                                'post_type'   => 'blog',
-                                'tag' => 'slide-3',
-                                'suppress_filters' => true,
-                            ));
-                            foreach( $posts as $post ){ setup_postdata($post);
-                                ?>
+                        $post_objects = get_field('slide_2');
+                        if( $post_objects ): ?>
+                            <?php foreach( $post_objects as $post): // Переменная должна быть названа обязательно $post (IMPORTANT) ?>
+                                <?php setup_postdata($post); ?>
                                 <a href="<?php echo get_permalink(); ?>" class="slider-item slider-column-bottom blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
                                     <p class="title">
                                         <span class="text"><?php echo the_field('blog_text') ?></span>
@@ -420,46 +410,40 @@
                                     <i class="fas icon"></i>
                                     <div class="background"></div>
                                 </a>
-                                <?php
-                            }
-                            wp_reset_postdata();
+                            <?php endforeach; ?>
+                            <?php wp_reset_postdata(); // ВАЖНО - сбросьте значение $post object чтобы избежать ошибок в дальнейшем коде ?>
+                        <?php endif;
                         ?>
 
                     </div>
                 </div>
                 <div class="slider">
+
                     <?php
-                    $posts = get_posts( array(
-                        'numberposts' => 1,
-                        'post_type'   => 'blog',
-                        'tag' => 'slide-4',
-                        'suppress_filters' => true,
-                    ));
-                    foreach( $posts as $post ){ setup_postdata($post);
-                        ?>
-                        <a href="<?php echo get_permalink(); ?>" class="slider-item slider-row blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
-                            <p class="title">
-                                <span class="text"><?php echo the_field('blog_text') ?></span>
-                                <?php the_title() ?>
-                            </p>
-                            <i class="fas icon"></i>
-                            <div class="background"></div>
-                        </a>
-                        <?php
-                    }
-                    wp_reset_postdata();
+                    $post_objects = get_field('slide_3');
+                    if( $post_objects ): ?>
+                        <?php foreach( $post_objects as $post): // Переменная должна быть названа обязательно $post (IMPORTANT) ?>
+                            <?php setup_postdata($post); ?>
+                            <a href="<?php echo get_permalink(); ?>" class="slider-item slider-row blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
+                                <p class="title">
+                                    <span class="text"><?php echo the_field('blog_text') ?></span>
+                                    <?php the_title() ?>
+                                </p>
+                                <i class="fas icon"></i>
+                                <div class="background"></div>
+                            </a>
+                        <?php endforeach; ?>
+                        <?php wp_reset_postdata(); // ВАЖНО - сбросьте значение $post object чтобы избежать ошибок в дальнейшем коде ?>
+                    <?php endif;
                     ?>
-                    
+
+
                     <div class="slider-column">
                         <?php
-                            $posts = get_posts( array(
-                                'numberposts' => 1,
-                                'post_type'   => 'blog',
-                                'tag' => 'slide-5',
-                                'suppress_filters' => true,
-                            ));
-                            foreach( $posts as $post ){ setup_postdata($post);
-                                ?>
+                        $post_objects = get_field('slide_4');
+                        if( $post_objects ): ?>
+                            <?php foreach( $post_objects as $post): // Переменная должна быть названа обязательно $post (IMPORTANT) ?>
+                                <?php setup_postdata($post); ?>
                                 <a href="<?php echo get_permalink(); ?>" class="slider-item slider-column-top blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
                                     <p class="title">
                                         <span class="text"><?php echo the_field('blog_text') ?></span>
@@ -468,20 +452,16 @@
                                     <i class="fas icon"></i>
                                     <div class="background"></div>
                                 </a>
-                                <?php
-                            }
-                            wp_reset_postdata();
+                            <?php endforeach; ?>
+                            <?php wp_reset_postdata(); // ВАЖНО - сбросьте значение $post object чтобы избежать ошибок в дальнейшем коде ?>
+                        <?php endif;
                         ?>
 
                         <?php
-                            $posts = get_posts( array(
-                                'numberposts' => 1,
-                                'post_type'   => 'blog',
-                                'tag' => 'slide-6',
-                                'suppress_filters' => true,
-                            ));
-                            foreach( $posts as $post ){ setup_postdata($post);
-                                ?>
+                        $post_objects = get_field('slide_5');
+                        if( $post_objects ): ?>
+                            <?php foreach( $post_objects as $post): // Переменная должна быть названа обязательно $post (IMPORTANT) ?>
+                                <?php setup_postdata($post); ?>
                                 <a href="<?php echo get_permalink(); ?>" class="slider-item slider-column-bottom blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
                                     <p class="title">
                                         <span class="text"><?php echo the_field('blog_text') ?></span>
@@ -490,25 +470,21 @@
                                     <i class="fas icon"></i>
                                     <div class="background"></div>
                                 </a>
-                                <?php
-                            }
-                            wp_reset_postdata();
+                            <?php endforeach; ?>
+                            <?php wp_reset_postdata(); // ВАЖНО - сбросьте значение $post object чтобы избежать ошибок в дальнейшем коде ?>
+                        <?php endif;
                         ?>
-                        
+
                     </div>
                 </div>
             </div>
             <div class="sect4-slick-mobile">
                 <div class="slider">
                     <?php
-                        $posts = get_posts( array(
-                            'numberposts' => 1,
-                            'post_type'   => 'blog',
-                            'tag' => 'slide-1',
-                            'suppress_filters' => true,
-                        ));
-                        foreach( $posts as $post ){ setup_postdata($post);
-                            ?>
+                    $post_objects = get_field('slide_1');
+                    if( $post_objects ): ?>
+                        <?php foreach( $post_objects as $post): // Переменная должна быть названа обязательно $post (IMPORTANT) ?>
+                            <?php setup_postdata($post); ?>
                             <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
                                 <p class="title">
                                     <span class="text"><?php echo the_field('blog_text') ?></span>
@@ -517,21 +493,17 @@
                                 <i class="fas icon"></i>
                                 <div class="background"></div>
                             </a>
-                            <?php
-                        }
-                        wp_reset_postdata();
+                        <?php endforeach; ?>
+                        <?php wp_reset_postdata(); // ВАЖНО - сбросьте значение $post object чтобы избежать ошибок в дальнейшем коде ?>
+                    <?php endif;
                     ?>
                 </div>
                 <div class="slider">
                     <?php
-                        $posts = get_posts( array(
-                            'numberposts' => 1,
-                            'post_type'   => 'blog',
-                            'tag' => 'slide-2',
-                            'suppress_filters' => true,
-                        ));
-                        foreach( $posts as $post ){ setup_postdata($post);
-                            ?>
+                    $post_objects = get_field('slide_2');
+                    if( $post_objects ): ?>
+                        <?php foreach( $post_objects as $post): // Переменная должна быть названа обязательно $post (IMPORTANT) ?>
+                            <?php setup_postdata($post); ?>
                             <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
                                 <p class="title">
                                     <span class="text"><?php echo the_field('blog_text') ?></span>
@@ -540,21 +512,17 @@
                                 <i class="fas icon"></i>
                                 <div class="background"></div>
                             </a>
-                            <?php
-                        }
-                        wp_reset_postdata();
+                        <?php endforeach; ?>
+                        <?php wp_reset_postdata(); // ВАЖНО - сбросьте значение $post object чтобы избежать ошибок в дальнейшем коде ?>
+                    <?php endif;
                     ?>
                 </div>
                 <div class="slider">
                     <?php
-                        $posts = get_posts( array(
-                            'numberposts' => 1,
-                            'post_type'   => 'blog',
-                            'tag' => 'slide-3',
-                            'suppress_filters' => true,
-                        ));
-                        foreach( $posts as $post ){ setup_postdata($post);
-                            ?>
+                    $post_objects = get_field('slide_3');
+                    if( $post_objects ): ?>
+                        <?php foreach( $post_objects as $post): // Переменная должна быть названа обязательно $post (IMPORTANT) ?>
+                            <?php setup_postdata($post); ?>
                             <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
                                 <p class="title">
                                     <span class="text"><?php echo the_field('blog_text') ?></span>
@@ -563,21 +531,17 @@
                                 <i class="fas icon"></i>
                                 <div class="background"></div>
                             </a>
-                            <?php
-                        }
-                        wp_reset_postdata();
+                        <?php endforeach; ?>
+                        <?php wp_reset_postdata(); // ВАЖНО - сбросьте значение $post object чтобы избежать ошибок в дальнейшем коде ?>
+                    <?php endif;
                     ?>
                 </div>
                 <div class="slider">
                     <?php
-                        $posts = get_posts( array(
-                            'numberposts' => 1,
-                            'post_type'   => 'blog',
-                            'tag' => 'slide-4',
-                            'suppress_filters' => true,
-                        ));
-                        foreach( $posts as $post ){ setup_postdata($post);
-                            ?>
+                    $post_objects = get_field('slide_4');
+                    if( $post_objects ): ?>
+                        <?php foreach( $post_objects as $post): // Переменная должна быть названа обязательно $post (IMPORTANT) ?>
+                            <?php setup_postdata($post); ?>
                             <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
                                 <p class="title">
                                     <span class="text"><?php echo the_field('blog_text') ?></span>
@@ -586,21 +550,17 @@
                                 <i class="fas icon"></i>
                                 <div class="background"></div>
                             </a>
-                            <?php
-                        }
-                        wp_reset_postdata();
+                        <?php endforeach; ?>
+                        <?php wp_reset_postdata(); // ВАЖНО - сбросьте значение $post object чтобы избежать ошибок в дальнейшем коде ?>
+                    <?php endif;
                     ?>
                 </div>
                 <div class="slider">
                     <?php
-                        $posts = get_posts( array(
-                            'numberposts' => 1,
-                            'post_type'   => 'blog',
-                            'tag' => 'slide-5',
-                            'suppress_filters' => true,
-                        ));
-                        foreach( $posts as $post ){ setup_postdata($post);
-                            ?>
+                    $post_objects = get_field('slide_5');
+                    if( $post_objects ): ?>
+                        <?php foreach( $post_objects as $post): // Переменная должна быть названа обязательно $post (IMPORTANT) ?>
+                            <?php setup_postdata($post); ?>
                             <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
                                 <p class="title">
                                     <span class="text"><?php echo the_field('blog_text') ?></span>
@@ -609,21 +569,17 @@
                                 <i class="fas icon"></i>
                                 <div class="background"></div>
                             </a>
-                            <?php
-                        }
-                        wp_reset_postdata();
+                        <?php endforeach; ?>
+                        <?php wp_reset_postdata(); // ВАЖНО - сбросьте значение $post object чтобы избежать ошибок в дальнейшем коде ?>
+                    <?php endif;
                     ?>
                 </div>
                 <div class="slider">
                     <?php
-                        $posts = get_posts( array(
-                            'numberposts' => 1,
-                            'post_type'   => 'blog',
-                            'tag' => 'slide-6',
-                            'suppress_filters' => true,
-                        ));
-                        foreach( $posts as $post ){ setup_postdata($post);
-                            ?>
+                    $post_objects = get_field('slide_6');
+                    if( $post_objects ): ?>
+                        <?php foreach( $post_objects as $post): // Переменная должна быть названа обязательно $post (IMPORTANT) ?>
+                            <?php setup_postdata($post); ?>
                             <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>')">
                                 <p class="title">
                                     <span class="text"><?php echo the_field('blog_text') ?></span>
@@ -632,11 +588,12 @@
                                 <i class="fas icon"></i>
                                 <div class="background"></div>
                             </a>
-                            <?php
-                        }
-                        wp_reset_postdata();
+                        <?php endforeach; ?>
+                        <?php wp_reset_postdata(); // ВАЖНО - сбросьте значение $post object чтобы избежать ошибок в дальнейшем коде ?>
+                    <?php endif;
                     ?>
                 </div>
+
             </div>
             <!--.flex-->
         </div>
@@ -746,7 +703,7 @@
                     It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
                     passages, and more recently with desktop publishing software like Aldus PageMaker including
                     versions of Lorem Ipsum.</p>
-                <a class="show js-show">Show full text</a>
+                <a class="show js-show"><span class="show">Show full text</span><span class="hide">Hide text</span></a>
             </div>
         </div>
     </section>

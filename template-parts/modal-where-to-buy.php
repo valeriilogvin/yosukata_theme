@@ -9,11 +9,11 @@
                 <p class="text">Choose where you
                     wanna shop our products</p>
                 <div class="flex row">
-                    <a href="" class="col-6 buy-button js-buy-amazon" style="display: none;">
+                    <a href="" class="col-6 buy-button js-buy-amazon" style="display: none;" target="_blank">
                         <span>Buy at</span>
                         <img src="<?php echo get_stylesheet_directory_uri() ?>/img/amazon.svg" alt="">
                     </a>
-                    <a href="" class="col-6 buy-button js-buy-ebay" style="display: none;">
+                    <a href="" class="col-6 buy-button js-buy-ebay" style="display: none;" target="_blank">
                         <span>Buy at</span>
                         <img src="<?php echo get_stylesheet_directory_uri() ?>/img/ebay.svg" alt="">
                     </a>

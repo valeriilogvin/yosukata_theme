@@ -517,7 +517,7 @@
     left: 0; }
 
 .wok .wok-sect4 {
-    background: url("../img/sect2-bg.jpg") bottom center no-repeat;
+    background: url("../img/marble_bg2.jpg") top center no-repeat;
     padding: 75px 0 130px; }
 .wok .wok-sect4 h2 {
     color: #000000;
@@ -1021,7 +1021,7 @@
     -o-transition: opacity .5s ease;
     transition: opacity .5s ease; }
 .blog-article .sect-blog-bottom {
-    background: url("../img/sect2-bg.jpg") bottom center no-repeat;
+    background: url("../img/marble_bg2.jpg") top center no-repeat;
     padding: 75px 0 130px; }
 .blog-article-slider .slick-list {
     margin: 0 -15px; }
@@ -1072,12 +1072,13 @@
     background-size: cover; }
 .sect-blog-bottom-slider p.title {
     position: absolute;
+    padding-top: 10px;
     left: 20px;
     right: 20px;
     bottom: 15px;
     color: #ffffff;
     font-size: 16px;
-    font-weight: 500; }
+    font-weight: 600; }
 .sect-blog-bottom-slider span.text {
     display: block;
     font-size: 12px;
@@ -1155,7 +1156,15 @@
     .blog-article .sect-blog-bottom h2{
         font-size: 30px;
         line-height: 38px;
-    }}
+    }
+    .blog-article div.center .flex.row.col-8 .col-6{
+        width: 100%;
+        margin: 0;
+    }
+    .blog-article div.center .flex.row.col-8 .col-6 + .col-6{
+        margin-top: 30px;
+    }
+}
 
 .recipes-article p.title {
     font-size: 22px;
@@ -1277,7 +1286,7 @@
     position: absolute; }
 
 .recipes-article .more-recipes {
-    background: url("../img/sect2-bg.jpg") top center no-repeat;
+    background: url("../img/marble_bg2.jpg") top center no-repeat;
     background-size: cover;
     padding-bottom: 80px; }
 .recipes-article .more-recipes h2 {

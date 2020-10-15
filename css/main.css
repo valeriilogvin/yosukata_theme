@@ -2907,6 +2907,15 @@ button.my-slick-next {
         color: #000;
         background-clip: inherit;
         background-image: none; }
+      .sect8 .bottom-text p ~ a.show span.hide{
+        display: none;
+      }
+      .sect8 .bottom-text p.visible ~ a.show span.show{
+        display: none;
+      }
+      .sect8 .bottom-text p.visible ~ a.show span.hide{
+        display: inline-block;
+      }
     .sect8 .bottom-text a.show {
       cursor: pointer;
       display: block;

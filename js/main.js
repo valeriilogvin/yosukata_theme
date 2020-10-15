@@ -373,8 +373,6 @@ $(document).ready(function() {
 // show/hide text on .sect8
 $('.sect8').on('click', '.js-show', function () {
     $('.js-show-text').toggleClass('visible');
-    var hBlock = $(this).siblings('.visible');
-    $(this).text(hBlock.is(':visible') ? 'Hide text' : 'Show full text');
 });
 
 //validation settings
