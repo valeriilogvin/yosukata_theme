@@ -247,7 +247,7 @@ get_template_part( 'inc/breadcrumbs' );
 
 function true_loadmore_scripts() {
 //	wp_enqueue_script('jquery'); // just in case
- 	wp_enqueue_script( 'true_loadmore', get_stylesheet_directory_uri() . '/loadmore.js', array('jquery') );
+ 	wp_enqueue_script( 'true_loadmore', get_stylesheet_directory_uri() . '/js/loadmore.js', array('jquery') );
 }
  
 add_action( 'wp_enqueue_scripts', 'true_loadmore_scripts' );
