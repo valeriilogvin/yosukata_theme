@@ -3,7 +3,7 @@
         <h2 data-aos="fade-right"
             data-aos-delay="300"
             data-aos-duration="1000">
-            Reviews
+            <?php the_field('reviews_title', 20) ?>
         </h2>
 
         <div class="sect6-slick">

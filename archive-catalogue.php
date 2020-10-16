@@ -17,19 +17,19 @@ else {
         <div class="flex row">
             <div class="col-2 js-col-2">
                 <ul class="fixed-catalogue js-fixed-catalogue">
-                    <li><a href="#Steel-Woks">Steel Woks</a></li>
-                    <li><a href="#Steel-Pans">Steel Pans</a></li>
-                    <li><a href="#Cast-Iron-Woks">Cast Iron Woks</a></li>
-                    <li><a href="#Cast-Iron-Pans">Cast Iron Pans</a></li>
-                    <li><a href="#Lids">Lids</a></li>
-                    <li><a href="#Accessories">Accessories</a></li>
+                    <li><a href="#Steel-Woks"><?php the_field('categories_title_1',20) ?></a></li>
+                    <li><a href="#Steel-Pans"><?php the_field('categories_title_2',20) ?></a></li>
+                    <li><a href="#Cast-Iron-Woks"><?php the_field('categories_title_3',20) ?></a></li>
+                    <li><a href="#Cast-Iron-Pans"><?php the_field('categories_title_4',20) ?></a></li>
+                    <li><a href="#Lids"><?php the_field('categories_title_5',20) ?></a></li>
+                    <li><a href="#Accessories"><?php the_field('categories_title_6',20) ?></a></li>
                 </ul>
             </div>
 
             <div class="col-10">
                 <div id="Steel-Woks" class="catalogue-item js-catalogue-item">
                     <div class="catalogue-item-title">
-                        <h3>Steel Woks</h3>
+                        <h3><?php the_field('categories_title_1',20) ?></h3>
                         <span class="line"></span>
                     </div>
                     <div class="flex row">
@@ -82,7 +82,7 @@ else {
                 </div>
                 <div id="Steel-Pans" class="catalogue-item js-catalogue-item">
                     <div class="catalogue-item-title">
-                        <h3>Steel Pans</h3>
+                        <h3><?php the_field('categories_title_2',20) ?></h3>
                         <span class="line"></span>
                     </div>
                     <div class="flex row">
@@ -134,7 +134,7 @@ else {
                 </div>
                 <div id="Cast-Iron-Woks" class="catalogue-item js-catalogue-item">
                     <div class="catalogue-item-title">
-                        <h3>Cast Iron Woks</h3>
+                        <h3><?php the_field('categories_title_3',20) ?></h3>
                         <span class="line"></span>
                     </div>
                     <div class="flex row">
@@ -186,7 +186,7 @@ else {
                 </div>
                 <div id="Cast-Iron-Pans" class="catalogue-item js-catalogue-item">
                     <div class="catalogue-item-title">
-                        <h3>Cast Iron Pans</h3>
+                        <h3><?php the_field('categories_title_4',20) ?></h3>
                         <span class="line"></span>
                     </div>
 
@@ -239,7 +239,7 @@ else {
                 </div>
                 <div id="Lids" class="catalogue-item js-catalogue-item">
                     <div class="catalogue-item-title">
-                        <h3>Lids</h3>
+                        <h3><?php the_field('categories_title_5',20) ?></h3>
                         <span class="line"></span>
                     </div>
                     <div class="flex row">
@@ -291,7 +291,7 @@ else {
                 </div>
                 <div id="Accessories" class="catalogue-item js-catalogue-item">
                     <div class="catalogue-item-title">
-                        <h3>Accessories</h3>
+                        <h3><?php the_field('categories_title_6',20) ?></h3>
                         <span class="line"></span>
                     </div>
                     <div class="flex row">

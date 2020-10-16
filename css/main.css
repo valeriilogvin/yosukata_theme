@@ -556,9 +556,33 @@ button.md-close {
         color: #000000;
         line-height: 26px;
         padding: 0 20px;
-        margin-bottom: 30px; }
-        .md-modal .md-content form input.error,
-        .md-modal .md-content form select.error {
+        margin-bottom: 30px;
+        width: 100%;}
+        .md-modal .wpcf7 .wpcf7-submit{
+          order: 6;
+        }
+        .md-modal .wpcf7-not-valid-tip{
+          display: none !important;
+        }
+        .md-modal div.wpcf7 .ajax-loader{
+          display: none !important;
+        }
+        .md-modal .wpcf7 form.failed .wpcf7-response-output,
+        .md-modal .wpcf7 form.aborted .wpcf7-response-output,
+        .md-modal .wpcf7 form.invalid .wpcf7-response-output,
+        .md-modal .wpcf7 form.unaccepted .wpcf7-response-output{
+          order: 5;
+          font-size: 12px;
+          font-weight: 500;
+          width: 100%;
+          display: block;
+          text-align: center;
+          border: none;
+          margin: 0;
+          color: #ff0000;
+        }
+        .md-modal .md-content form input.wpcf7-not-valid,
+        .md-modal .md-content form select.wpcf7-not-valid {
           border-bottom: 1px #ff0000 solid; }
       .md-modal .md-content form select {
         color: #777777; }
@@ -567,14 +591,14 @@ button.md-close {
       .md-modal .md-content form textarea {
         color: #000000;
         line-height: 26px;
+        width: 100%;
         background: none;
         outline: none;
         border: 1px #777777 solid;
         border-radius: 2px;
         padding: 10px 15px;
         -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-        margin-bottom: 30px; }
+                box-sizing: border-box;}
       .md-modal .md-content form input:-moz-placeholder {
         font-size: 14px;
         color: #777777;
@@ -677,6 +701,11 @@ button.md-close {
         margin-bottom: 20px; }
       .md-modal .md-content .buy-button img {
         width: 65%; }
+
+.modal-form p{
+  width: calc(50% - 30px);
+  margin: 0 15px;
+}
 
 .md-show {
   visibility: visible; }

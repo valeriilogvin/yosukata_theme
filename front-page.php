@@ -152,7 +152,7 @@
             <h2 data-aos="fade-right"
                 data-aos-delay="300"
                 data-aos-duration="1000">
-                Special offers
+                <?php the_field('special_offers_title') ?>
             </h2>
             <div class="flex row">
 
@@ -160,7 +160,7 @@
                 <?php $hero = get_field('item1');
                 if( $hero ): ?>
                     <a href="<?php echo $hero['link']; ?>" class="item deal_of_the_month col-6">
-                        <h2 class="title">Deal of <br />the month</h2>
+                        <h2 class="title"><?php the_field('special_offers_deal') ?></h2>
                         <div class="flex">
                             <div class="img-block">
                                 <img src="<?php echo $hero['image']; ?>" alt="">
@@ -188,10 +188,9 @@
                                         if( $hero['ebay_link'] ) { ?>
                                             data-ebay="<?php echo $hero['ebay_link']; ?>"
                                         <?php }?>
-
-                                    >
+                                        >
                                         <span class="back"></span>
-                                        Buy now
+                                        <?php the_field('special_offers_button') ?>
 
                                     </p>
                                 </div>
@@ -206,7 +205,7 @@
                 if( $hero ): ?>
                     <a href="<?php echo $hero['link']; ?>" class="item top_sales col-3">
                         <div class="fire">
-                            <i class="fas fa-fire"></i> top sales
+                            <i class="fas fa-fire"></i> <?php the_field('top_sales') ?>
                         </div>
                         <div class="img-block">
                             <img src="<?php echo $hero['image']; ?>" alt="">
@@ -234,7 +233,7 @@
 
                                 >
                                     <span class="back"></span>
-                                    Buy now
+                                    <?php the_field('special_offers_button') ?>
 
                                 </p>
                             </div>
@@ -248,7 +247,7 @@
                 if( $hero ): ?>
                     <a href="<?php echo $hero['link']; ?>" class="item top_sales col-3">
                         <div class="fire">
-                            <i class="fas fa-fire"></i> top sales
+                            <i class="fas fa-fire"></i> <?php the_field('top_sales') ?>
                         </div>
                         <div class="img-block">
                             <img src="<?php echo $hero['image']; ?>" alt="">
@@ -276,7 +275,7 @@
 
                                 >
                                     <span class="back"></span>
-                                    Buy now
+                                    <?php the_field('special_offers_button') ?>
 
                                 </p>
                             </div>
@@ -287,7 +286,7 @@
 
             </div>
             <div class="text-center">
-                <a href="<?php echo home_url(); ?>/catalogue" class="button black"><span class="back"></span> View full catalogue</a>
+                <a href="<?php echo home_url(); ?>/catalogue" class="button black"><span class="back"></span><?php the_field('special_offers_button2') ?></a>
             </div>
         </div>
         <img class="pepper" src="<?php echo get_stylesheet_directory_uri() ?>/img/pepper.png" alt="">
@@ -300,38 +299,38 @@
             <h2 data-aos="fade-right"
                 data-aos-delay="300"
                 data-aos-duration="1000">
-                Categories
+                <?php the_field('categories_title') ?>
             </h2>
             <div class="flex row">
                 <a target="_blank" href="<?php echo home_url(); ?>/catalogue/#Steel-Woks" class="item col-4">
-                    <h3>Steel Woks</h3>
+                    <h3><?php the_field('categories_title_1') ?></h3>
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/img/steel-woks.png" alt="">
-                    <p class="button"><span class="back"></span> To the Category</p>
+                    <p class="button catalogue-button"><span class="back"></span><?php the_field('categories_button') ?></p>
                 </a>
                 <a target="_blank" href="<?php echo home_url(); ?>/catalogue/#Steel-Pans" class="item col-4">
-                    <h3>Steel Pans</h3>
+                    <h3><?php the_field('categories_title_2') ?></h3>
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/img/steel-pans.png" alt="">
-                    <p class="button"><span class="back"></span> To the Category</p>
+                    <p class="button catalogue-button"><span class="back"></span><?php the_field('categories_button') ?></p>
                 </a>
                 <a target="_blank" href="<?php echo home_url(); ?>/catalogue/#Cast-Iron-Woks" class="item col-4">
-                    <h3>Cast Iron Woks</h3>
+                    <h3><?php the_field('categories_title_3') ?></h3>
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/img/iron-woks.png" alt="">
-                    <p class="button"><span class="back"></span> To the Category</p>
+                    <p class="button catalogue-button"><span class="back"></span><?php the_field('categories_button') ?></p>
                 </a>
                 <a target="_blank" href="<?php echo home_url(); ?>/catalogue/#Cast-Iron-Pans" class="item col-4">
-                    <h3>Cast Iron Pans</h3>
+                    <h3><?php the_field('categories_title_4') ?></h3>
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/img/iron-pans.png" alt="">
-                    <p class="button"><span class="back"></span> To the Category</p>
+                    <p class="button catalogue-button"><span class="back"></span><?php the_field('categories_button') ?></p>
                 </a>
                 <a target="_blank" href="<?php echo home_url(); ?>/catalogue/#Lids" class="item col-4">
-                    <h3>Lids</h3>
+                    <h3><?php the_field('categories_title_5') ?></h3>
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/img/lids.png" alt="">
-                    <p class="button"><span class="back"></span> To the Category</p>
+                    <p class="button catalogue-button"><span class="back"></span><?php the_field('categories_button') ?></p>
                 </a>
                 <a target="_blank" href="<?php echo home_url(); ?>/catalogue/#Accessories" class="item col-4">
-                    <h3>Accessories</h3>
+                    <h3><?php the_field('categories_title_6') ?></h3>
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/img/accessories.png" alt="">
-                    <p class="button"><span class="back"></span> To the Category</p>
+                    <p class="button catalogue-button"><span class="back"></span><?php the_field('categories_button') ?></p>
                 </a>
             </div>
         </div>
@@ -346,14 +345,12 @@
                     <h2 data-aos="fade-right"
                         data-aos-delay="300"
                         data-aos-duration="1000">
-                        Find out more about Yosukata
+                        <?php the_field('find_out_more_title') ?>
                     </h2>
-                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                        and scrambled it to make a type specimen book.</p>
+                    <p><?php the_field('find_out_more_text') ?></p>
                 </div>
                 <div class="col-3 button-block">
-                    <a target="_blank" href="<?php echo home_url(); ?>/blog" class="button black"><span class="back"></span>See all</a>
+                    <a target="_blank" href="<?php echo home_url(); ?>/blog" class="button black"><span class="back"></span><?php the_field('see_all') ?></a>
                 </div>
             </div>
             <div class="sect4-slick">
@@ -606,19 +603,9 @@
                     <h2 data-aos="fade-right"
                         data-aos-delay="300"
                         data-aos-duration="1000">
-                        About
+                        <?php the_field('about_title') ?>
                     </h2>
-                    <p>When it comes to dish excellence, there is never a detail that we overlook. Although more and more
-                        of us care about organic, healthy ingredients that are rich in taste and flavors, but forget to pay
-                        attention to kitchen cooking utensils. <span class="bold">Nature has provided us with solution that has been forgotten
-                                        in the pursuit of convenience: fire and iron.</span> Peek inside the kitchen of any restaurant and you will
-                        find cast iron and carbon steel cooking ware in the place of non-stick coated pans. It is a key for
-                        cooking tasteful dishes.
-                        <br /><br />
-                        We are chefs who care about flavor and can distinguish between a pan that is high-quality and one
-                        that is cheap tin. We are constantly sourcing and testing in order to distill the pans that make it
-                        possible to create culinary masterpieces. We founded the Yosukata company to help consumers
-                        revitalize the benefits of natural cooking ware.</p>
+                    <p><?php the_field('about_text') ?></p>
                 </div>
             </div>
 
@@ -629,14 +616,9 @@
 
     <section class="sect7">
         <div class="container text-center">
-            <p class="title">
-                Want to save money while you shop?
-            </p>
-            <p class="text">
-                Get your discount instantly, <br />
-                just press the button!
-            </p>
-            <a class="button md-trigger" data-modal="modal-coupon"><span class="back"></span>Get a coupon</a>
+            <p class="title"><?php the_field('get_coupon_title') ?></p>
+            <p class="text"><?php the_field('get_coupon_text') ?></p>
+            <a class="button md-trigger" data-modal="modal-coupon"><span class="back"></span><?php the_field('get_coupon_button') ?></a>
         </div>
     </section>
 
@@ -647,7 +629,7 @@
                     <h2 data-aos="fade-right"
                         data-aos-delay="300"
                         data-aos-duration="1000">
-                        Check out our recipes!
+                        <?php the_field('recipes_title') ?>
                     </h2>
                 </div>
                 <div class="col-3"><a target="_blank" href="<?php echo home_url(); ?>/recipes" class="button black"><span class="back"></span>All Recipes</a></div>
@@ -669,7 +651,7 @@
                             <span>Difficulty: <span class="value"><?php the_field('difficulty'); ?></span></span>
                             <span>Servings: <span class="value"><?php the_field('serving'); ?></span></span>
                             <h3><?php the_title(); ?></h3>
-                            <p class="button"><span class="back"></span> View Recipe</p>
+                            <p class="button"><span class="back"></span><?php the_field('recipes_button',20) ?></p>
                         </div>
                     </a>
                     <?php
@@ -678,32 +660,11 @@
                 ?>
             </div>
             <div class="bottom-text">
-                <p class="js-show-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                    the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                    of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining essentially unchanged. It was
-                    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                    and more recently with desktop publishing software like Aldus PageMaker including versions of
-                    Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                    took a galley of type and scrambled it to make a type specimen book. It has survived not only
-                    five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software like Aldus PageMaker including
-                    versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                    the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                    of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining essentially unchanged. It was
-                    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                    and more recently with desktop publishing software like Aldus PageMaker including versions of
-                    Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                    took a galley of type and scrambled it to make a type specimen book. It has survived not only
-                    five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software like Aldus PageMaker including
-                    versions of Lorem Ipsum.</p>
-                <a class="show js-show"><span class="show">Show full text</span><span class="hide">Hide text</span></a>
+                <p class="js-show-text"><?php the_field('recipes_text') ?></p>
+                <a class="show js-show">
+                    <span class="show"><?php the_field('recipes_button_show') ?></span>
+                    <span class="hide"><?php the_field('recipes_button_hide') ?></span>
+                </a>
             </div>
         </div>
     </section>

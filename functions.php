@@ -106,6 +106,12 @@ function yosukata_scripts() {
             true
         );
     }
+    if ( is_post_type_archive('blog') ) {
+        wp_enqueue_script(
+            'true_loadmore',
+            get_stylesheet_directory_uri() . '/js/loadmore.js',
+            array('jquery') );
+    }
 
 }
 add_action( 'wp_enqueue_scripts', 'yosukata_scripts' );
@@ -245,12 +251,8 @@ add_action( 'init', 'post_tag_for_pages' );
 
 get_template_part( 'inc/breadcrumbs' );
 
-function true_loadmore_scripts() {
-//	wp_enqueue_script('jquery'); // just in case
- 	wp_enqueue_script( 'true_loadmore', get_stylesheet_directory_uri() . '/js/loadmore.js', array('jquery') );
-}
- 
-add_action( 'wp_enqueue_scripts', 'true_loadmore_scripts' );
+// Contact Form 7 remove auto added p tags
+add_filter('wpcf7_autop_or_not', '__return_false');
 
 function true_load_posts(){
  

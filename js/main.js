@@ -418,7 +418,7 @@ $(document).ready(function(){
     });
 });
 
-$('a.item').on('click', 'p.button' , function () {
+$('a.item').on('click', 'p.button:not(.catalogue-button)' , function () {
     event.preventDefault();
 });
 
@@ -447,3 +447,11 @@ $('.js-button-buy').on('click','', function () {
 });
 
 $('.js-top_sales').append('<div class="fire"><i class="fas fa-fire"></i> top sales</div>');
+
+$('.wpcf7-form-control-wrap.Message')
+    .addClass('col-12')
+    .find('textarea').attr('rows', '5');
+$('.wpcf7-form-control-wrap.name')
+    .addClass('col-6');
+$('.wpcf7-form-control-wrap.E-mail')
+    .addClass('col-6');
