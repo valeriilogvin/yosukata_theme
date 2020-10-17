@@ -76,7 +76,7 @@ jQuery(function($){
 				},
 				success:function(data){
 					if( data ) { 
-						$('div.container.container-blog div.flex.row div.col-6').remove();
+						$('div.container.container-blog div.flex.row a.col-6').remove();
 						$('#loadsm').before(data);
 						current_page++;
 					}else{

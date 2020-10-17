@@ -39,14 +39,14 @@ $args = array(
 
                 foreach( $posts as $post ){ setup_postdata($post);
                     ?>
-                    <div class="col-6">
-                        <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>');">
+                    <a href="<?php echo get_permalink(); ?>"  class="col-6">
+                        <div class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>');">
                             <i class="fas icon"></i>
                             <div class="background"></div>
-                        </a>
+                        </div>
                         <p class="title"><?php echo the_field('blog_title') ?></p>
                         <p class="text"><?php echo the_field('blog_text') ?></p>
-                    </div>
+                    </a>
                     <?php
                 }
                 wp_reset_postdata();

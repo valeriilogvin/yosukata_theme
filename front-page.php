@@ -156,18 +156,69 @@
             </h2>
             <div class="flex row">
 
-                <!-- get acf-group -->
-                <?php $hero = get_field('item1');
-                if( $hero ): ?>
-                    <a href="<?php echo $hero['link']; ?>" class="item deal_of_the_month col-6">
-                        <h2 class="title"><?php the_field('special_offers_deal') ?></h2>
-                        <div class="flex">
+                <?php
+                $post_objects = get_field('post1');
+                if( $post_objects ): ?>
+                    <?php foreach( $post_objects as $post): // Переменная должна быть названа обязательно $post (IMPORTANT) ?>
+                        <?php setup_postdata($post); ?>
+                        <a href="<?php echo get_permalink(); ?>" class="item deal_of_the_month col-6">
+                            <h2 class="title"><?php the_field('special_offers_deal',20) ?></h2>
+                            <div class="flex">
+                                <div class="img-block">
+                                    <img src="<?php the_field('main_photo') ?>" alt="">
+                                </div>
+                                <div class="descriptions">
+                                    <h3><?php the_field('catalogue_title') ?></h3>
+                                    <div class="stars <?php the_field('stars') ?>">
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="price-block">
+                                            <span class="price"><?php the_field('price') ?></span>
+                                            <span class="old-price"><?php the_field('price_old') ?></span>
+                                        </div>
+                                        <p class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
+
+                                            <?php
+                                            if(  get_field('amazon_link') ) { ?>
+                                                data-amazon="<?php the_field('amazon_link') ?>"
+                                            <?php }
+                                            if(  get_field('ebay_link') ) { ?>
+                                                data-ebay="<?php the_field('ebay_link') ?>"
+                                            <?php }?>
+                                        >
+                                            <span class="back"></span>
+                                            <?php the_field('special_offers_button',20) ?>
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    <?php endforeach; ?>
+                    <?php wp_reset_postdata(); // ВАЖНО - сбросьте значение $post object чтобы избежать ошибок в дальнейшем коде ?>
+                <?php endif;
+                ?>
+
+                <?php
+                $post_objects = get_field('post2');
+                if( $post_objects ): ?>
+                    <?php foreach( $post_objects as $post): // Переменная должна быть названа обязательно $post (IMPORTANT) ?>
+                        <?php setup_postdata($post); ?>
+                        <a href="<?php echo get_permalink(); ?>" class="item top_sales col-3">
+                            <div class="fire">
+                                <i class="fas fa-fire"></i> <?php the_field('top_sales',20) ?>
+                            </div>
                             <div class="img-block">
-                                <img src="<?php echo $hero['image']; ?>" alt="">
+                                <img src="<?php the_field('main_photo') ?>" alt="">
                             </div>
                             <div class="descriptions">
-                                <h3><?php echo $hero['title']; ?></h3>
-                                <div class="stars <?php echo $hero['amount_of_stars']; ?>">
+                                <h3><?php the_field('catalogue_title') ?></h3>
+                                <div class="stars <?php the_field('stars') ?>">
                                     <div class="star"></div>
                                     <div class="star"></div>
                                     <div class="star"></div>
@@ -175,114 +226,75 @@
                                     <div class="star"></div>
                                 </div>
                                 <div class="flex">
-                                    <div class="price-block">
-                                        <span class="price"><?php echo $hero['price']; ?></span>
-                                        <span class="old-price"><?php echo $hero['price_old']; ?></span>
-                                    </div>
+                                    <span class="price"><?php the_field('price') ?></span>
                                     <p class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
 
                                         <?php
-                                        if(  $hero['amazon_link'] ) { ?>
-                                            data-amazon="<?php echo $hero['amazon_link']; ?>"
+                                        if(  get_field('amazon_link') ) { ?>
+                                            data-amazon="<?php the_field('amazon_link') ?>"
                                         <?php }
-                                        if( $hero['ebay_link'] ) { ?>
-                                            data-ebay="<?php echo $hero['ebay_link']; ?>"
+                                        if(  get_field('ebay_link') ) { ?>
+                                            data-ebay="<?php the_field('ebay_link') ?>"
                                         <?php }?>
-                                        >
+                                    >
                                         <span class="back"></span>
-                                        <?php the_field('special_offers_button') ?>
+                                        <?php the_field('special_offers_button',20) ?>
 
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    <?php endforeach; ?>
+                    <?php wp_reset_postdata(); // ВАЖНО - сбросьте значение $post object чтобы избежать ошибок в дальнейшем коде ?>
                 <?php endif;
                 ?>
 
-                <!-- get acf-group -->
-                <?php $hero = get_field('item2');
-                if( $hero ): ?>
-                    <a href="<?php echo $hero['link']; ?>" class="item top_sales col-3">
-                        <div class="fire">
-                            <i class="fas fa-fire"></i> <?php the_field('top_sales') ?>
-                        </div>
-                        <div class="img-block">
-                            <img src="<?php echo $hero['image']; ?>" alt="">
-                        </div>
-                        <div class="descriptions">
-                            <h3><?php echo $hero['title']; ?></h3>
-                            <div class="stars <?php echo $hero['amount_of_stars']; ?>">
-                                <div class="star"></div>
-                                <div class="star"></div>
-                                <div class="star"></div>
-                                <div class="star"></div>
-                                <div class="star"></div>
+
+                <?php
+                $post_objects = get_field('post3');
+                if( $post_objects ): ?>
+                    <?php foreach( $post_objects as $post): // Переменная должна быть названа обязательно $post (IMPORTANT) ?>
+                        <?php setup_postdata($post); ?>
+                        <a href="<?php echo get_permalink(); ?>" class="item top_sales col-3">
+                            <div class="fire">
+                                <i class="fas fa-fire"></i> <?php the_field('top_sales',20) ?>
                             </div>
-                            <div class="flex">
-                                <span class="price"><?php echo $hero['price']; ?></span>
-                                <p class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
-
-                                    <?php
-                                    if(  $hero['amazon_link'] ) { ?>
-                                        data-amazon="<?php echo $hero['amazon_link']; ?>"
-                                    <?php }
-                                    if( $hero['ebay_link'] ) { ?>
-                                        data-ebay="<?php echo $hero['ebay_link']; ?>"
-                                    <?php }?>
-
-                                >
-                                    <span class="back"></span>
-                                    <?php the_field('special_offers_button') ?>
-
-                                </p>
+                            <div class="img-block">
+                                <img src="<?php the_field('main_photo') ?>" alt="">
                             </div>
-                        </div>
-                    </a>
+                            <div class="descriptions">
+                                <h3><?php the_field('catalogue_title') ?></h3>
+                                <div class="stars <?php the_field('stars') ?>">
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                </div>
+                                <div class="flex">
+                                    <span class="price"><?php the_field('price') ?></span>
+                                    <p class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
+
+                                        <?php
+                                        if(  get_field('amazon_link') ) { ?>
+                                            data-amazon="<?php the_field('amazon_link') ?>"
+                                        <?php }
+                                        if(  get_field('ebay_link') ) { ?>
+                                            data-ebay="<?php the_field('ebay_link') ?>"
+                                        <?php }?>
+                                    >
+                                        <span class="back"></span>
+                                        <?php the_field('special_offers_button',20) ?>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    <?php endforeach; ?>
+                    <?php wp_reset_postdata(); // ВАЖНО - сбросьте значение $post object чтобы избежать ошибок в дальнейшем коде ?>
                 <?php endif;
                 ?>
 
-                <!-- get acf-group -->
-                <?php $hero = get_field('item3');
-                if( $hero ): ?>
-                    <a href="<?php echo $hero['link']; ?>" class="item top_sales col-3">
-                        <div class="fire">
-                            <i class="fas fa-fire"></i> <?php the_field('top_sales') ?>
-                        </div>
-                        <div class="img-block">
-                            <img src="<?php echo $hero['image']; ?>" alt="">
-                        </div>
-                        <div class="descriptions">
-                            <h3><?php echo $hero['title']; ?></h3>
-                            <div class="stars <?php echo $hero['amount_of_stars']; ?>">
-                                <div class="star"></div>
-                                <div class="star"></div>
-                                <div class="star"></div>
-                                <div class="star"></div>
-                                <div class="star"></div>
-                            </div>
-                            <div class="flex">
-                                <span class="price"><?php echo $hero['price']; ?></span>
-                                <p class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
-
-                                    <?php
-                                    if(  $hero['amazon_link'] ) { ?>
-                                        data-amazon="<?php echo $hero['amazon_link']; ?>"
-                                    <?php }
-                                    if( $hero['ebay_link'] ) { ?>
-                                        data-ebay="<?php echo $hero['ebay_link']; ?>"
-                                    <?php }?>
-
-                                >
-                                    <span class="back"></span>
-                                    <?php the_field('special_offers_button') ?>
-
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                <?php endif;
-                ?>
 
             </div>
             <div class="text-center">

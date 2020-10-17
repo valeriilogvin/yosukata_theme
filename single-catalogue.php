@@ -185,7 +185,6 @@ else {
             <img class="img-limes" src="<?php echo get_stylesheet_directory_uri() ?>/img/limes.png" alt="">
             <img class="img-big_pepper" src="<?php echo get_stylesheet_directory_uri() ?>/img/big_pepper.png" alt="">
             <img class="img-avocado" src="<?php echo get_stylesheet_directory_uri() ?>/img/avocado.png" alt="">
-            <img class="img-big_pepper2" src="<?php echo get_stylesheet_directory_uri() ?>/img/big_pepper.png" alt="">
         </div>
 
         <?php get_template_part( 'template-parts/review' ); ?>
