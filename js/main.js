@@ -451,7 +451,8 @@ $('.js-top_sales').append('<div class="fire"><i class="fas fa-fire"></i> top sal
 $('.wpcf7-form-control-wrap.Message')
     .addClass('col-12')
     .find('textarea').attr('rows', '5');
-$('.wpcf7-form-control-wrap.name')
+$('.wpcf7-form-control-wrap.your-name')
     .addClass('col-6');
 $('.wpcf7-form-control-wrap.E-mail')
     .addClass('col-6');
+

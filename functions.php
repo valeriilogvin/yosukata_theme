@@ -75,6 +75,12 @@ function yosukata_scripts() {
         array(),
         '1.0'
     );
+    wp_enqueue_style(
+        'yosukata-style-form',
+        get_stylesheet_directory_uri() . '/css/form.css',
+        array(),
+        '1.0'
+    );
     wp_enqueue_script(
         'yosukata-slick',
         get_template_directory_uri() . '/slick/slick.min.js',
