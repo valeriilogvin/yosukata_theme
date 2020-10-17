@@ -1,7 +1,8 @@
 jQuery(function($){
 	$(window).scroll(function(){
-//		var bottomOffset = 2000; 
-		var bottomOffset = 1000; 
+//alert('scroll');
+		var bottomOffset = 1500; 
+//		var bottomOffset = 1000; 
 		var data = {
 			'action': 'loadmore',
 			'query': true_posts,
