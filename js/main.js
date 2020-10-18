@@ -456,3 +456,9 @@ $('.wpcf7-form-control-wrap.your-name')
 $('.wpcf7-form-control-wrap.E-mail')
     .addClass('col-6');
 
+$('form .parent-col-6')
+    .parent()
+    .addClass('col-6');
+$('form .parent-col-12')
+    .parent()
+    .addClass('col-12');

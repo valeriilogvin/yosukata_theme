@@ -178,7 +178,7 @@ button.md-close i {
     outline: none;
     border: none;
     cursor: pointer; }
-.md-modal .md-content p.title-red {
+.md-modal .md-content .title-red {
     font-weight: 900;
     font-size: 30px;
     line-height: 40px;
