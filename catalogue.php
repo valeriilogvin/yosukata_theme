@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages of catalogue
+ * Template Name: Catalogue
  */
 
 if ( is_home() ){
@@ -13,7 +13,8 @@ else {
 ?>
 
     <div class="container catalogue">
-        <h2><?php the_field('catalogue_title',20) ?></h2>
+        ыыы
+        <h2><?php the_field('catalogue_title') ?></h2>
         <div class="flex row">
             <div class="col-2 js-col-2">
                 <ul class="fixed-catalogue js-fixed-catalogue">

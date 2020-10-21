@@ -788,6 +788,38 @@ button.menu-btn {
         .header div.language .language_drop-down a + a {
           margin-top: 3px; }
 
+/*.topmenu{
+  margin: 0 20px;
+}
+.topmenu li{
+  display: inline-block;
+}
+.topmenu li+li{
+  margin-left: 7px;
+}*/
+.pll-parent-menu-item{
+position: relative;
+  padding: 7px 40px 7px 40px;
+}
+.pll-parent-menu-item:hover .sub-menu{
+  display: block;
+}
+.pll-parent-menu-item .sub-menu{
+  background: rgba(22, 24, 30, 0.8);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: none;
+  transform: translateX(-50%) translateY(100%);
+}
+.pll-parent-menu-item .sub-menu a{
+  padding: 0 15px;
+}
+@media (max-width: 480px){
+  .header .topmenu {
+    display: none;
+  }
+}
 .coupon {
   color: #ffffff;
   z-index: 999;

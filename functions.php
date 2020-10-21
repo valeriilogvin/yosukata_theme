@@ -310,3 +310,13 @@ function true_load_posts(){
  
 add_action('wp_ajax_loadmore', 'true_load_posts');
 add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
+
+function polylang_translate()
+{
+    pll_register_string('FAQ - Заголовок', 'FAQ', 'Titles');
+    pll_register_string('Blog - Заголовок', 'Blog', 'Titles');
+    pll_register_string('Contact us - Заголовок', 'contact_us', 'modal');
+    pll_register_string('Contact us - текст', 'contact_us_text', 'modal', true);
+    pll_register_string('Contact us - текст', 'contact_us_text', 'modal', true);
+}
+add_action( 'init', 'polylang_translate' );

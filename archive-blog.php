@@ -16,12 +16,12 @@ else {
         <div class="container">
             <div class="flex row">
                 <div class="col-6">
-                    <h2>Blog</h2>
+                    <h2><?php pll_e('Blog') ?></h2>
                 </div>
                 <div class="col-6 blog-buttons">
-                    <a href="#" class="blog-button active" id="load_all">All</a>
-                    <a href="#" class="blog-button" id="load_articles">Articles</a>
-                    <a href="#" class="blog-button" id="load_video">Video</a>
+                    <a href="#" class="blog-button active" id="load_all"><?php the_field('blog_btn_all',20) ?></a>
+                    <a href="#" class="blog-button" id="load_articles"><?php the_field('blog_btn_article',20) ?></a>
+                    <a href="#" class="blog-button" id="load_video"><?php the_field('blog_btn_video',20) ?></a>
                 </div>
             </div>
         </div>

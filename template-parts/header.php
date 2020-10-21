@@ -24,20 +24,27 @@
             <?php the_field('button_buy_text',20) ?>
             <span class="back"></span>
         </a>
-        <div class="language">
-            <img src="<?php echo get_stylesheet_directory_uri() ?>/img/usa.jpg" alt="">
+        <!--<div class="language">
+            <img src="<?php /*echo get_stylesheet_directory_uri() */?>/img/usa.jpg" alt="">
             <div class="language_drop-down">
                 <a href="#" class="ger">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/img/ger.jpg" alt="">
+                    <img src="<?php /*echo get_stylesheet_directory_uri() */?>/img/ger.jpg" alt="">
                 </a>
                 <a href="#" class="fr">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/img/fr.jpg" alt="">
+                    <img src="<?php /*echo get_stylesheet_directory_uri() */?>/img/fr.jpg" alt="">
                 </a>
                 <a href="#" class="ch">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/img/ch.jpg" alt="">
+                    <img src="<?php /*echo get_stylesheet_directory_uri() */?>/img/ch.jpg" alt="">
                 </a>
             </div>
-        </div>
+        </div>-->
+        <?php
+        wp_nav_menu(array(
+            'theme_location'  => 'top',
+            'container'       => null,
+            'menu_class'      => 'topmenu',
+        ));
+        ?>
         <button class="menu-btn display_none">
             <span></span>
             <span></span>

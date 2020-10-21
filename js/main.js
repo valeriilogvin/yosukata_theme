@@ -462,3 +462,7 @@ $('form .parent-col-6')
 $('form .parent-col-12')
     .parent()
     .addClass('col-12');
+
+// $('.lang-item-en').find('a').html('<img src="http://logvin.website/yosukata-new/wp-content/themes/yosukata/img/usa.jpg" alt="">')
+// $('.lang-item-de').find('a').html('<img src="http://logvin.website/yosukata-new/wp-content/themes/yosukata/img/ger.jpg" alt="">')
+// $('.lang-item-fr').find('a').html('<img src="http://logvin.website/yosukata-new/wp-content/themes/yosukata/img/fr.jpg" alt="">')
