@@ -43,7 +43,7 @@ else {
                         ));
                         foreach( $posts as $post ){ setup_postdata($post);
                             ?>
-                            <a href="<?php echo get_permalink(); ?>" class="item col-3">
+                            <a href="<?php echo get_permalink(); ?>" class="item col-3 catalogue-item">
                                 <div class="img-block"><img src="<?php the_field('main_photo'); ?>" alt=""></div>
                                 <div class="descriptions">
                                     <h3><?php the_title() ?></h3>
@@ -55,20 +55,27 @@ else {
                                         <div class="star"></div>
                                     </div>
                                     <div class="flex">
-                                        <span class="price"><?php the_field('price'); ?></span>
-                                        <p
-
-                                                class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
+                                        <div>
+                                            <?php
+                                            if( get_field('price') && get_field('old_price')) { ?>
+                                                <span style="display:block; font-weight: 900; color: #ff2a00;" class="price"><?php the_field('price');?></span>
+                                                <span class="price catalogue-old-price"><?php the_field('old_price');?></span>
+                                            <?php }
+                                            else if( get_field('price') ) { ?>
+                                                <span class="price"><?php the_field('price');?></span>
+                                            <?php }?>
+                                        </div>
+                                        <p class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
 
                                             <?php
-                                            if( get_field('amazon_link') ) { ?>
+                                                if( get_field('amazon_link') ) { ?>
                                                 data-amazon="<?php the_field('amazon_link');?>"
-                                            <?php }
-                                            if( get_field('ebay_link') ) { ?>
+                                                <?php }
+                                                if( get_field('ebay_link') ) { ?>
                                                 data-ebay="<?php the_field('ebay_link');?>"
-                                            <?php }?>
+                                                <?php }?>
+                                            >
 
-                                        >
                                             <span class="back"></span> Buy now
                                         </p>
                                     </div>
@@ -95,7 +102,7 @@ else {
                         ));
                         foreach( $posts as $post ){ setup_postdata($post);
                             ?>
-                            <a href="<?php echo get_permalink(); ?>" class="item col-3">
+                            <a href="<?php echo get_permalink(); ?>" class="item col-3 catalogue-item">
                                 <div class="img-block"><img src="<?php the_field('main_photo'); ?>" alt=""></div>
                                 <div class="descriptions">
                                     <h3><?php the_title() ?></h3>
@@ -107,10 +114,19 @@ else {
                                         <div class="star"></div>
                                     </div>
                                     <div class="flex">
-                                        <span class="price"><?php the_field('price'); ?></span>
-                                        <p
 
-                                                class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
+                                        <div>
+                                            <?php
+                                            if( get_field('price') && get_field('old_price')) { ?>
+                                                <span style="display:block; font-weight: 900; color: #ff2a00;" class="price"><?php the_field('price');?></span>
+                                                <span class="price catalogue-old-price"><?php the_field('old_price');?></span>
+                                            <?php }
+                                            else if( get_field('price') ) { ?>
+                                                <span class="price"><?php the_field('price');?></span>
+                                            <?php }?>
+                                        </div>
+
+                                        <p class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
 
                                             <?php
                                             if( get_field('amazon_link') ) { ?>
@@ -119,8 +135,8 @@ else {
                                             if( get_field('ebay_link') ) { ?>
                                                 data-ebay="<?php the_field('ebay_link');?>"
                                             <?php }?>
+                                            >
 
-                                        >
                                             <span class="back"></span> Buy now
                                         </p>
                                     </div>
@@ -147,7 +163,7 @@ else {
                         ));
                         foreach( $posts as $post ){ setup_postdata($post);
                             ?>
-                            <a href="<?php echo get_permalink(); ?>" class="item col-3">
+                            <a href="<?php echo get_permalink(); ?>" class="item col-3 catalogue-item">
                                 <div class="img-block"><img src="<?php the_field('main_photo'); ?>" alt=""></div>
                                 <div class="descriptions">
                                     <h3><?php the_title() ?></h3>
@@ -159,10 +175,19 @@ else {
                                         <div class="star"></div>
                                     </div>
                                     <div class="flex">
-                                        <span class="price"><?php the_field('price'); ?></span>
-                                        <p
 
-                                                class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
+                                        <div>
+                                            <?php
+                                            if( get_field('price') && get_field('old_price')) { ?>
+                                                <span style="display:block; font-weight: 900; color: #ff2a00;" class="price"><?php the_field('price');?></span>
+                                                <span class="price catalogue-old-price"><?php the_field('old_price');?></span>
+                                            <?php }
+                                            else if( get_field('price') ) { ?>
+                                                <span class="price"><?php the_field('price');?></span>
+                                            <?php }?>
+                                        </div>
+
+                                        <p class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
 
                                             <?php
                                             if( get_field('amazon_link') ) { ?>
@@ -171,8 +196,8 @@ else {
                                             if( get_field('ebay_link') ) { ?>
                                                 data-ebay="<?php the_field('ebay_link');?>"
                                             <?php }?>
-
                                         >
+
                                             <span class="back"></span> Buy now
                                         </p>
                                     </div>
@@ -200,7 +225,7 @@ else {
                         ));
                         foreach( $posts as $post ){ setup_postdata($post);
                             ?>
-                            <a href="<?php echo get_permalink(); ?>" class="item col-3">
+                            <a href="<?php echo get_permalink(); ?>" class="item col-3 catalogue-item">
                                 <div class="img-block"><img src="<?php the_field('main_photo'); ?>" alt=""></div>
                                 <div class="descriptions">
                                     <h3><?php the_title() ?></h3>
@@ -212,10 +237,19 @@ else {
                                         <div class="star"></div>
                                     </div>
                                     <div class="flex">
-                                        <span class="price"><?php the_field('price'); ?></span>
-                                        <p
 
-                                                class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
+                                        <div>
+                                            <?php
+                                            if( get_field('price') && get_field('old_price')) { ?>
+                                                <span style="display:block; font-weight: 900; color: #ff2a00;" class="price"><?php the_field('price');?></span>
+                                                <span class="price catalogue-old-price"><?php the_field('old_price');?></span>
+                                            <?php }
+                                            else if( get_field('price') ) { ?>
+                                                <span class="price"><?php the_field('price');?></span>
+                                            <?php }?>
+                                        </div>
+
+                                        <p class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
 
                                             <?php
                                             if( get_field('amazon_link') ) { ?>
@@ -224,8 +258,8 @@ else {
                                             if( get_field('ebay_link') ) { ?>
                                                 data-ebay="<?php the_field('ebay_link');?>"
                                             <?php }?>
-
                                         >
+
                                             <span class="back"></span> Buy now
                                         </p>
                                     </div>
@@ -252,7 +286,7 @@ else {
                         ));
                         foreach( $posts as $post ){ setup_postdata($post);
                             ?>
-                            <a href="<?php echo get_permalink(); ?>" class="item col-3">
+                            <a href="<?php echo get_permalink(); ?>" class="item col-3 catalogue-item">
                                 <div class="img-block"><img src="<?php the_field('main_photo'); ?>" alt=""></div>
                                 <div class="descriptions">
                                     <h3><?php the_title() ?></h3>
@@ -264,10 +298,19 @@ else {
                                         <div class="star"></div>
                                     </div>
                                     <div class="flex">
-                                        <span class="price"><?php the_field('price'); ?></span>
-                                        <p
 
-                                           class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
+                                        <div>
+                                            <?php
+                                            if( get_field('price') && get_field('old_price')) { ?>
+                                                <span style="display:block; font-weight: 900; color: #ff2a00;" class="price"><?php the_field('price');?></span>
+                                                <span class="price catalogue-old-price"><?php the_field('old_price');?></span>
+                                            <?php }
+                                            else if( get_field('price') ) { ?>
+                                                <span class="price"><?php the_field('price');?></span>
+                                            <?php }?>
+                                        </div>
+
+                                        <p class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
 
                                             <?php
                                             if( get_field('amazon_link') ) { ?>
@@ -276,8 +319,8 @@ else {
                                             if( get_field('ebay_link') ) { ?>
                                                 data-ebay="<?php the_field('ebay_link');?>"
                                             <?php }?>
-
                                         >
+
                                             <span class="back"></span> Buy now
                                         </p>
                                     </div>
@@ -304,7 +347,7 @@ else {
                         ));
                         foreach( $posts as $post ){ setup_postdata($post);
                             ?>
-                            <a href="<?php echo get_permalink(); ?>" class="item col-3">
+                            <a href="<?php echo get_permalink(); ?>" class="item col-3 catalogue-item">
                                 <div class="img-block"><img src="<?php the_field('main_photo'); ?>" alt=""></div>
                                 <div class="descriptions">
                                     <h3><?php the_title() ?></h3>
@@ -316,10 +359,19 @@ else {
                                         <div class="star"></div>
                                     </div>
                                     <div class="flex">
-                                        <span class="price"><?php the_field('price') ?></span>
-                                        <p
 
-                                                class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
+                                        <div>
+                                            <?php
+                                            if( get_field('price') && get_field('old_price')) { ?>
+                                                <span style="display:block; font-weight: 900; color: #ff2a00;" class="price"><?php the_field('price');?></span>
+                                                <span class="price catalogue-old-price"><?php the_field('old_price');?></span>
+                                            <?php }
+                                            else if( get_field('price') ) { ?>
+                                                <span class="price"><?php the_field('price');?></span>
+                                            <?php }?>
+                                        </div>
+
+                                        <p class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
 
                                             <?php
                                             if( get_field('amazon_link') ) { ?>
@@ -328,9 +380,8 @@ else {
                                             if( get_field('ebay_link') ) { ?>
                                                 data-ebay="<?php the_field('ebay_link');?>"
                                             <?php }?>
-
-
                                         >
+
                                             <span class="back"></span> Buy now
                                         </p>
                                     </div>
@@ -346,9 +397,6 @@ else {
         </div>
     </div>
 
-    <script defer >
-
-    </script>
 <?php
 
 

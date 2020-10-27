@@ -193,6 +193,27 @@
     position: absolute;
     right: 0;
     top: 200px; }
+.catalogue-old-price{
+    line-height: 34px;
+    color: #444444;
+    display: block;
+    font-weight: 500;
+    font-size: 24px;
+    position: relative;
+    text-align: center;
+}
+.catalogue-old-price:after {
+    background: #ff2a00;
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    height: 2px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
 
 @media (max-width: 1366px) {
     .catalogue .col-10 .flex.row {

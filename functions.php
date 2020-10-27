@@ -257,9 +257,15 @@ add_action( 'init', 'post_tag_for_pages' );
 
 get_template_part( 'inc/breadcrumbs' );
 
-// Contact Form 7 remove auto added p tags
+/**
+ * Contact Form 7
+ * remove auto added p tags
+ */
 add_filter('wpcf7_autop_or_not', '__return_false');
 
+/**
+ * Ajax load-more
+ */
 function true_load_posts(){
  
 	$args = unserialize( stripslashes( $_POST['query'] ) );
@@ -269,7 +275,7 @@ function true_load_posts(){
 	$post_type = isset($_POST['post_type']) ? $_POST['post_type'] : '';
 
 	if($post_type){
-//		$args['paged'] = 1;
+    // $args['paged'] = 1;
 
 		if($post_type == 'articles'){
           $args['meta_key']		= 'blog_type_of_post';
@@ -288,17 +294,17 @@ function true_load_posts(){
  
 		while( have_posts() ): the_post();
  
-//echo 'pm='.get_permalink();
-?>
-                    <a href="<?php echo get_permalink(); ?>" class="col-6">
-                        <div  class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>');">
-                            <i class="fas icon"></i>
-                            <div class="background"></div>
-                        </div>
-                        <p class="title"><?php echo the_field('blog_title') ?></p>
-                        <p class="text"><?php echo the_field('blog_text') ?></p>
-                    </a>
-<?php
+        //echo 'pm='.get_permalink();
+        ?>
+            <a href="<?php echo get_permalink(); ?>" class="col-6">
+                <div  class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>');">
+                    <i class="fas icon"></i>
+                    <div class="background"></div>
+                </div>
+                <p class="title"><?php echo the_field('blog_title') ?></p>
+                <p class="text"><?php echo the_field('blog_text') ?></p>
+            </a>
+        <?php
  
 		endwhile;
  
@@ -307,10 +313,12 @@ function true_load_posts(){
 	die();
 }
  
- 
 add_action('wp_ajax_loadmore', 'true_load_posts');
 add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
 
+/**
+ * Polylang
+ */
 function polylang_translate()
 {
     pll_register_string('FAQ - Заголовок', 'FAQ', 'Titles');

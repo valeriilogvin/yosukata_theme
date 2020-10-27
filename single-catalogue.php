@@ -17,9 +17,7 @@ else {
             <div class="container">
                 <div class="flex">
                     <div class="col-6 ">
-                        <div class="fire">
-                            <i class="fas fa-fire"></i> top sales
-                        </div>
+
                         <div class="wok-slider-for">
                             <?php
                             if( get_field('catalogue_photo') ) {
@@ -73,7 +71,7 @@ else {
                                     echo '</ul>';
                                 }
                                 ?>
-                                <a href="#" class="button grey black"><span class="back"></span>Ask a question</a>
+                                <a class="button grey black md-trigger" data-modal="modal-contact"><span class="back"></span>Ask a question</a>
                                 <a class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
 
                                     <?php

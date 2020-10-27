@@ -17,16 +17,16 @@
                     <div class="col-6">
                         <ul>
                             <li><a href="<?php echo home_url(); ?>/#about"><?php the_field('menu_about',20) ?></a></li>
-                            <li><a href="#"><?php the_field('menu_knowledge_base',20) ?></a></li>
+                            <li><a href="<?php echo home_url(); ?>/blog"><?php the_field('menu_knowledge_base',20) ?></a></li>
                             <li><a href="<?php echo home_url(); ?>/recipes"><?php the_field('menu_recipes',20) ?></a></li>
                             <li><a href="<?php echo home_url(); ?>/faq"><?php the_field('menu_faq',20) ?></a></li>
                             <li><a data-modal="modal-contact" class="md-trigger"><?php the_field('menu_contact',20) ?></a></li>
-                            <li><a href="#"><?php the_field('menu_shop',20) ?></a></li>
+                            <li><a href="<?php echo home_url(); ?>/catalogue"><?php the_field('menu_shop',20) ?></a></li>
                         </ul>
                     </div>
                     <div class="col-6">
                         <ul>
-                            <li><a href="#"><?php the_field('menu_product_registration',20) ?></a></li>
+                            <li><a data-modal="modal-register" class="md-trigger"><?php the_field('menu_product_registration',20) ?></a></li>
                             <li><a data-modal="modal-wholesale" class="md-trigger"><?php the_field('menu_wholesales',20) ?></a></li>
                             <li><a href="#"><?php the_field('menu_warranty',20) ?></a></li>
                             <li><a href="<?php echo home_url(); ?>/privacy-policy/"><?php the_field('menu_privacy_policy',20) ?></a></li>
@@ -38,10 +38,13 @@
             </div>
             <div class="col-4">
                 <p class="text"><?php the_field('subscribe',20) ?></p>
-                <form action="" class="form-footer">
-                    <input type="text" placeholder="<?php the_field('footer_placeholder',20) ?>">
+                <?php echo do_shortcode( ' [contact-form-7 id="505" title="Subscribe" html_class="form-footer"]' ); ?>
+                <!--<form action="" class="form-footer">
+                     
+                   
+                    <input type="text" placeholder="<?php the_field('footer_placeholder', 20) ?>">
                     <button type="submit"><i class="fab fa-telegram-plane"></i></button>
-                </form>
+                </form>-->
                 <div class="social">
                     <a href="<?php the_field('facebook_link',20) ?>"><i class="fab fa-facebook-f"></i></a>
                     <a href="<?php the_field('instagram_link',20) ?>"><i class="fab fa-instagram"></i> </a>

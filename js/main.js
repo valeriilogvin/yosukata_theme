@@ -376,7 +376,7 @@ $('.sect8').on('click', '.js-show', function () {
 });
 
 //validation settings
-$(".modal-form").each(function() {
+/*$(".modal-form").each(function() {
     $(this).validate({
         debug: true,
         success: "valid",
@@ -397,7 +397,7 @@ $(".modal-form").each(function() {
             form.submit();
         }
     });
-});
+});*/
 
 // faq
 $(document).ready(function(){
