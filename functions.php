@@ -75,6 +75,12 @@ function yosukata_scripts() {
         array(),
         '1.0'
     );
+    wp_enqueue_style(
+        'yosukata-style-form',
+        get_stylesheet_directory_uri() . '/css/form.css',
+        array(),
+        '1.0'
+    );
     wp_enqueue_script(
         'yosukata-slick',
         get_template_directory_uri() . '/slick/slick.min.js',
@@ -106,7 +112,8 @@ function yosukata_scripts() {
             true
         );
     }
-    if ( is_post_type_archive('blog') ) {
+///    if ( is_post_type_archive('blog') ) {
+    if ( is_post_type_archive('blog') || is_post_type_archive('recipes')) {
         wp_enqueue_script(
             'true_loadmore',
             get_stylesheet_directory_uri() . '/js/loadmore.js',
@@ -261,10 +268,10 @@ function true_load_posts(){
 	$args['post_status'] = 'publish';
 
 	$post_type = isset($_POST['post_type']) ? $_POST['post_type'] : '';
+//die('-'.$sm_post_type);
 
 	if($post_type){
 //		$args['paged'] = 1;
-
 		if($post_type == 'articles'){
           $args['meta_key']		= 'blog_type_of_post';
           $args['meta_value']	= 'articles';
@@ -274,25 +281,39 @@ function true_load_posts(){
           $args['meta_value']	= 'video';
 		}
 	}
-
+//die('ok');
 //print_r($args);
+$sm_post_type = isset($args['post_type']) ? $args['post_type'] : '';
 
 	query_posts( $args );
 	if( have_posts() ) :
- 
 		while( have_posts() ): the_post();
- 
-//echo 'pm='.get_permalink();
+if($sm_post_type == 'recipes'){
 ?>
-                    <div class="col-6">
-                        <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>');">
+                    <a href="<?php echo get_permalink(); ?>" class="col-6 recipe" style="background-image: url('<?php the_field('recipe_main_photo'); ?>')">
+                        <div class="description">
+                            <span class="time"><?php the_field('time'); ?></span>
+                            <span class="info">
+                                <span class="info-name">Difficulty <span class="info-text"><?php the_field('difficulty'); ?></span></span>
+                                <span class="info-name">Servings <span class="info-text"><?php the_field('serving'); ?></span></span>
+                            </span>
+                            <p class="recipe-title"><?php the_title() ?></p>
+                            <p class="button black"><span class="back"></span>View recipe</p>
+                        </div>
+                    </a>
+<?
+} else{
+?>
+                    <a href="<?php echo get_permalink(); ?>" class="col-6">
+                        <div  class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>');">
                             <i class="fas icon"></i>
                             <div class="background"></div>
-                        </a>
+                        </div>
                         <p class="title"><?php echo the_field('blog_title') ?></p>
                         <p class="text"><?php echo the_field('blog_text') ?></p>
-                    </div>
+                    </a>
 <?php
+}
  
 		endwhile;
  
@@ -304,3 +325,12 @@ function true_load_posts(){
  
 add_action('wp_ajax_loadmore', 'true_load_posts');
 add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
+
+function polylang_translate()
+{
+    pll_register_string('FAQ', 'FAQ', 'Titles');
+    pll_register_string('Blog', 'Blog', 'Titles');
+    pll_register_string('Contact us заголовок', 'contact_us', 'modal');
+    pll_register_string('Contact us текст', 'contact_us_text', 'modal');
+}
+add_action( 'init', 'polylang_translate' );

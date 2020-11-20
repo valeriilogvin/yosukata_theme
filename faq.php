@@ -14,7 +14,7 @@ if (is_home()) {
     <div class="sect-faq">
 
         <div class="container">
-            <h2>FAQ</h2>
+            <h2><?php pll_e( 'FAQ' ); ?></h2>
 
 
             <!-- acf repeater -->

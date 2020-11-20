@@ -193,6 +193,27 @@
     position: absolute;
     right: 0;
     top: 200px; }
+.catalogue-old-price{
+    line-height: 34px;
+    color: #444444;
+    display: block;
+    font-weight: 500;
+    font-size: 24px;
+    position: relative;
+    text-align: center;
+}
+.catalogue-old-price:after {
+    background: #ff2a00;
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    height: 2px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
 
 @media (max-width: 1366px) {
     .catalogue .col-10 .flex.row {
@@ -305,7 +326,9 @@
     .catalogue img.shrimp {
         display: none; }
     .catalogue img.parsley {
-        display: none; } }
+        display: none; }
+
+}
 
 @media (max-width: 480px) {
     .catalogue .col-2 .fixed-catalogue li {
@@ -370,7 +393,7 @@
     position: relative;
     display: block;
     width: 100%;
-    height: 430px; }
+    height: 505px; }
 .wrapper.pages .video-block:hover:before {
     background: rgba(255, 255, 255, 0.2); }
 .wrapper.pages .video-block:before {
@@ -400,18 +423,42 @@
     transform: translate(-20%, -50%);
     border: 25px solid transparent;
     border-left: 30px solid #ffffff; }
+@media (max-width: 1600px) {
+    .wrapper.pages .video-block {
+        height: 450px; }
+}
+@media (max-width: 1366px) {
+    .wrapper.pages .video-block {
+        height: 420px; }
+}
+@media (max-width: 1280px) {
+    .wrapper.pages .video-block {
+    height: 520px;} }
 @media (max-width: 1024px) {
     .wrapper.pages .video-block {
-        height: 320px; } }
+        height: 380px; } }
 @media (max-width: 767px) {
+    .wrapper.pages .header {
+        background: url(../img/bg-header.jpg) top center no-repeat;
+        background-size: cover;
+    }
     .wrapper.pages .video-block {
-        height: 220px; }
+        height: 230px; }
     .wrapper.pages .video-block .watch {
         width: 90px;
         height: 90px; }
     .wrapper.pages .video-block .watch:after {
         border: 15px solid transparent;
         border-left: 20px solid #ffffff; } }
+@media (max-width: 480px) {
+    .wrapper.pages .video-block {
+        height: 200px; }
+}
+@media (max-width: 380px) {
+    .wrapper.pages .video-block {
+        height: 160px;
+    }
+}
 .wrapper.pages p.video-bottom-title {
     font-size: 14px;
     line-height: 24px;
@@ -834,8 +881,6 @@
         display: block; }
     .wok .sect2 {
         padding: 35px 0; }
-    .wok .wok-sect4 {
-        background-position: bottom center; }
     .wok .wok-sect4 .item {
         width: -webkit-calc(100% - 30px);
         width: calc(100% - 30px); }
@@ -886,13 +931,16 @@
         -ms-flex-order: 0;
         order: 0; }
     .wok .wok-slider-for .slide {
-        height: 330px; }
+        height: 380px; }
     .wok .wok-slider-for .slide img {
         height: auto;
         width: 100%; }
     .wok .wok-slider-nav {
         margin: 0 40px 0; } }
-
+@media (max-width: 380px) {
+    .wok .wok-slider-for .slide {
+        height: 330px; }
+}
 .blog-article h1 {
     color: #000000;
     position: relative;
@@ -1253,16 +1301,16 @@
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%); }
-.recipes-article .sect-main .instructions {
+.recipes-article .instructions {
     padding: 80px 0;
     margin: 0 auto; }
-.recipes-article .sect-main .instructions ul li {
+.recipes-article .instructions ul li {
     font-size: 18px;
     font-weight: 400; }
-.recipes-article .sect-main .instructions ul li + li{
+.recipes-article .instructions ul li + li{
     margin-top: 10px;
 }
-.recipes-article .sect-main .instructions ul li .num {
+.recipes-article .instructions ul li .num {
     font-weight: 900;
     padding-right: 15px; }
 .recipes-article .sect-main .limes {
@@ -1271,6 +1319,7 @@
     bottom: 20%; }
 .wrapper.pages .recipes-article .sect2.center{
     position: relative;
+    margin-top: 90px;
     padding: 90px 0 150px;
 }
 .recipes-article .sect2 p.title {
@@ -1381,8 +1430,8 @@
         padding-top: 600px; }
     .recipes-article .more-recipes h2 {
         padding-top: 50px;
-        font-size: 22px;
-        line-height: 30px;
+        font-size: 26px;
+        line-height: 34px;
         padding-bottom: 0; }
     .recipes-article .sect2 {
         padding-bottom: 100px !important; } }
@@ -1496,8 +1545,8 @@
 
 #modal-recipes-image button.md-close{
     z-index: 99;
-    margin-left: auto;
-
+    right: -35px;
+    top: -10px;
 }
 #modal-recipes-image button.md-close:hover i{
     color: #ffffff;
@@ -1505,8 +1554,11 @@
 #modal-recipes-image .img-block-hover:after{
     display: none;
 }
+#modal-recipes-image .img-block{
+    background: none;
+}
 #modal-recipes-image{
-    height: 90%;
+    height: 80%;
 }
 #modal-recipes-image .md-content{
     background: none;
@@ -1527,15 +1579,15 @@
     width: auto;
 }
 #modal-recipes-image .blog-article-slider-full .slider img{
-    width: auto;
-    height: 100%;
+    width: 100%;
+    height: auto;
     margin: 0 auto;
 }
 #modal-recipes-image button.my-slick-next {
-    right: 20px;
+    right: -30px;
 }
 #modal-recipes-image button.my-slick-prev {
-    left: 20px;
+    left: -30px;
 }
 #modal-recipes-image .slick-dots {
     bottom: -30px; }
@@ -1558,6 +1610,14 @@
 #modal-recipes-image .slick-dots li button:before {
     display: none; }
 
+@media (max-width: 1366px) {
+    #modal-recipes-image {
+        top: 35%;
+    }
+    #modal-recipes-image {
+        height: 70%;
+    }
+}
 @media (max-width: 1280px) {
     .recipes .recipe {
         height: 400px; }
@@ -1573,7 +1633,11 @@
     .recipes .description span.info > span {
         display: block; }
     .recipes .description span.info > span + span {
-        margin-left: 0; } }
+        margin-left: 0; }
+    #modal-recipes-image {
+        top: 35%;
+    }
+}
 
 @media (max-width: 1024px) {
     .recipes .recipe {
@@ -1581,7 +1645,12 @@
     .recipes .description span.info > span {
         display: inline-block; }
     .recipes .description span.info > span + span {
-        margin-left: 15px; } }
+        margin-left: 15px; }
+    #modal-recipes-image {
+        height: 50%;
+        width: 80%;
+    }
+}
 
 @media (max-width: 767px) {
     .recipes .recipe {
@@ -1598,12 +1667,11 @@
     #modal-recipes-image {
         height: 70%;
     }
-    #modal-recipes-image .blog-article-slider-full .slider img{
-        width: 100%;
-        height: auto;
-    }
-    #modal-recipes-image .slick-dots {
-        bottom: 10px;
+
+    #modal-recipes-image button.md-close {
+        z-index: 99;
+        right: 10px;
+        top: 10px;
     }
 }
 

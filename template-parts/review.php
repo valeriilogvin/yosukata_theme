@@ -10,7 +10,7 @@
 
             <?php
             $posts = get_posts( array(
-                'numberposts' => 6,
+                'numberposts' => 12,
                 'post_type'   => 'reviews',
                 'suppress_filters' => true,
             ));
@@ -29,6 +29,7 @@
                         <div class="line">
                             <span class="country"><i class="fas fa-flag"></i><?php the_field('country') ?></span>
                             <a href="<?php the_field('review_link') ?>"><i class="fab fa-amazon"></i><?php the_field('review_link_text') ?></a>
+                            <span class="country"><?php the_field('name') ?></span>
                         </div>
                         <p class="text"><?php the_field('review_text') ?></p>
                     </div>

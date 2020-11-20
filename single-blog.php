@@ -71,6 +71,7 @@ else {
                     $posts = get_posts( array(
                         'posts_per_page' => 6,
                         'post_type'   => 'blog',
+                        'orderby'     => 'rand',
                         'tag' => 'more_from_blog',
                         'suppress_filters' => true,
                     ));

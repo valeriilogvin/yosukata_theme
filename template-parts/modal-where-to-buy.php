@@ -3,12 +3,11 @@
         <button class="md-close"><i class="fas fa-times"></i></button>
         <div class="flex row">
             <div class="col-4">
-                <h2 class="modal-name">Where to buy</h2>
+                <h2 class="modal-name"><?php the_field('where_to_buy',20) ?></h2>
             </div>
             <div class="col-8">
-                <p class="text">Choose where you
-                    wanna shop our products</p>
-                <div class="flex row">
+                <p class="text"><?php the_field('where_to_buy_text',20) ?></p>
+                <div class="flex row" style="justify-content: center;">
                     <a href="" class="col-6 buy-button js-buy-amazon" style="display: none;" target="_blank">
                         <span>Buy at</span>
                         <img src="<?php echo get_stylesheet_directory_uri() ?>/img/amazon.svg" alt="">

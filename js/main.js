@@ -207,6 +207,7 @@ $('.blog-article-slider').slick({
     dots: true,
     prevArrow: '<button type="button" class="my-slick-prev"><i class="fas fa-chevron-left"></i></button>',
     nextArrow: '<button type="button" class="my-slick-next"><i class="fas fa-chevron-right"></i></button>',
+    asNavFor: '.blog-article-slider-full',
     // infinite: true,
     // fade: true,
     // cssEase: 'linear',
@@ -240,6 +241,7 @@ $('.blog-article-slider').slick({
 $('.blog-article-slider-full').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
+    asNavFor: '.blog-article-slider',
     dots: true,
     prevArrow: '<button type="button" class="my-slick-prev"><i class="fas fa-chevron-left"></i></button>',
     nextArrow: '<button type="button" class="my-slick-next"><i class="fas fa-chevron-right"></i></button>',
@@ -247,31 +249,18 @@ $('.blog-article-slider-full').slick({
     // fade: true,
     // cssEase: 'linear',
     // pauseOnHover:false,
-    /*responsive: [
-        {
-            breakpoint: 1025,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                arrows: false,
-                autoplay: true,
-                autoplaySpeed: 3000,
-            }
-        },
+    responsive: [
         {
             breakpoint: 768,
             settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
                 arrows: false,
-                autoplay: true,
-                autoplaySpeed: 3000,
+                dots: false,
             }
         }
         // You can unslick at a given breakpoint now by adding:
         // settings: "unslick"
         // instead of a settings object
-    ]*/
+    ]
 });
 $('.sect-blog-bottom-slider').slick({
     slidesToShow: 3,
@@ -376,7 +365,7 @@ $('.sect8').on('click', '.js-show', function () {
 });
 
 //validation settings
-$(".modal-form").each(function() {
+/*$(".modal-form").each(function() {
     $(this).validate({
         debug: true,
         success: "valid",
@@ -397,7 +386,7 @@ $(".modal-form").each(function() {
             form.submit();
         }
     });
-});
+});*/
 
 // faq
 $(document).ready(function(){
@@ -451,7 +440,25 @@ $('.js-top_sales').append('<div class="fire"><i class="fas fa-fire"></i> top sal
 $('.wpcf7-form-control-wrap.Message')
     .addClass('col-12')
     .find('textarea').attr('rows', '5');
-$('.wpcf7-form-control-wrap.name')
+$('.wpcf7-form-control-wrap.your-name')
     .addClass('col-6');
 $('.wpcf7-form-control-wrap.E-mail')
     .addClass('col-6');
+
+$('form .parent-col-6')
+    .parent()
+    .addClass('col-6');
+$('form .parent-col-12')
+    .parent()
+    .addClass('col-12');
+
+
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+    setTimeout(function () {
+        $('.md-modal').removeClass('md-show')
+    },3000)
+}, false );
+
+// $('.lang-item-en').find('a').html('<img src="http://logvin.website/yosukata-new/wp-content/themes/yosukata/img/usa.jpg" alt="">')
+// $('.lang-item-de').find('a').html('<img src="http://logvin.website/yosukata-new/wp-content/themes/yosukata/img/ger.jpg" alt="">')
+// $('.lang-item-fr').find('a').html('<img src="http://logvin.website/yosukata-new/wp-content/themes/yosukata/img/fr.jpg" alt="">')

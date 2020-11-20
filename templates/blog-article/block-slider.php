@@ -30,4 +30,3 @@ if( get_row_layout('photo') ) {
     </div>
 </div>
 
-<div class="md-overlay"></div>

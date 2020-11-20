@@ -16,12 +16,12 @@ else {
         <div class="container">
             <div class="flex row">
                 <div class="col-6">
-                    <h2>Blog</h2>
+                    <h2><?php pll_e('Blog') ?></h2>
                 </div>
                 <div class="col-6 blog-buttons">
-                    <a href="#" class="blog-button active" id="load_all">All</a>
-                    <a href="#" class="blog-button" id="load_articles">Articles</a>
-                    <a href="#" class="blog-button" id="load_video">Video</a>
+                    <a href="#" class="blog-button active" id="load_all"><?php the_field('blog_btn_all',20) ?></a>
+                    <a href="#" class="blog-button" id="load_articles"><?php the_field('blog_btn_article',20) ?></a>
+                    <a href="#" class="blog-button" id="load_video"><?php the_field('blog_btn_video',20) ?></a>
                 </div>
             </div>
         </div>
@@ -39,14 +39,14 @@ $args = array(
 
                 foreach( $posts as $post ){ setup_postdata($post);
                     ?>
-                    <div class="col-6">
-                        <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>');">
+                    <a href="<?php echo get_permalink(); ?>"  class="col-6">
+                        <div class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>');">
                             <i class="fas icon"></i>
                             <div class="background"></div>
-                        </a>
-                        <p class="title"><?php echo the_field('blog_title') ?></p>
+                        </div>
+                        <p class="title"><?php the_title() ?></p>
                         <p class="text"><?php echo the_field('blog_text') ?></p>
-                    </div>
+                    </a>
                     <?php
                 }
                 wp_reset_postdata();

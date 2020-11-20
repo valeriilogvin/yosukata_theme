@@ -1,7 +1,8 @@
 jQuery(function($){
 	$(window).scroll(function(){
-//		var bottomOffset = 2000; 
-		var bottomOffset = 1000; 
+//alert('scroll');
+		var bottomOffset = 1500; 
+//		var bottomOffset = 1000; 
 		var data = {
 			'action': 'loadmore',
 			'query': true_posts,
@@ -75,7 +76,7 @@ jQuery(function($){
 				},
 				success:function(data){
 					if( data ) { 
-						$('div.container.container-blog div.flex.row div.col-6').remove();
+						$('div.container.container-blog div.flex.row a.col-6').remove();
 						$('#loadsm').before(data);
 						current_page++;
 					}else{

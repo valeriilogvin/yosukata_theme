@@ -18,23 +18,23 @@ $(document).ready(function() {
 
     // toggle class in fixed menu in catalogue
     $(function () {
-        var $window = $(window);
+        let $window = $(window);
         $window.scroll(function () {
-            var $fixedCatalogue = $('.js-fixed-catalogue');
-            var ws = $window.scrollTop() + 250;
-            var $firstItem = $('.js-catalogue-item:nth-child(1)');
-            var $secondItem = $('.js-catalogue-item:nth-child(2)');
-            var $thirdItem = $('.js-catalogue-item:nth-child(3)');
-            var $fourthItem = $('.js-catalogue-item:nth-child(4)');
-            var $fifthItem = $('.js-catalogue-item:nth-child(5)');
-            var $sixthItem = $('.js-catalogue-item:nth-child(6)');
-            var $firstItemOffset = $firstItem.offset().top;
-            var $firstItemHeight = $firstItem.outerHeight();
-            var $secondItemOffset = $secondItem.offset().top;
-            var $thirdItemOffset = $thirdItem.offset().top;
-            var $fourthItemOffset = $fourthItem.offset().top;
-            var $fifthItemOffset = $fifthItem.offset().top;
-            var $sixthItemOffset = $sixthItem.offset().top;
+            let $fixedCatalogue = $('.js-fixed-catalogue'),
+                ws = $window.scrollTop() + 250,
+                $firstItem = $('.js-catalogue-item:nth-child(1)'),
+                $secondItem = $('.js-catalogue-item:nth-child(2)'),
+                $thirdItem = $('.js-catalogue-item:nth-child(3)'),
+                $fourthItem = $('.js-catalogue-item:nth-child(4)'),
+                $fifthItem = $('.js-catalogue-item:nth-child(5)'),
+                $sixthItem = $('.js-catalogue-item:nth-child(6)'),
+                $firstItemOffset = $firstItem.offset().top,
+                $firstItemHeight = $firstItem.outerHeight(),
+                $secondItemOffset = $secondItem.offset().top,
+                $thirdItemOffset = $thirdItem.offset().top,
+                $fourthItemOffset = $fourthItem.offset().top,
+                $fifthItemOffset = $fifthItem.offset().top,
+                $sixthItemOffset = $sixthItem.offset().top;
 
             if ((ws > $firstItemOffset - 150) && (ws <= $firstItemHeight + 300)) {
                 $fixedCatalogue.find('li').removeClass('active')

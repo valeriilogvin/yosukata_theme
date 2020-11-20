@@ -18,29 +18,30 @@
                 <li><a data-modal="modal-contact" class="md-trigger"><?php the_field('menu_contact',20) ?></a></li>
             </ul>
 
-            <a
-                data-amazon="<?php the_field('button_buy_link_amazon', 20) ?>"
-                data-ebay="<?php the_field('button_buy_link_ebay', 20) ?>"
+            <!-- Кнопка первый вариант -->
+            <!--<a
+                data-amazon="<?php /*the_field('button_buy_link_amazon', 20) */?>"
+                data-ebay="<?php /*the_field('button_buy_link_ebay', 20) */?>"
                 class="button md-trigger js-button-buy"
                 data-modal="modal-where-to-buy">
+                <?php /*the_field('button_buy_text',20) */?>
+                <span class="back"></span>
+            </a>-->
+            <a href="<?php echo home_url(); ?>/catalogue" class="button js-button-buy" >
                 <?php the_field('button_buy_text',20) ?>
                 <span class="back"></span>
             </a>
 
-            <div class="language">
-                <img src="<?php echo get_stylesheet_directory_uri() ?>/img/usa.jpg" alt="">
-                <div class="language_drop-down">
-                    <a href="#" class="ger">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/img/ger.jpg" alt="">
-                    </a>
-                    <a href="#" class="fr">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/img/fr.jpg" alt="">
-                    </a>
-                    <a href="#" class="ch">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/img/ch.jpg" alt="">
-                    </a>
-                </div>
-            </div>
+            <!-- переключатель языков -->
+            <?php
+            /* wp_nav_menu(array(
+                'theme_location'  => 'top',
+                'container'       => null,
+                'menu_class'      => 'topmenu',
+            ));
+            */
+            ?>
+
             <button class="menu-btn display_none">
                 <span></span>
                 <span></span>
