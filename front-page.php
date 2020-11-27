@@ -678,7 +678,7 @@
                     ?>
                     <a href="<?php echo get_permalink(); ?>" class="slide">
                         <span class="time"><?php the_field('time'); ?></span>
-                        <div class="img-block" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect8-img3.jpg')"></div>
+                        <div class="img-block" style="background-image: url('<?php the_field('recipe_main_photo') ?>')"></div>
                         <div class="slide-title">
                             <span>Difficulty: <span class="value"><?php the_field('difficulty'); ?></span></span>
                             <span>Servings: <span class="value"><?php the_field('serving'); ?></span></span>

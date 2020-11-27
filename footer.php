@@ -31,6 +31,7 @@
                             <li><a href="<?php echo home_url(); ?>/warranty-returns"><?php the_field('menu_warranty',20) ?></a></li>
                             <li><a href="<?php echo home_url(); ?>/privacy-policy"><?php the_field('menu_privacy_policy',20) ?></a></li>
                             <li><a href="<?php echo home_url(); ?>/terms-conditions"><?php the_field('menu_terms',20) ?></a></li>
+                            <li><a href="<?php echo home_url(); ?>/cookies-policy"><?php the_field('cookies-policy',20) ?></a></li>
                             <li><a href="<?php echo home_url(); ?>/site-map/"><?php the_field('menu_site_map',20) ?></a></li>
                         </ul>
                     </div>

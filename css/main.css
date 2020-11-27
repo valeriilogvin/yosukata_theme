@@ -1722,6 +1722,9 @@ position: relative;
                 justify-content: space-between; } }
 
 @media (max-width: 767px) {
+  .sect2 {
+    background: #ffffff;
+  }
   .sect2 h2 {
     padding-bottom: 30px; }
   .sect2 .item {
@@ -1759,6 +1762,9 @@ position: relative;
       margin-top: 0; }
       .sect2 .item span.old-price:after {
         width: 100%; }
+  .sect2 .deal_of_the_month {
+    background: #ffffff;
+  }
   .sect2 .deal_of_the_month .flex {
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
@@ -1775,6 +1781,15 @@ position: relative;
 @media (max-width: 480px) {
   .sect2 img.limes {
     width: 125px; }
+  .sect2 .item h2 {
+    width: 100%;
+  }
+  .sect2 .item .img-block {
+    margin: 35px 0 30px 0;
+    width: 100%;
+  }
+  .sect2 .item.deal_of_the_month div.descriptions {
+    width: 100%; }
   .sect2 img.pepper {
     width: 120px; } }
 

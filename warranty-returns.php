@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Warranty & Returns
+ * Template Name: Страница с текстом
  */
 
 if ( is_home() ){
@@ -29,7 +29,7 @@ else {
     <div class="blog-article privacy">
         <div class="sect1 center">
             <div class="container flex">
-                <h2>Warranty & Returns</h2>
+                <h2><?php the_title() ?></h2>
 
                 <?php
                 if ( have_posts() ) : while ( have_posts() ) : the_post();

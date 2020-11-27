@@ -30,6 +30,17 @@
                             <span class="country"><i class="fas fa-flag"></i><?php the_field('country') ?></span>
                             <a href="<?php the_field('review_link') ?>"><i class="fab fa-amazon"></i><?php the_field('review_link_text') ?></a>
                             <span class="country"><?php the_field('name') ?></span>
+
+                            <?php
+
+                            // переменные
+                            $post_id = get_field('catalogue-link', false, false);
+
+                            // проверяем на существование поля
+                            if( $post_id ): ?>
+                                <a href="<?php echo get_the_permalink($post_id); ?>"><?php echo get_the_title($post_id); ?></a>
+                            <?php endif; ?>
+
                         </div>
                         <p class="text"><?php the_field('review_text') ?></p>
                     </div>
