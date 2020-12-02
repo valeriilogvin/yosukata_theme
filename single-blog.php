@@ -78,12 +78,12 @@ else {
                     foreach( $posts as $post ){ setup_postdata($post);
                         ?>
                         <div class="slider">
-                                <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>');">
+                                <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php the_field('blog_type_of_post') ?>" style="background-image: url('<?php the_field('blog_main_photo') ?>');">
                                     <i class="fas icon"></i>
                                     <div class="background"></div>
                                 </a>
-                                <p class="title" style="position: relative; color: #000000; left: 0;bottom: 0;"><?php echo the_field('blog_title') ?></p>
-                                <p class="text"><?php echo the_field('blog_text') ?></p>
+                                <p class="title" style="position: relative; color: #000000; left: 0;bottom: 0;"><?php the_title() ?></p>
+                                <p class="text"><?php the_field('blog_text') ?></p>
                         </div>
                         <?php
                     }

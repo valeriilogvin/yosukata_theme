@@ -63,9 +63,10 @@ $('.sect4-slick-mobile').slick({
     ]
 });
 $('.sect6-slick').slick({
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     dots: false,
+    adaptiveHeight: true,
     prevArrow: '<button type="button" class="my-slick-prev"><i class="fas fa-chevron-left"></i></button>',
     nextArrow: '<button type="button" class="my-slick-next"><i class="fas fa-chevron-right"></i></button>',
     // infinite: true,
@@ -76,8 +77,6 @@ $('.sect6-slick').slick({
         {
             breakpoint: 1025,
             settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
                 arrows: false,
                 autoplay: true,
                 autoplaySpeed: 3000,
@@ -86,8 +85,6 @@ $('.sect6-slick').slick({
         {
             breakpoint: 768,
             settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
                 arrows: false,
                 autoplay: true,
                 autoplaySpeed: 3000,

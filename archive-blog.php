@@ -40,12 +40,12 @@ $args = array(
                 foreach( $posts as $post ){ setup_postdata($post);
                     ?>
                     <a href="<?php echo get_permalink(); ?>"  class="col-6">
-                        <div class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>');">
+                        <div class="slider-item blog-article <?php the_field('blog_type_of_post') ?>" style="background-image: url('<?php the_field('blog_main_photo') ?>');">
                             <i class="fas icon"></i>
                             <div class="background"></div>
                         </div>
                         <p class="title"><?php the_title() ?></p>
-                        <p class="text"><?php echo the_field('blog_text') ?></p>
+                        <p class="text"><?php the_field('blog_text') ?></p>
                     </a>
                     <?php
                 }

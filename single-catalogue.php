@@ -187,7 +187,7 @@ else {
             <img class="img-avocado" src="<?php echo get_stylesheet_directory_uri() ?>/img/avocado.png" alt="">
         </div>
 
-        <?php get_template_part( 'template-parts/review' ); ?>
+        <?php get_template_part( 'template-parts/review', 'catalogue' ); ?>
 
         <?php get_template_part( 'template-parts/recommended', 'products' ); ?>
 

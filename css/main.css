@@ -2442,7 +2442,7 @@ button.my-slick-next {
         display: none; } }
 
 .sect5 {
-  background: url("../img/sect5-bg.jpg") bottom center no-repeat;
+  background: url("../img/sect5-bg.jpg") top center no-repeat;
   background-size: cover;
   padding: 65px 0 140px; }
   .sect5 .col-6 {

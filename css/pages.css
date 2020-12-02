@@ -1441,6 +1441,9 @@
         width: 300px;
         height: 400px;
     }
+    .recipes .recipe{
+        background-size: contain;
+    }
     .recipes-article .sect-main .ingredients {
         padding-top: 450px;
     }
@@ -1467,9 +1470,9 @@
 
 .recipes .recipe {
     border-radius: 2px;
-    background-position: center;
+    background-position: left center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 55%;
     height: 500px;
     display: -webkit-box;
     display: -webkit-flex;
@@ -1510,7 +1513,7 @@
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
     justify-content: flex-start;
-    background: rgba(255, 255, 255, 0.9); }
+    background: #ffffff }
 .recipes .description .time {
     margin-bottom: auto;
     color: #000000;

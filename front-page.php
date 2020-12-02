@@ -644,7 +644,8 @@
         </div>
     </section>
 
-    <?php get_template_part( 'template-parts/review' ); ?>
+    <!--  Отзывы  -->
+    <?php //get_template_part( 'template-parts/review' ); ?>
 
     <section class="sect7">
         <div class="container text-center">
@@ -683,7 +684,7 @@
                             <span>Difficulty: <span class="value"><?php the_field('difficulty'); ?></span></span>
                             <span>Servings: <span class="value"><?php the_field('serving'); ?></span></span>
                             <h3><?php the_title(); ?></h3>
-                            <p class="button"><span class="back"></span><?php the_field('recipes_button',20) ?></p>
+                            <p class="button"><span class="back"></span>View Recipe</p>
                         </div>
                     </a>
                     <?php

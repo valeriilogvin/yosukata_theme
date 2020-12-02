@@ -9,41 +9,43 @@
         <div class="sect6-slick">
 
             <?php
-            $posts = get_posts( array(
+            $posts = get_posts(array(
                 'numberposts' => 12,
-                'post_type'   => 'reviews',
+                'post_type' => 'reviews',
                 'suppress_filters' => true,
             ));
-            foreach( $posts as $post ){ setup_postdata($post);
+            foreach ($posts as $post) {
+                setup_postdata($post);
                 ?>
 
-                    <div class="slide">
-                        <p class="title"><?php the_title(); ?></p>
-                        <div class="stars <?php the_field('stars') ?>">
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
-                        </div>
-                        <div class="line">
-                            <span class="country"><i class="fas fa-flag"></i><?php the_field('country') ?></span>
-                            <a href="<?php the_field('review_link') ?>"><i class="fab fa-amazon"></i><?php the_field('review_link_text') ?></a>
-                            <span class="country"><?php the_field('name') ?></span>
-
-                            <?php
-
-                            // переменные
-                            $post_id = get_field('catalogue-link', false, false);
-
-                            // проверяем на существование поля
-                            if( $post_id ): ?>
-                                <a href="<?php echo get_the_permalink($post_id); ?>"><?php echo get_the_title($post_id); ?></a>
-                            <?php endif; ?>
-
-                        </div>
-                        <p class="text"><?php the_field('review_text') ?></p>
+                <div class="slide">
+                    <p class="title"><?php the_title(); ?></p>
+                    <div class="stars <?php the_field('stars') ?>">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
                     </div>
+                    <div class="line">
+                        <span class="country"><i class="fas fa-flag"></i><?php the_field('country') ?></span>
+                        <a href="<?php the_field('review_link') ?>"><i
+                                    class="fab fa-amazon"></i><?php the_field('review_link_text') ?></a>
+                        <span class="country"><?php the_field('name') ?></span>
+
+                        <?php
+
+                        // переменные
+                        $post_id = get_field('catalogue-link', false, false);
+
+                        // проверяем на существование поля
+                        if ($post_id): ?>
+                            <a href="<?php echo get_the_permalink($post_id); ?>"><?php echo get_the_title($post_id); ?></a>
+                        <?php endif; ?>
+
+                    </div>
+                    <p class="text"><?php the_field('review_text') ?></p>
+                </div>
 
                 <?php
             }
