@@ -8,7 +8,7 @@
 
         <div class="sect6-slick">
 
-            // acf объект записи
+            <!-- acf объект записи -->
             <?php
             $post_objects = get_field('review-catalogue');
             if ($post_objects):

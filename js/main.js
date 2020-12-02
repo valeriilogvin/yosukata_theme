@@ -2,7 +2,7 @@ AOS.init();
 var $window = $(window);
 
 //slick-slider settings
-$('.sect1-slick').slick(    {
+$('.sect1-slick').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
@@ -13,17 +13,17 @@ $('.sect1-slick').slick(    {
     autoplaySpeed: 4000,
     fade: true,
     cssEase: 'linear',
-    pauseOnHover:false,
+    pauseOnHover: false,
     customPaging: function (slider, i) {
         // var thumb = $(slider.$slides[i]).data();
         return '<a class="custom-dots">' + '0' + (i + 1) + '</a>';
     },
 });
 $('.sect1-slick .slider1 .slider-lines .front')
-    .css('animation','categoryProgress 4500ms infinite linear both')
-    .css('-webkit-animation','categoryProgress 4500ms infinite linear both');
+    .css('animation', 'categoryProgress 4500ms infinite linear both')
+    .css('-webkit-animation', 'categoryProgress 4500ms infinite linear both');
 // On edge hit
-$('.sect1-slick').on('edge', function(event, slick, direction){
+$('.sect1-slick').on('edge', function (event, slick, direction) {
     console.log('edge was hit')
 });
 $('.sect4-slick').slick({
@@ -291,11 +291,11 @@ $('.sect-blog-bottom-slider').slick({
 });
 
 //anchor fixed-catalogue
-$(document).ready(function(){
-    $(".fixed-catalogue").on("click","a", function (event) {
+$(document).ready(function () {
+    $(".fixed-catalogue").on("click", "a", function (event) {
         event.preventDefault();
 
-        var id  = $(this).attr('href'),
+        var id = $(this).attr('href'),
             top = $(id).offset().top - 100;
 
         $('body,html').animate({scrollTop: top}, 1000);
@@ -303,11 +303,11 @@ $(document).ready(function(){
 });
 
 // fixed menu
-$(function(){
+$(function () {
     var $nav = $('.fixed-header'),
         $h = $nav.offset().top;
-    $window.scroll(function(){
-        if ($window.scrollTop() > $h){
+    $window.scroll(function () {
+        if ($window.scrollTop() > $h) {
             $nav.addClass('fixed');
         } else {
             $nav.removeClass('fixed');
@@ -316,39 +316,39 @@ $(function(){
 });
 
 
-
 // appearance & hiding of header-top
-(function($) {
+(function ($) {
     function sayHi() {
-        $('.header-top').css({'display' : 'block'});
+        $('.header-top').css({'display': 'block'});
     }
+
     setTimeout(sayHi, 2000);
 
     $('.header-top .close').click(function () {
-        $('.header-top').css({'display' : 'none'});
+        $('.header-top').css({'display': 'none'});
     });
 })(jQuery);
 
 // burger-menu appearance & hiding submenu
-$(function(){
-    $('.pushy li.parent-submenu').click(function(){
-        $('li.parent-submenu ul.submenu').toggle('slow', function() {
+$(function () {
+    $('.pushy li.parent-submenu').click(function () {
+        $('li.parent-submenu ul.submenu').toggle('slow', function () {
             $(this).toggleClass('expanded');
         });
     });
 });
 
 // button back_to_top
-$(document).ready(function() {
+$(document).ready(function () {
     var button = $('.back_to_top');
-    $(window).scroll (function () {
-        if ($(this).scrollTop () > 300) {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
             button.fadeIn();
         } else {
             button.fadeOut();
         }
     });
-    button.on('click', function(){
+    button.on('click', function () {
         $('body, html').animate({
             scrollTop: 0
         }, 800);
@@ -386,14 +386,13 @@ $('.sect8').on('click', '.js-show', function () {
 });*/
 
 // faq
-$(document).ready(function(){
-    $('.pane_header').click(function(){
-        if ($(this).parent().children('div.subitem').is(':visible')){
+$(document).ready(function () {
+    $('.pane_header').click(function () {
+        if ($(this).parent().children('div.subitem').is(':visible')) {
             $('div.subitem').slideUp().siblings('normal');
             $('.pane_header').removeClass("active");
             $('.pane_header').parent().removeClass("active");
-        }
-        else {
+        } else {
             $('div.subitem').slideUp().siblings('normal');
             $('.pane_header').removeClass("active");
             $('.pane_header').parent().removeClass("active");
@@ -404,11 +403,11 @@ $(document).ready(function(){
     });
 });
 
-$('a.item').on('click', 'p.button:not(.catalogue-button)' , function () {
+$('a.item').on('click', 'p.button:not(.catalogue-button)', function () {
     event.preventDefault();
 });
 
-$('.js-button-buy').on('click','', function () {
+$('.js-button-buy').on('click', '', function () {
     let $this = $(this),
         $amazonButton = $('.js-buy-amazon'),
         $ebayButton = $('.js-buy-ebay'),
@@ -424,7 +423,7 @@ $('.js-button-buy').on('click','', function () {
             .attr('href', dataAmazon)
             .css('display', 'flex');
     }
-    if($this.attr("data-ebay")){
+    if ($this.attr("data-ebay")) {
         console.log('has e');
         $ebayButton
             .attr('href', dataEbay)
@@ -449,12 +448,11 @@ $('form .parent-col-12')
     .parent()
     .addClass('col-12');
 
-
-document.addEventListener( 'wpcf7mailsent', function( event ) {
+document.addEventListener('wpcf7mailsent', function (event) {
     setTimeout(function () {
         $('.md-modal').removeClass('md-show')
-    },3000)
-}, false );
+    }, 3000)
+}, false);
 
 // $('.lang-item-en').find('a').html('<img src="http://logvin.website/yosukata-new/wp-content/themes/yosukata/img/usa.jpg" alt="">')
 // $('.lang-item-de').find('a').html('<img src="http://logvin.website/yosukata-new/wp-content/themes/yosukata/img/ger.jpg" alt="">')

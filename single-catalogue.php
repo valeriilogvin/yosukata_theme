@@ -3,11 +3,10 @@
  * The template for displaying single posts of catalogue
  */
 
-if ( is_home() ){
+if (is_home()) {
     get_header('home');
 
-}
-else {
+} else {
     get_header('pages');
 }
 ?>
@@ -16,17 +15,14 @@ else {
         <div class="sect1">
             <div class="container">
                 <div class="flex">
-                    <div class="col-6 ">
-                        <div class="fire">
-                            <i class="fas fa-fire"></i> top sales
-                        </div>
+                    <div class="col-6 <?php the_field('top_sales') ?>">
                         <div class="wok-slider-for">
                             <?php
-                            if( get_field('catalogue_photo') ) {
-                                while( the_repeater_field('catalogue_photo') ) {
+                            if (get_field('catalogue_photo')) {
+                                while (the_repeater_field('catalogue_photo')) {
                                     echo '
                                         <div class="slide">
-                                            <img src="' . get_sub_field('image') .'" alt="">
+                                            <img src="' . get_sub_field('image') . '" alt="">
                                         </div>
                                         ';
                                 }
@@ -35,11 +31,11 @@ else {
                         </div>
                         <div class="wok-slider-nav">
                             <?php
-                            if( get_field('catalogue_photo') ) {
-                                while( the_repeater_field('catalogue_photo') ) {
+                            if (get_field('catalogue_photo')) {
+                                while (the_repeater_field('catalogue_photo')) {
                                     echo '
                                         <div class="slide">
-                                            <img src="' . get_sub_field('image') .'" alt="">
+                                            <img src="' . get_sub_field('image') . '" alt="">
                                         </div>
                                         ';
                                 }
@@ -60,29 +56,32 @@ else {
                                 </div>
                                 <span class="review"><?php the_field('review_text'); ?></span>
                                 <?php
-                                if( get_field('info') ) {
+                                if (get_field('info')) {
                                     echo '<ul>';
-                                    while( the_repeater_field('info') ) {
+                                    while (the_repeater_field('info')) {
                                         echo '
                                         <li>
-                                            <span class="title">' . get_sub_field('left_col') .'</span>
-                                            <span class="text">' . get_sub_field('right_col') .'</span>
+                                            <span class="title">' . get_sub_field('left_col') . '</span>
+                                            <span class="text">' . get_sub_field('right_col') . '</span>
                                         </li>
                                         ';
                                     }
                                     echo '</ul>';
                                 }
                                 ?>
-                                <a class="button grey black md-trigger" data-modal="modal-contact"><span class="back"></span>Ask a question</a>
+                                <a class="button grey black md-trigger" data-modal="modal-contact">
+                                    <span class="back"></span>Ask a question
+                                </a>
+
                                 <a class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
 
                                     <?php
-                                    if( get_field('amazon_link') ) { ?>
-                                        data-amazon="<?php the_field('amazon_link');?>"
+                                    if (get_field('amazon_link')) { ?>
+                                        data-amazon="<?php the_field('amazon_link'); ?>"
                                     <?php }
-                                    if( get_field('ebay_link') ) { ?>
-                                       data-ebay="<?php the_field('ebay_link');?>"
-                                    <?php }?>
+                                    if (get_field('ebay_link')) { ?>
+                                        data-ebay="<?php the_field('ebay_link'); ?>"
+                                    <?php } ?>
 
                                 >
                                     <span class="back"></span>
@@ -110,13 +109,13 @@ else {
                                 </div>
                                 <span class="review"><?php the_field('review_text'); ?></span>
                                 <?php
-                                if( get_field('info') ) {
+                                if (get_field('info')) {
                                     echo '<ul>';
-                                    while( the_repeater_field('info') ) {
+                                    while (the_repeater_field('info')) {
                                         echo '
                                         <li>
-                                            <span class="title">' . get_sub_field('left_col') .'</span>
-                                            <span class="text">' . get_sub_field('right_col') .'</span>
+                                            <span class="title">' . get_sub_field('left_col') . '</span>
+                                            <span class="text">' . get_sub_field('right_col') . '</span>
                                         </li>
                                         ';
                                     }
@@ -127,12 +126,12 @@ else {
                                 <a class="button black md-trigger js-button-buy" data-modal="modal-where-to-buy"
 
                                     <?php
-                                    if( get_field('amazon_link') ) { ?>
-                                        data-amazon="<?php the_field('amazon_link');?>"
+                                    if (get_field('amazon_link')) { ?>
+                                        data-amazon="<?php the_field('amazon_link'); ?>"
                                     <?php }
-                                    if( get_field('ebay_link') ) { ?>
-                                        data-ebay="<?php the_field('ebay_link');?>"
-                                    <?php }?>
+                                    if (get_field('ebay_link')) { ?>
+                                        data-ebay="<?php the_field('ebay_link'); ?>"
+                                    <?php } ?>
 
                                 >
                                     <span class="back"></span>
@@ -155,11 +154,11 @@ else {
             <div class="container flex">
 
                 <?php
-                if ( have_posts() ) : while ( have_posts() ) : the_post();
+                if (have_posts()) : while (have_posts()) : the_post();
 
-                    if( have_rows('recipe-article') ):
+                    if (have_rows('recipe-article')):
 
-                        while ( have_rows('recipe-article') ) : the_row();
+                        while (have_rows('recipe-article')) : the_row();
 
                             $row_layout_slug = get_row_layout();
 
@@ -169,12 +168,13 @@ else {
                         endwhile;
 
                     endif;
-                endwhile; else : ?>
+                endwhile;
+                else : ?>
                     <div class="section section-not-found">
                         <div class="container">
                             <div class="row">
                                 <div class="col-12">
-                                    <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+                                    <p><?php esc_html_e('Sorry, no posts matched your criteria.'); ?></p>
                                 </div>
                             </div>
                         </div>
@@ -187,11 +187,9 @@ else {
             <img class="img-avocado" src="<?php echo get_stylesheet_directory_uri() ?>/img/avocado.png" alt="">
         </div>
 
-        <?php get_template_part( 'template-parts/review', 'catalogue' ); ?>
+        <?php get_template_part('template-parts/review', 'catalogue'); ?>
 
-        <?php get_template_part( 'template-parts/recommended', 'products' ); ?>
-
-
+        <?php get_template_part('template-parts/recommended', 'products'); ?>
 
     </div>
 
