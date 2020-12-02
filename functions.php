@@ -85,6 +85,7 @@ function yosukata_scripts()
         array(),
         '1.0'
     );
+
     wp_enqueue_script(
         'yosukata-slick',
         get_template_directory_uri() . '/slick/slick.min.js',
@@ -92,7 +93,6 @@ function yosukata_scripts()
         '1.0',
         true
     );
-
     wp_enqueue_script(
         'yosukata-libs',
         get_template_directory_uri() . '/js/libs.min.js',
@@ -107,6 +107,7 @@ function yosukata_scripts()
         '1.0',
         true
     );
+
     if (is_post_type_archive('catalogue')) {
         wp_enqueue_script(
             'yosukata-catalogue-fixed-menu',
@@ -116,14 +117,12 @@ function yosukata_scripts()
             true
         );
     }
-///    if ( is_post_type_archive('blog') ) {
     if (is_post_type_archive('blog') || is_post_type_archive('recipes')) {
         wp_enqueue_script(
             'true_loadmore',
             get_stylesheet_directory_uri() . '/js/loadmore.js',
             array('jquery'));
     }
-
 }
 
 add_action('wp_enqueue_scripts', 'yosukata_scripts');
@@ -263,85 +262,9 @@ function post_tag_for_pages()
 add_action('init', 'post_tag_for_pages');
 
 /**
- * Breadcrumbs
+ * Contact Form 7
  * */
-get_template_part('inc/breadcrumbs');
-
-// Contact Form 7 remove auto added p tags
-add_filter('wpcf7_autop_or_not', '__return_false');
-
-/**
- * Ajax
- * */
-function true_load_posts()
-{
-
-    $args = unserialize(stripslashes($_POST['query']));
-    $args['paged'] = $_POST['page'] + 1; // next page
-    $args['post_status'] = 'publish';
-
-
-    $post_type = isset($_POST['post_type']) ? $_POST['post_type'] : '';
-//die('-'.$sm_post_type);
-
-    if ($post_type) {
-//		$args['paged'] = 1;
-        if ($post_type == 'articles') {
-            $args['meta_key'] = 'blog_type_of_post';
-            $args['meta_value'] = 'articles';
-        }
-        if ($post_type == 'video') {
-            $args['meta_key'] = 'blog_type_of_post';
-            $args['meta_value'] = 'video';
-        }
-    }
-//die('ok');
-//print_r($args);
-    $sm_post_type = isset($args['post_type']) ? $args['post_type'] : '';
-
-    query_posts($args);
-    if (have_posts()) :
-        while (have_posts()): the_post();
-            if ($sm_post_type == 'recipes') {
-                ?>
-                <a href="<?php echo the_permalink(); ?>" class="col-6 recipe"
-                   style="background-image: url('<?php the_field('recipe_main_photo'); ?>')">
-                    <div class="description">
-                        <span class="time"><?php the_field('time'); ?></span>
-                        <span class="info">
-                                <span class="info-name">Difficulty <span
-                                            class="info-text"><?php the_field('difficulty'); ?></span></span>
-                                <span class="info-name">Servings <span
-                                            class="info-text"><?php the_field('serving'); ?></span></span>
-                            </span>
-                        <p class="recipe-title"><?php the_title() ?></p>
-                        <p class="button black"><span class="back"></span>View recipe</p>
-                    </div>
-                </a>
-                <?
-            } else {
-                ?>
-                <a href="<?php the_permalink(); ?>" class="col-6">
-                    <div class="slider-item blog-article <?php the_field('blog_type_of_post') ?>"
-                         style="background-image: url('<?php the_field('blog_main_photo') ?>');">
-                        <i class="fas icon"></i>
-                        <div class="background"></div>
-                    </div>
-                    <p class="title"><?php the_title() ?></p>
-                    <p class="text"><?php the_field('blog_text') ?></p>
-                </a>
-                <?php
-            }
-
-        endwhile;
-
-    endif;
-
-    die();
-}
-
-add_action('wp_ajax_loadmore', 'true_load_posts');
-add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
+add_filter('wpcf7_autop_or_not', '__return_false'); // remove auto added p tags
 
 /**
  * Polylang
@@ -355,3 +278,9 @@ function polylang_translate()
 }
 
 add_action('init', 'polylang_translate');
+
+/**
+ * template-parts
+ * */
+get_template_part('template-parts/ajax', 'loader'); // Ajax
+get_template_part('template-parts/breadcrumbs'); // Breadcrumbs
