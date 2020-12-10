@@ -666,6 +666,7 @@ button.menu-btn {
         margin-top: -3px; }
 
 .header {
+  max-height: 50px;
   position: absolute;
   z-index: 5;
   top: 68px;
@@ -1156,6 +1157,7 @@ position: relative;
   width: 100%; }
 
 .fixed-header {
+  max-height: 80px;
   padding: 15px 0;
   background: rgba(51, 51, 51, 0.8);
   opacity: 0;
@@ -2075,8 +2077,8 @@ position: relative;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 450px;
-  padding: 3px 30px; }
+  min-height: 525px;
+  padding: 3px 0px;}
 .sect4-slick .slider-item {
   margin: 0 10px;
   position: relative;
@@ -2119,7 +2121,7 @@ position: relative;
   font-size: 22px;
   font-weight: 500; }
 .sect4-slick .slider-row {
-  width: 70%; }
+  width: 65%; }
 .sect4-slick .slider-row p.title {
   bottom: 30px;
   left: 30px;
@@ -2134,7 +2136,7 @@ position: relative;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 30%;
+  width: 35%;
   margin: -10px 0; }
 .sect4-slick .slider-column .slider-item {
   margin: 10px; }
@@ -2199,7 +2201,7 @@ position: relative;
   margin: 0 15px; }
 .sect4-slick-mobile .slider a {
   position: relative;
-  min-height: 220px;
+  min-height: 245px;
   width: 100%;
   -webkit-box-shadow: 0 1px 3px 0 black;
   box-shadow: 0 1px 3px 0 black;
@@ -2285,7 +2287,16 @@ button.my-slick-prev {
 button.my-slick-next {
   right: -25px; }
 
+@media (max-width: 1600px) {
+
+  .sect4-slick .slider{
+    min-height: 460px;
+  }
+}
 @media (max-width: 1366px) {
+  .sect4-slick .slider{
+    min-height: 435px;
+  }
   .sect4-slick .watch {
     width: 140px; } }
 
@@ -2304,6 +2315,12 @@ button.my-slick-next {
   .slider {
     display: block; } }
 
+@media (max-width: 1024px) {
+  .sect4-slick-mobile .slider a{
+    min-height: 180px;
+  }
+}
+
 @media (max-width: 767px) {
   .sect4 .container {
     position: relative; }
@@ -2318,11 +2335,18 @@ button.my-slick-next {
     margin-top: 5px;
     position: absolute;
     top: 0;
-    right: 0; } }
+    right: 0; }
+  .sect4-slick-mobile .slider a{
+    min-height: 240px;
+  }
+}
 
 @media (max-width: 480px) {
   .sect4 .col-3 {
-    width: 100%; } }
+    width: 100%; }
+  .sect4-slick-mobile .slider a{
+    min-height: 200px;
+  }}
 
 @media (max-width: 380px) {
   .sect4 {
@@ -2335,6 +2359,9 @@ button.my-slick-next {
     left: 20px;
     right: 20px;
     font-size: 16px; }
+  .sect4-slick-mobile .slider a{
+    min-height: 155px;
+  }
   .sect4-slick .slider-column-top p.title,
   .sect4-slick .slider-column-bottom p.title {
     font-size: 16px;

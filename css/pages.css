@@ -373,6 +373,7 @@
     align-items: center; }
 .wrapper.pages .header {
     padding: 15px 0;
+    max-height: 80px;
     background: url("../img/bg.jpg") top center no-repeat;
     background-size: cover;
     top: 0;

@@ -679,14 +679,15 @@ get_header('home');
         <!--  Отзывы  -->
         <?php //get_template_part( 'template-parts/review' ); ?>
 
-        <section class="sect7">
+        <!-- блок купон -->
+        <!--<section class="sect7">
             <div class="container text-center">
-                <p class="title"><?php the_field('get_coupon_title') ?></p>
-                <p class="text"><?php the_field('get_coupon_text') ?></p>
+                <p class="title"><?php /*the_field('get_coupon_title') */?></p>
+                <p class="text"><?php /*the_field('get_coupon_text') */?></p>
                 <a class="button md-trigger" data-modal="modal-coupon"><span
-                            class="back"></span><?php the_field('get_coupon_button') ?></a>
+                            class="back"></span><?php /*the_field('get_coupon_button') */?></a>
             </div>
-        </section>
+        </section>-->
 
         <section class="sect8" id="recipes">
             <div class="container">
