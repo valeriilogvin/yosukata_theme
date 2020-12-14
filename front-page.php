@@ -1,9 +1,7 @@
 <?php
 get_header('home');
 ?>
-
 <body>
-
     <div class="wrapper">
 
         <section class="sect1">
@@ -351,16 +349,16 @@ get_header('home');
                     </a>
                     <a href="<?php echo home_url(); ?>/catalogue/#blue-carbon-steel-woks" class="item col-4">
                         <h3><?php the_field('categories_title_2') ?></h3>
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/img/steel-pans.png" alt="">
+                        <img src="<?php echo get_stylesheet_directory_uri() ?>/img/blue_carbon_wok.png" alt="">
                         <p class="button catalogue-button"><span class="back"></span><?php the_field('categories_button') ?>
                         </p>
                     </a>
-                    <a href="<?php echo home_url(); ?>/catalogue/#black-carbon-steel-skillets" class="item col-4">
-                        <h3><?php the_field('categories_title_3') ?></h3>
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/img/iron-woks.png" alt="">
-                        <p class="button catalogue-button"><span class="back"></span><?php the_field('categories_button') ?>
+                    <!--<a href="<?php /*echo home_url(); */?>/catalogue/#black-carbon-steel-skillets" class="item col-4">
+                        <h3><?php /*the_field('categories_title_3') */?></h3>
+                        <img src="<?php /*echo get_stylesheet_directory_uri() */?>/img/iron-woks.png" alt="">
+                        <p class="button catalogue-button"><span class="back"></span><?php /*the_field('categories_button') */?>
                         </p>
-                    </a>
+                    </a>-->
                     <!--<a href="<?php /*echo home_url(); */ ?>/catalogue/#Cast-Iron-Pans" class="item col-4">
                         <h3><?php /*the_field('categories_title_4') */ ?></h3>
                         <img src="<?php /*echo get_stylesheet_directory_uri() */ ?>/img/iron-pans.png" alt="">

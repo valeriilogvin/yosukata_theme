@@ -102,7 +102,7 @@
     z-index: 0; }
 .catalogue .item {
     width: -webkit-calc(25% - 40px);
-    width: calc(25% - 40px);
+    width: calc(33% - 40px);
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
@@ -221,8 +221,6 @@
     .catalogue .col-10 .col-3 {
         margin: 25px 15px; }
     .catalogue .item {
-        width: -webkit-calc(25% - 30px);
-        width: calc(25% - 30px);
         padding: 25px 0 25px 30px; }
     .catalogue .item .price {
         font-size: 20px; }

@@ -454,6 +454,24 @@ document.addEventListener('wpcf7mailsent', function (event) {
     }, 3000)
 }, false);
 
+$(document).ready(function () {
+    $('#modal-video .md-close').on('click', function () {
+        var url = $('iframe').attr('src');
+        $('iframe').attr('src', '');
+        $('iframe').attr('src', url);
+    });
+    $('#modal-video ~ .md-overlay').on('click', function () {
+        var url = $('iframe').attr('src');
+        $('iframe').attr('src', '');
+        $('iframe').attr('src', url);
+    });
+});
+// $(document).on('click', '#play_video', function() {
+//     jQuery("iframe").each(function() {
+//         jQuery(this)[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*')
+//     });
+// });
+
 // $('.lang-item-en').find('a').html('<img src="http://logvin.website/yosukata-new/wp-content/themes/yosukata/img/usa.jpg" alt="">')
 // $('.lang-item-de').find('a').html('<img src="http://logvin.website/yosukata-new/wp-content/themes/yosukata/img/ger.jpg" alt="">')
 // $('.lang-item-fr').find('a').html('<img src="http://logvin.website/yosukata-new/wp-content/themes/yosukata/img/fr.jpg" alt="">')

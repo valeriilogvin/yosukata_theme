@@ -22,6 +22,7 @@
                             <li><a href="<?php echo home_url(); ?>/faq"><?php the_field('menu_faq',20) ?></a></li>
                             <li><a data-modal="modal-contact" class="md-trigger"><?php the_field('menu_contact',20) ?></a></li>
                             <li><a href="<?php echo home_url(); ?>/catalogue"><?php the_field('menu_shop',20) ?></a></li>
+                            <li><a href="<?php echo home_url(); ?>/global"><?php the_field('menu_global',20) ?></a></li>
                         </ul>
                     </div>
                     <div class="col-6">

@@ -32,6 +32,8 @@
             <span class="back"></span>
         </a>
 
+        <a style="margin-left: 25px" href="<?php echo home_url(); ?>/global" class="global"><img  style="width: 20px; display: block;" src="<?php echo get_stylesheet_directory_uri() ?>/img/global.svg" alt=""></a>
+
         <!-- переключатель языков -->
         <?php
         /* wp_nav_menu(array(

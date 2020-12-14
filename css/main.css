@@ -1430,7 +1430,7 @@ position: relative;
     -webkit-align-items: start;
         -ms-flex-align: start;
             align-items: start;
-    padding: 35px 50px; }
+    padding: 35px 25px; }
 .sect2 .top_sales span.old-price {
   margin-top: 10px;
   line-height: 34px;
@@ -1614,7 +1614,7 @@ position: relative;
   .sect2 .deal_of_the_month .flex div.descriptions {
     width: 100%; }
   .sect2 .item {
-    padding: 20px 30px; }
+    padding: 30px 40px; }
     .sect2 .item h2 {
       font-size: 24px; }
       .sect2 .item h2 br {
@@ -1853,6 +1853,9 @@ position: relative;
   padding-bottom: 125px; }
   .sect3 h2 {
     margin-bottom: 50px; }
+  .sect3 .flex.row{
+    justify-content: center;
+  }
   .sect3 .flex .item {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1942,7 +1945,12 @@ position: relative;
     width: 60%; }
   .sect3 .flex .item a.button {
     font-size: 16px;
-    line-height: 40px; } }
+    line-height: 40px; }
+  .sect3 .flex .item h3 {
+    margin: auto 0 120px 25px;
+    font-size: 20px;
+    line-height: 30px;
+  }}
 
 @media (max-width: 1280px) {
   .sect3 {
