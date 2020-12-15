@@ -7,9 +7,9 @@
                 <li class="parent-submenu">
                     <a href="<?php echo home_url(); ?>/blog"><?php the_field('menu_knowledge_base',20) ?></a>
                     <ul class="submenu">
-                        <li><a href="<?php echo home_url(); ?>/blog"><?php the_field('menu_seasoning',20) ?></a></li>
-                        <li><a href="<?php echo home_url(); ?>/blog"><?php the_field('menu_video',20) ?></a></li>
-                        <li><a href="<?php echo home_url(); ?>/blog"><?php the_field('menu_other_category',20) ?></a></li>
+                        <li><a href="<?php echo home_url(); ?>/blog/#all"><?php the_field('menu_seasoning',20) ?></a></li>
+                        <li><a href="<?php echo home_url(); ?>/blog/#video"><?php the_field('menu_video',20) ?></a></li>
+                        <li><a href="<?php echo home_url(); ?>/blog/#articles"><?php the_field('menu_other_category',20) ?></a></li>
                     </ul>
                 </li>
                 <li><a href="<?php echo home_url(); ?>/recipes"><?php the_field('menu_recipes',20) ?></a></li>

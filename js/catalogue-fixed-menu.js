@@ -44,26 +44,26 @@ $(document).ready(function() {
                 $fixedCatalogue.find('li').removeClass('active')
                 $fixedCatalogue.find('li:nth-child(2)').addClass('active')
             }
-            if (ws > $thirdItemOffset) {
-                $fixedCatalogue.find('li').removeClass('active')
-                $fixedCatalogue.find('li:nth-child(3)').addClass('active')
-            }
-            if (ws > $thirdItemOffset) {
-                $fixedCatalogue.find('li').removeClass('active')
-                $fixedCatalogue.find('li:nth-child(3)').addClass('active')
-            }
-            if (ws > $fourthItemOffset) {
-                $fixedCatalogue.find('li').removeClass('active')
-                $fixedCatalogue.find('li:nth-child(4)').addClass('active')
-            }
-            if (ws > $fifthItemOffset) {
-                $fixedCatalogue.find('li').removeClass('active')
-                $fixedCatalogue.find('li:nth-child(5)').addClass('active')
-            }
-            if (ws > $sixthItemOffset) {
-                $fixedCatalogue.find('li').removeClass('active')
-                $fixedCatalogue.find('li:nth-child(6)').addClass('active')
-            }
+            // if (ws > $thirdItemOffset) {
+            //     $fixedCatalogue.find('li').removeClass('active')
+            //     $fixedCatalogue.find('li:nth-child(3)').addClass('active')
+            // }
+            // if (ws > $thirdItemOffset) {
+            //     $fixedCatalogue.find('li').removeClass('active')
+            //     $fixedCatalogue.find('li:nth-child(3)').addClass('active')
+            // }
+            // if (ws > $fourthItemOffset) {
+            //     $fixedCatalogue.find('li').removeClass('active')
+            //     $fixedCatalogue.find('li:nth-child(4)').addClass('active')
+            // }
+            // if (ws > $fifthItemOffset) {
+            //     $fixedCatalogue.find('li').removeClass('active')
+            //     $fixedCatalogue.find('li:nth-child(5)').addClass('active')
+            // }
+            // if (ws > $sixthItemOffset) {
+            //     $fixedCatalogue.find('li').removeClass('active')
+            //     $fixedCatalogue.find('li:nth-child(6)').addClass('active')
+            // }
 
         });
     });

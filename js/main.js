@@ -96,7 +96,7 @@ $('.sect6-slick').slick({
     ]
 });
 $('.recommended-products').slick({
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     dots: false,
     prevArrow: '<button type="button" class="my-slick-prev"><i class="fas fa-chevron-left"></i></button>',
@@ -457,11 +457,13 @@ document.addEventListener('wpcf7mailsent', function (event) {
 $(document).ready(function () {
     $('#modal-video .md-close').on('click', function () {
         var url = $('iframe').attr('src');
+        // console.log(url);
         $('iframe').attr('src', '');
         $('iframe').attr('src', url);
     });
     $('#modal-video ~ .md-overlay').on('click', function () {
         var url = $('iframe').attr('src');
+        // console.log(url);
         $('iframe').attr('src', '');
         $('iframe').attr('src', url);
     });

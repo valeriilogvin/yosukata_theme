@@ -21,9 +21,9 @@ if (is_home()) {
                             if (get_field('catalogue_photo')) {
                                 while (the_repeater_field('catalogue_photo')) {
                                     echo '
-                                        <div class="slide">
+                                        <a href="' . get_sub_field('image') . '" class="slide lightzoom">
                                             <img src="' . get_sub_field('image') . '" alt="">
-                                        </div>
+                                        </a>
                                         ';
                                 }
                             }

@@ -33,6 +33,8 @@
             </div>
         </div>-->
 
+        <a href="<?php echo home_url(); ?>/global" class="global"><img  style="width: 20px; display: block;" src="<?php echo get_stylesheet_directory_uri() ?>/img/global.svg" alt=""></a>
+
         <a href="<?php echo home_url(); ?>/catalogue" class="button js-button-buy" >
             <?php the_field('button_buy_text',20) ?>
             <span class="back"></span>

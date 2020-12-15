@@ -7,7 +7,7 @@
 <div class="md-modal md-effect-1" id="modal-video">
     <div class="md-content">
         <button class="md-close"><i class="fas fa-times"></i></button>
-        <?php the_sub_field('link') ?>
+        <?php the_sub_field('link') ?></iframe>
     </div>
 </div>
 <div class="md-overlay"></div>

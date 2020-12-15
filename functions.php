@@ -117,6 +117,15 @@ function yosukata_scripts()
             true
         );
     }
+    if (is_singular('catalogue')) {
+        wp_enqueue_script(
+            'yosukata-catalogue-fixed-menu',
+            get_template_directory_uri() . '/js/lightzoom.js',
+            array(),
+            '1.0',
+            true
+        );
+    }
     if (is_post_type_archive('blog') || is_post_type_archive('recipes')) {
         wp_enqueue_script(
             'true_loadmore',
