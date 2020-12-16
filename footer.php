@@ -56,10 +56,10 @@
             </div>
         </div>
         <div class="copyright">
-            <span>© Yosukata 2020</span>
-            <div class="img">
-                <!-- <img src="<?php echo get_stylesheet_directory_uri() ?>/img/footer-icons.png" alt="" class="icons"> --> <br>
-            </div>
+            <span style="text-align: center;">© Yosukata <?=date("Y");?>, <br />Suzhou Allshine I/E Limited. Rm.12, Ho King Commercial Centre, 2-16 Fa Yuen str., Mongkok, Kowloon, Hong Kong. <br /> <a href="mailto:info@yosukata.com" >info@yosukata.com</a></span>
+            <!--<div class="img">
+                <img src="<?php /*echo get_stylesheet_directory_uri() */?>/img/footer-icons.png" alt="" class="icons">  <br>
+            </div>-->
         </div>
     </div>
 </div>

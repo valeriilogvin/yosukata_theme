@@ -27,6 +27,46 @@ get_header('home');
             </div>
 
             <div class="sect1-slick">
+                <?php $hero = get_field('first_block_slide_4');
+                if ($hero): ?>
+
+                    <div class="slider1 slider1_4">
+                        <div class="container">
+                            <div class="content">
+                                <h1 data-aos="fade-right"
+                                    data-aos-delay="300"
+                                    data-aos-duration="1000"><?php echo $hero['title']; ?></h1>
+                                <h2><?php echo $hero['title2']; ?></h2>
+                                <a href="<?php echo $hero['link']; ?>" class="button"><?php echo $hero['button_text']; ?>
+                                    <span class="back"></span></a>
+                            </div>
+                        </div>
+                        <div class="container container-bottom">
+                            <div class="slider-lines">
+                                <div class="front"></div>
+                                <div class="back"></div>
+                            </div>
+                        </div>
+                        <style>
+                            .sect1-slick .slider1_4 {
+                                background-image: url(<?php echo $hero['photo']; ?>);
+                                background-position: top center;
+                                background-repeat: no-repeat;
+                                -webkit-background-size: cover;
+                                background-size: cover;
+                            }
+
+                            @media (max-width: 1024px) {
+                                .sect1-slick .slider1_4 {
+                                    background-image: url(<?php echo $hero['photo_mob']; ?>);
+                                    background-position: bottom center;
+                                }
+                            }
+                        </style>
+                    </div>
+
+                <?php endif;
+                ?>
                 <?php $hero = get_field('first_block_slide_1');
                 if ($hero): ?>
 

@@ -1865,6 +1865,8 @@
     z-index: 0; }
 .sect-faq .pane-block {
     position: relative; }
+.sect-faq .pane-block:last-child {
+    padding-bottom: 60px; }
 .sect-faq .pane_header:hover{
 color: #b20027;
 }
