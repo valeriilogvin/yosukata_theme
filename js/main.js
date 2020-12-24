@@ -315,7 +315,6 @@ $(function () {
     });
 });
 
-
 // appearance & hiding of header-top
 (function ($) {
     function sayHi() {
@@ -448,12 +447,25 @@ $('form .parent-col-12')
     .parent()
     .addClass('col-12');
 
+// get coupon after send
 document.addEventListener('wpcf7mailsent', function (event) {
     setTimeout(function () {
-        $('.md-modal').removeClass('md-show')
+        $('.md-modal').removeClass('md-show');
+        $('.wpcf7-form').removeClass('sent');
+        $('.wpcf7-response-output').html('').css('display', 'none');
+
+        // document.location.href = "https://yosukata.com/coupon";
     }, 3000)
 }, false);
 
+document.querySelector('#wpcf7-f441-o5').addEventListener('wpcf7mailsent', function (event) {
+    setTimeout(function () {
+        // $('.md-modal').removeClass('md-show');
+        document.location.href = "https://yosukata.com/coupon";
+    }, 3000)
+}, false);
+
+// stop video after close popup
 $(document).ready(function () {
     $('#modal-video .md-close').on('click', function () {
         var url = $('iframe').attr('src');
@@ -468,12 +480,3 @@ $(document).ready(function () {
         $('iframe').attr('src', url);
     });
 });
-// $(document).on('click', '#play_video', function() {
-//     jQuery("iframe").each(function() {
-//         jQuery(this)[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*')
-//     });
-// });
-
-// $('.lang-item-en').find('a').html('<img src="http://logvin.website/yosukata-new/wp-content/themes/yosukata/img/usa.jpg" alt="">')
-// $('.lang-item-de').find('a').html('<img src="http://logvin.website/yosukata-new/wp-content/themes/yosukata/img/ger.jpg" alt="">')
-// $('.lang-item-fr').find('a').html('<img src="http://logvin.website/yosukata-new/wp-content/themes/yosukata/img/fr.jpg" alt="">')

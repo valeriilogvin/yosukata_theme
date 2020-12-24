@@ -27,7 +27,7 @@ get_header('home');
             </div>
 
             <div class="sect1-slick">
-                <?php $hero = get_field('first_block_slide_4');
+                <?php $hero = get_field('first_block_slide_1');
                 if ($hero): ?>
 
                     <div class="slider1 slider1_4">
@@ -67,7 +67,7 @@ get_header('home');
 
                 <?php endif;
                 ?>
-                <?php $hero = get_field('first_block_slide_1');
+                <?php $hero = get_field('first_block_slide_2');
                 if ($hero): ?>
 
                     <div class="slider1 slider1_1">
@@ -107,7 +107,7 @@ get_header('home');
 
                 <?php endif;
                 ?>
-                <?php $hero = get_field('first_block_slide_2');
+                <?php $hero = get_field('first_block_slide_3');
                 if ($hero): ?>
 
                     <div class="slider1 slider1_2">
@@ -147,7 +147,7 @@ get_header('home');
 
                 <?php endif;
                 ?>
-                <?php $hero = get_field('first_block_slide_3');
+                <?php $hero = get_field('first_block_slide_4');
                 if ($hero): ?>
 
                     <div class="slider1 slider1_3">

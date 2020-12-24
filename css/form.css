@@ -348,6 +348,27 @@ button.md-close i {
     font-size: 16px;
 }
 
+.md-modal .wpcf7-list-item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+}
+
+.md-modal .wpcf7-list-item-label{
+    order: 2;
+    font-size: 14px;
+    color: #777777;
+    font-weight: 500;
+}
+.md-modal .wpcf7-list-item input{
+    width: auto;
+    margin: 0 10px 0 0;
+}
+.md-modal .wpcf7-list-item input{
+    width: auto!important;
+    margin: 0 10px 0 0!important;
+}
 #modal-video{
     overflow: visible!important;
     width: 80%;
