@@ -71,9 +71,12 @@
     </div>
 </a>
 
-<a class="coupon md-trigger" data-modal="modal-coupon">
-    <span><?php the_field('coupon_text',20) ?></span>
-</a>
+
+<!-- button "get coupon"-->
+
+<!--<a class="coupon md-trigger" data-modal="modal-coupon">-->
+<!--    <span>--><?php //the_field('coupon_text',20) ?><!--</span>-->
+<!--</a>-->
 
 </div>
 
@@ -87,6 +90,7 @@
 <?php get_template_part( 'template-parts/modal', 'wholesale' ); ?>
 <?php get_template_part( 'template-parts/modal', 'coupon' ); ?>
 <?php get_template_part( 'template-parts/modal', 'where-to-buy' ); ?>
+<?php get_template_part( 'template-parts/modal', 'question' ); ?>
 <div class="md-overlay"></div><!-- the overlay element -->
 <!--md-modal:end-->
 

@@ -69,7 +69,7 @@ if (is_home()) {
                                     echo '</ul>';
                                 }
                                 ?>
-                                <a class="button grey black md-trigger" data-modal="modal-contact">
+                                <a class="button grey black md-trigger" data-modal="modal-question">
                                     <span class="back"></span>Ask a question
                                 </a>
 
