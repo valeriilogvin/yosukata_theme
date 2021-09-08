@@ -1,16 +1,16 @@
-<div class="md-modal md-effect-1" id="modal-contact">
+<div class="md-modal md-effect-1" id="modal-question">
     <div class="md-content">
         <button class="md-close"><i class="fas fa-times"></i></button>
         <div class="flex row">
             <div class="col-4">
-                <h2 class="modal-name"><?php the_field('contact_us',20) ?></h2>
+                <h2 class="modal-name"><?php the_field('question',20) ?></h2>
             </div>
             <div class="col-8">
                 <p class="text">
-                    <?php the_field('contact_us_text',20) ?>
+                    <?php the_field('question_text',20) ?>
                 </p>
 
-                <?php echo do_shortcode( ' [contact-form-7 id="423" title="Contact Us" html_class="modal-form flex row"]' ); ?>
+                <?php echo do_shortcode( ' [contact-form-7 id="1143" title="Ask a question" html_class="modal-form flex row"]' ); ?>
 
                 <!--<form action="" class="modal-form flex row" method="post">
                     <input name="Name2" type="text" class="col-6" placeholder="Name" required>

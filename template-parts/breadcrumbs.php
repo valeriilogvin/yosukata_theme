@@ -22,8 +22,8 @@ class Kama_Breadcrumbs {
     // Локализация
     static $l10n = array(
         'home'       => 'Yosukata home page',
-        'paged'      => 'Страница %d',
-        '_404'       => 'Ошибка 404',
+        'paged'      => 'Page %d',
+        '_404'       => 'Error 404',
         'search'     => 'Результаты поиска по запросу - <b>%s</b>',
         'author'     => 'Архив автора: <b>%s</b>',
         'year'       => 'Архив за <b>%d</b> год',

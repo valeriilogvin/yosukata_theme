@@ -71,18 +71,28 @@ else {
                     $posts = get_posts( array(
                         'posts_per_page' => 6,
                         'post_type'   => 'blog',
+                        'orderby'     => 'rand',
                         'tag' => 'more_from_blog',
                         'suppress_filters' => true,
                     ));
                     foreach( $posts as $post ){ setup_postdata($post);
                         ?>
                         <div class="slider">
+<<<<<<< HEAD
                                 <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php echo the_field('blog_type_of_post') ?>" style="background-image: url('<?php echo the_field('blog_main_photo') ?>');">
                                     <i class="fas icon"></i>
                                     <div class="background"></div>
                                 </a>
                                 <p class="title" style="position: relative; color: #000000; left: 0;bottom: 0;"><?php echo the_field('blog_title') ?></p>
                                 <p class="text"><?php echo the_field('blog_text') ?></p>
+=======
+                                <a href="<?php echo get_permalink(); ?>" class="slider-item blog-article <?php the_field('blog_type_of_post') ?>" style="background-image: url('<?php the_field('blog_main_photo') ?>');">
+                                    <i class="fas icon"></i>
+                                    <div class="background"></div>
+                                </a>
+                                <p class="title" style="position: relative; color: #000000; left: 0;bottom: 0;"><?php the_title() ?></p>
+                                <p class="text"><?php the_field('blog_text') ?></p>
+>>>>>>> 3b1bde27ae7f47a79b167e5c4b727ec2db84e821
                         </div>
                         <?php
                     }

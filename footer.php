@@ -16,58 +16,76 @@
                 <div class="flex row">
                     <div class="col-6">
                         <ul>
-                            <li><a href="<?php echo home_url(); ?>/#about">About</a></li>
-                            <li><a href="#">Knowledge Base</a></li>
-                            <li><a href="<?php echo home_url(); ?>/recipes">Recipes</a></li>
-                            <li><a href="<?php echo home_url(); ?>/faq">FAQ</a></li>
-                            <li><a data-modal="modal-contact" class="md-trigger">Contact</a></li>
-                            <li><a href="#">Shop</a></li>
+                            <li><a href="<?php echo home_url(); ?>/#about"><?php the_field('menu_about',20) ?></a></li>
+                            <li><a href="<?php echo home_url(); ?>/blog"><?php the_field('menu_knowledge_base',20) ?></a></li>
+                            <li><a href="<?php echo home_url(); ?>/recipes"><?php the_field('menu_recipes',20) ?></a></li>
+                            <li><a href="<?php echo home_url(); ?>/faq"><?php the_field('menu_faq',20) ?></a></li>
+                            <li><a data-modal="modal-contact" class="md-trigger"><?php the_field('menu_contact',20) ?></a></li>
+                            <li><a href="<?php echo home_url(); ?>/catalogue"><?php the_field('menu_shop',20) ?></a></li>
+                            <li><a href="<?php echo home_url(); ?>/global"><?php the_field('menu_global',20) ?></a></li>
                         </ul>
                     </div>
                     <div class="col-6">
                         <ul>
+<<<<<<< HEAD
                             <li><a href="#">Product Registration</a></li>
                             <li><a data-modal="modal-wholesale" class="md-trigger">Wholesales</a></li>
                             <li><a href="#">Warranty & Returns</a></li>
                             <li><a href="<?php echo home_url(); ?>/privacy-policy/">Privacy policy</a></li>
                             <li><a href="#">Terms & Conditions</a></li>
                             <li><a href="<?php echo home_url(); ?>/site-map/">Site Map</a></li>
+=======
+                            <li><a data-modal="modal-register" class="md-trigger"><?php the_field('menu_product_registration',20) ?></a></li>
+                            <li><a data-modal="modal-wholesale" class="md-trigger"><?php the_field('menu_wholesales',20) ?></a></li>
+                            <li><a href="<?php echo home_url(); ?>/warranty-returns"><?php the_field('menu_warranty',20) ?></a></li>
+                            <li><a href="<?php echo home_url(); ?>/privacy-policy"><?php the_field('menu_privacy_policy',20) ?></a></li>
+                            <li><a href="<?php echo home_url(); ?>/terms-conditions"><?php the_field('menu_terms',20) ?></a></li>
+                            <li><a href="<?php echo home_url(); ?>/cookies-policy"><?php the_field('cookies-policy',20) ?></a></li>
+                            <li><a href="<?php echo home_url(); ?>/site-map/"><?php the_field('menu_site_map',20) ?></a></li>
+>>>>>>> 3b1bde27ae7f47a79b167e5c4b727ec2db84e821
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-4">
-                <p class="text">Subscribe to our newsletters to get more awesome recipes, special offers, free
-                    giveaways, and once-in-a-lifetime deals.</p>
-                <form action="" class="form-footer">
-                    <input type="text" placeholder="Your e-mail address">
+                <p class="text"><?php the_field('subscribe',20) ?></p>
+                <?php echo do_shortcode( ' [contact-form-7 id="505" title="Subscribe" html_class="form-footer"]' ); ?>
+                <!--<form action="" class="form-footer">
+                     
+                   
+                    <input type="text" placeholder="<?php the_field('footer_placeholder', 20) ?>">
                     <button type="submit"><i class="fab fa-telegram-plane"></i></button>
-                </form>
+                </form>-->
                 <div class="social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href=""><i class="fab fa-instagram"></i> </a>
-                    <a href=""><i class="fab fa-pinterest-p"></i></a>
-                    <a href=""><i class="fab fa-youtube"></i></a>
+<!--                    <a href="--><?php //the_field('facebook_link',20) ?><!--"><i class="fab fa-facebook-f"></i></a>-->
+<!--                    <a href="--><?php //the_field('instagram_link',20) ?><!--"><i class="fab fa-instagram"></i> </a>-->
+<!--                    <a href="--><?php //the_field('pinterest_link',20) ?><!--"><i class="fab fa-pinterest-p"></i></a>-->
+                    <a href="<?php the_field('youtube_link',20) ?>"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
         <div class="copyright">
-            <span>© Yosukata 2020</span>
-            <img src="<?php echo get_stylesheet_directory_uri() ?>/img/footer-icons.png" alt="" class="icons">
+            <span style="text-align: center;">© Yosukata <?=date("Y");?>, <br />Suzhou Allshine I/E Limited. Rm.12, Ho King Commercial Centre, 2-16 Fa Yuen str., Mongkok, Kowloon, Hong Kong. <br /> <a href="mailto:info@yosukata.com" >info@yosukata.com</a></span>
+            <!--<div class="img">
+                <img src="<?php /*echo get_stylesheet_directory_uri() */?>/img/footer-icons.png" alt="" class="icons">  <br>
+            </div>-->
         </div>
     </div>
 </div>
 
-<a class="back_to_top" title="Back to top">
+<a class="back_to_top" title="<?php the_field('back_to_top',20) ?>">
     <div class="arrow">
         <span></span>
         <span></span>
     </div>
 </a>
 
-<a class="coupon md-trigger" data-modal="modal-coupon">
-    <span>I’m a coupon!</span>
-</a>
+
+<!-- button "get coupon"-->
+
+<!--<a class="coupon md-trigger" data-modal="modal-coupon">-->
+<!--    <span>--><?php //the_field('coupon_text',20) ?><!--</span>-->
+<!--</a>-->
 
 </div>
 
@@ -81,6 +99,7 @@
 <?php get_template_part( 'template-parts/modal', 'wholesale' ); ?>
 <?php get_template_part( 'template-parts/modal', 'coupon' ); ?>
 <?php get_template_part( 'template-parts/modal', 'where-to-buy' ); ?>
+<?php get_template_part( 'template-parts/modal', 'question' ); ?>
 <div class="md-overlay"></div><!-- the overlay element -->
 <!--md-modal:end-->
 

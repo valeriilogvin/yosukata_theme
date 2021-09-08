@@ -15,8 +15,8 @@
             ));
             foreach( $posts as $post ){ setup_postdata($post);
                 ?>
-                <a href="#" class="item col-5 <?php the_field('top_sales') ?>">
-                    <div class="img-block"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/sect2-1.png" alt=""></div>
+                <a href="<?php echo get_permalink(); ?>" class="item col-5 <?php the_field('top_sales') ?>">
+                    <div class="img-block"><img src="<?php the_field('main_photo') ?>" alt=""></div>
                     <div class="descriptions">
                         <h3><?php the_title(); ?></h3>
                         <div class="stars <?php the_field('stars') ?>">

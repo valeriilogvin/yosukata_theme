@@ -18,13 +18,30 @@ else {
         </div>
         <div class="container container-recipe">
             <div class="flex row">
+<<<<<<< HEAD
 
                 <?php
+=======
+                <?php
+
+$args = array(
+                    'posts_per_page' => 6, //6
+                    'post_type'   => 'recipes',
+                    'suppress_filters' => true,
+                );
+
+                $posts = get_posts( $args );
+/*
+>>>>>>> 3b1bde27ae7f47a79b167e5c4b727ec2db84e821
                 $posts = get_posts( array(
                     'numberposts' => -1,
                     'post_type'   => 'recipes',
                     'suppress_filters' => true,
                 ));
+<<<<<<< HEAD
+=======
+*/
+>>>>>>> 3b1bde27ae7f47a79b167e5c4b727ec2db84e821
                 foreach( $posts as $post ){ setup_postdata($post);
                     ?>
                     <a href="<?php echo get_permalink(); ?>" class="col-6 recipe" style="background-image: url('<?php the_field('recipe_main_photo'); ?>')">
@@ -42,10 +59,23 @@ else {
                 }
                 wp_reset_postdata();
                 ?>
+<<<<<<< HEAD
+=======
+                <div id="loadsm"></div>
+>>>>>>> 3b1bde27ae7f47a79b167e5c4b727ec2db84e821
 
             </div>
         </div>
     </div>
+<?php if (  1 || $wp_query->max_num_pages > 1 ) : ?>
+	<script id="true_loadmore">
+	var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
+	var true_posts = '<?php echo serialize($args); ?>';
+	var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
+	var post_type = '';
+	</script>
+<?php endif; ?>
+<?php //print_r($wp_query->query_vars);?>
 
 <?php
 get_footer();

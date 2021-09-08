@@ -39,18 +39,6 @@ else {
                         </div>
                     </div>
                 </div>
-                <div class="col-8 instructions">
-                    <p class="title">Instructions</p>
-                    <?php
-                    if( get_field('instructions') ) {
-                        echo '<ul>';
-                        while( the_repeater_field('instructions') ) {
-                            echo '<li><span class="num">' . get_sub_field('num') .'</span>' . get_sub_field('instruction') .'</li>';
-                        }
-                        echo '</ul>';
-                    }
-                    ?>
-                </div>
             </div>
             <img src="<?php echo get_stylesheet_directory_uri() ?>/img/limes.png" alt="" class="limes">
         </div>
@@ -112,7 +100,7 @@ else {
                         ?>
                         <a href="<?php echo get_permalink(); ?>" class="slide">
                             <span class="time"><?php the_field('time'); ?></span>
-                            <div class="img-block" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/sect8-img3.jpg')"></div>
+                            <div class="img-block" style="background-image: url('<?php the_field('recipe_main_photo'); ?>'); background-repeat: no-repeat; background-size: cover"></div>
                             <div class="slide-title">
                                 <span>Difficulty: <span class="value"><?php the_field('difficulty'); ?></span></span>
                                 <span>Servings: <span class="value"><?php the_field('serving'); ?></span></span>
@@ -128,6 +116,7 @@ else {
             </div>
         </div>
     </div>
+
 
 <?php
 get_footer();
